@@ -1,0 +1,55 @@
+@import "./../../common/constants";
+
+.top-header {
+    background-color: $DARK;
+    padding: 12px 0;
+
+    &__inner {
+        display: flex;
+
+        flex-direction: column;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__info {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: $WHITE;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        i {
+            font-size: 14px;
+            color: $RED;
+            margin-right: .5rem;
+        }
+    }
+
+    &__contacts {
+        border-bottom: 1px solid rgba($WHITE, .1);
+        display: flex;
+        flex-direction: column;
+        @media (min-width: map_get($MEDIA, SM)) {
+            border-bottom: none;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__search {
+        padding-top: 12px;
+        @media (min-width: map_get($MEDIA, SM)) {
+            border-bottom: none;
+            padding-top: 0;
+        }
+    }
+}

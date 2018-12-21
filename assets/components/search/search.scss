@@ -1,0 +1,48 @@
+@import "./../../common/constants";
+
+.search {
+    display: flex;
+
+    &__input {
+        border: none;
+        flex: 1 0 auto;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 2px 0;
+        color: $WHITE;
+        background-color: transparent;
+        transition: all .6s;
+        width: 80px;
+        border-bottom: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                width: 200px;
+                border-bottom: 1px solid $WHITE;
+            }
+
+        }
+        &::placeholder{
+            color: $WHITE;
+        }
+    }
+
+    &__button {
+        border: none;
+        display: flex;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        i{
+            font-size: 14px;
+            color: $RED;
+        }
+    }
+
+}

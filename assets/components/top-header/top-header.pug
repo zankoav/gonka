@@ -1,0 +1,13 @@
+mixin top-header()
+    .top-header
+        .container
+            .top-header__inner
+                .top-header__contacts
+                    a.top-header__info.top-header__info_phone(href="tel:1-555-644-5566")
+                        i.fas.fa-mobile-alt
+                        | 1-555-644-5566
+                    span.top-header__info.top-header__info_location
+                        i.fas.fa-map-marker-alt
+                        | Studio City, CA 91604
+                .top-header__search
+                    +search()
