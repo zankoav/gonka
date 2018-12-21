@@ -2,6 +2,7 @@ mixin bottom-header()
     .bottom-header
         .container
             .bottom-header__inner
-                .bottom-header__top
-                    //img.bottom-header__logo(src=require('./../../images/'))
-                .bottom-header__bottom
+                a.bottom-header__logo-link
+                    img.bottom-header__logo(src=require('./../../images/'))
+                +menu()
+                +socials()

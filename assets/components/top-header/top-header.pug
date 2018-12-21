@@ -10,4 +10,16 @@ mixin top-header()
                         i.fas.fa-map-marker-alt
                         | Studio City, CA 91604
                 .top-header__search
+                    .top-header__langs
+                        span.top-header__lang-current
+                            span.top-header__lang-value(data-current-lang="ru") RU
+                            i.fas.fa-angle-down
+                            ul.top-header__langs-list
+                                li.top-header__lang
+                                    a(href="#" , data-lang="ru") RU
+                                li.top-header__lang
+                                    a(href="#" , data-lang="en") EN
+                    a.top-header__basket(href="#")
+                        i.fas.fa-shopping-cart
+                        span.top-header__basket-count 10
                     +search()
