@@ -12,16 +12,11 @@
         color: $WHITE;
         background-color: transparent;
         transition: all .6s;
-        width: 80px;
+        width: 100px;
         border-bottom: 1px solid transparent;
 
         &:focus {
             outline: none;
-
-            @media (min-width: map_get($MEDIA, SM)) {
-                width: 200px;
-                border-bottom: 1px solid $WHITE;
-            }
 
         }
         &::placeholder{
