@@ -1,0 +1,33 @@
+mixin main-slider()
+    - var bgSlider = require('./../images/javelin.jpg')
+    .swiper-container.main-slider
+        .main-slider__parallax(style=`background-image:url(${bgSlider})` data-swiper-parallax="-23%")
+        .swiper-wrapper
+            .swiper-slide.main-slider__slide
+                .container
+                    .main-slider__title(data-swiper-parallax="-300")
+                        | Гонки на выживание
+                    .main-slider__subtitle(data-swiper-parallax="-200")
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis pariatur?
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    +_button("Подробнее", "button_gonka")
+            .swiper-slide.main-slider__slide
+                .container
+                    .main-slider__title(data-swiper-parallax="-300")
+                        | Гонки на выживание
+                    .main-slider__subtitle(data-swiper-parallax="-200")
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis pariatur?
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    +_button("Подробнее", "button_gonka")
+            .swiper-slide.main-slider__slide
+                .container
+                    .main-slider__title(data-swiper-parallax="-300")
+                        | Гонки на выживание
+                    .main-slider__subtitle(data-swiper-parallax="-200")
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis pariatur?
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    +_button("Подробнее", "button_gonka")
+        .swiper-pagination.swiper-pagination-white.main-slider__pagination

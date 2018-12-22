@@ -1,0 +1,78 @@
+@import "./../../common/constants";
+
+.categories {
+    display: flex;
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        padding: 1rem 0;
+        justify-content: center;
+    }
+
+    &__item {
+
+        text-align: center;
+        padding: 0 1rem 1rem;
+        width: initial;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            padding: 0 2rem;
+            border-right: 1px solid $WHITE;
+            width: initial;
+        }
+
+        &:last-child{
+            border-right: none;
+        }
+
+        a {
+            position: relative;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: bold;
+            color: $WHITE;
+            text-transform: uppercase;
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                color: $WHITE;
+                transition: all .4s;
+            }
+
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: -1rem;
+                height: 4px;
+                width: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $WHITE;
+                transition: all .4s;
+            }
+
+        }
+
+        &:hover, &_active {
+            a {
+                &:after{
+                    width: 100%;
+                }
+            }
+
+        }
+
+    }
+}
+
+.categories-container{
+    max-width: initial;
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        max-width: 100%;
+        margin-left: initial;
+        margin-right: initial;
+    }
+}

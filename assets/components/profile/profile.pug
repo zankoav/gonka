@@ -1,0 +1,10 @@
+mixin profile(isValid, isTop)
+    - var topMod = isTop ? 'profile_top' : '';
+    div(class=`profile ${topMod}`)
+        img.profile__icon(src=require('./../images/profile.svg'), alt="profile")
+        - if(isValid)
+            .profile__valid
+                a.profile__link.profile__link_user(href="#") Александр
+        - else
+            a.profile__default(href="#")
+                span.profile__link.profile__link_login Вход / Регистрация

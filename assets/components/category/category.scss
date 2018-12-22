@@ -1,0 +1,373 @@
+@import "./../../common/constants";
+
+.category {
+    background-color: $GRAY;
+    padding: 2rem 0 2.75rem;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        padding: 1rem 0 2rem;
+    }
+
+    &__breadcrumbs {
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__row {
+        max-width: initial;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        display: flex;
+
+        &_settings {
+            margin-bottom: 1rem;
+            @media (min-width: map_get($MEDIA, LG)) {
+                margin-top: 26px;
+            }
+        }
+    }
+
+    &__col {
+        padding: 0 1rem;
+
+        &_left {
+
+            display: none;
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                display: block;
+                max-width: 224px;
+                flex: 0 0 224px;
+            }
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                display: block;
+                max-width: 268px;
+                flex: 0 0 268px;
+            }
+        }
+
+        &_right {
+            flex: 1 0 0;
+        }
+
+        &_product-types {
+            @media (max-width: map_get($MEDIA, SM ) - 1) {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: $VIOL;
+                padding: 1rem;
+                z-index: 999;
+                transition: left .6s;
+
+                &_active {
+                    left: 0;
+                }
+            }
+        }
+
+    }
+
+    &__fillters-and-settings {
+
+        @media (max-width: map_get($MEDIA, SM ) - 1) {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: $VIOL;
+            padding: 1rem;
+            z-index: 999;
+            transition: right .6s;
+
+            &_active {
+                right: 0;
+            }
+
+        }
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+    }
+
+    &__fillters {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid $VIOL_LIGHT;
+        order: 3;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex: 1 0 100%;
+            justify-content: flex-end;
+            border-top: none;
+            order: initial;
+            padding-top: initial;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            flex: initial;
+            justify-content: initial;
+            margin-bottom: initial;
+        }
+
+    }
+
+    &__fillter-label {
+        line-height: 19px;
+        font-size: 14px;
+        color: $WHITE;
+        display: flex;
+        align-items: center;
+        user-select: none;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            line-height: 18px;
+            font-size: 13px;
+            color: $GRAY_DARK;
+        }
+
+        &:before {
+            content: '';
+            background: url("./../../images/checkbox-off.svg") no-repeat;
+            width: 15px;
+            height: 13px;
+            display: block;
+            margin-right: 4px;
+        }
+    }
+
+    &__fillter {
+        display: none;
+
+        &:checked + label {
+            color: $VIOL_LIGHT;
+
+            &:before {
+                content: '';
+                background: url("./../../images/checkbox-on.svg") no-repeat;
+            }
+        }
+    }
+
+    &__fillter-group {
+        &:first-child {
+            margin-right: 35px;
+        }
+    }
+
+    &__settings {
+        display: flex;
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+        flex-direction: column;
+        border-top: 1px solid $VIOL_LIGHT;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex: 1 0 100%;
+            margin-bottom: initial;
+            padding-top: initial;
+            justify-content: space-between;
+            align-items: center;
+            border-top: none;
+            flex-direction: initial;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            flex: initial;
+            justify-content: initial;
+        }
+
+        &:before{
+            content: 'Сортировать:';
+            color: $WHITE;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 1rem;
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                content: none;
+            }
+
+        }
+    }
+
+    &__pagination-settings {
+        margin-left: 4rem;
+        display: none;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: block;
+        }
+    }
+
+    &__pagination-settings-title {
+        line-height: 19px;
+        color: $GRAY_DARK;
+        font-size: 14px;
+        margin-right: 1rem;
+    }
+
+    &__pagination-settings-link {
+        color: $GRAY_DARK;
+        font-size: 14px;
+        line-height: 19px;
+        margin-right: 1rem;
+        transition: all .6s;
+
+        &:hover, &_active {
+            color: $VIOL_LIGHT;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__sorts {
+        position: relative;
+        font-size: 14px;
+        line-height: 19px;
+        flex: 1 0 auto;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex: initial;
+        }
+    }
+
+    &__sorting {
+        display: none; /*hide original SELECT element: */
+    }
+
+    .select-selected {
+        color: $WHITE;
+        cursor: pointer;
+        font-size: 14px;
+        background-color: transparent;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            color: $GRAY_DARK;
+        }
+    }
+
+    /* Style the arrow inside the select element: */
+    .select-selected:after {
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        content: "\f107";
+        top: 2px;
+        right: 0;
+        width: 13px;
+        height: 13px;
+        color: $VIOL_LIGHT;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            right: -1.5rem;
+        }
+
+    }
+
+    /* Point the arrow upwards when the select box is open (active): */
+    .select-selected.select-arrow-active:after {
+        content: "\f106";
+    }
+
+    /* style the items (options), including the selected item: */
+    .select-items div {
+        color: $GRAY_DARK;
+        padding: 4px 0;
+        cursor: pointer;
+    }
+
+    /* Style items (options): */
+    .select-items {
+        position: absolute;
+        background-color: $WHITE;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px $BLACK_05;
+        top: 100%;
+        min-width: 200px;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    /* Hide the items when the select box is closed: */
+    .select-hide {
+        display: none;
+    }
+
+    .select-items div:hover, .same-as-selected {
+        color: $VIOL_LIGHT !important;
+    }
+
+    &__mobile-product-types {
+        display: flex;
+        justify-content: flex-end;
+        flex: 0 0 auto;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &__mobile-button {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        color: $VIOL_LIGHT;
+    }
+
+    &__mobile-triggers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-size: 14px;
+        line-height: 19px;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &__mobile-list-title, &__mobile-filters-title {
+        color: $GRAY_DARK;
+        display: flex;
+        align-items: center;
+
+        &:after {
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            margin-left: 4px;
+            line-height: 0;
+            color: $VIOL_LIGHT;
+
+        }
+    }
+
+    &__reccomended{
+        padding-top: 2rem;
+    }
+}

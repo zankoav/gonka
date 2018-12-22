@@ -1,0 +1,78 @@
+@import "./../../common/constants";
+
+.menu {
+
+    &_gonka-top{
+        display: none;
+        position: absolute;
+        max-width: initial;
+        top: 14px;
+        padding-top: 15px;
+        left: 0;
+        z-index: 999;
+        flex-direction: column;
+
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: initial;
+            max-width: 100%;
+            top: initial;
+            padding-top: initial;
+
+        }
+
+        .menu__item {
+            padding: .75rem 2rem;
+            background-color: $DARK_LIGHT;
+            border-bottom: 1px solid $WHITE_03;
+            box-shadow: 0 2px 4px $BLACK_04;
+
+
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                padding: 0 1.5rem 0 0;
+                background-color: initial;
+                border-bottom: none;
+                box-shadow: none;
+            }
+
+            &:last-child {
+                border-bottom: none;
+
+                @media (min-width: map_get($MEDIA, SM)) {
+                    padding-right: 0;
+                    padding-bottom: 0;
+                }
+            }
+
+            a {
+                display: block;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: 700;
+                color: $WHITE_05;
+                transition: color .6s;
+                text-transform: uppercase;
+
+                @media (min-width: map_get($MEDIA, SM)) {
+                    font-size: 14px;
+                    line-height: 14px;
+                    text-transform: initial;
+                }
+
+                &:hover {
+                    color: $WHITE;
+                }
+            }
+
+            &_active {
+                a {
+                    color: $WHITE;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "./../../common/constants";
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    &__link{
+        color: $GRAY_DARK;
+        font-size: 14px;
+        line-height: 19px;
+        padding: 0 8px;
+        transition: all .6s;
+
+        &:hover, &_active{
+            color: $VIOL_LIGHT;
+        }
+    }
+
+}

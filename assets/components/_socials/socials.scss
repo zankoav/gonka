@@ -1,0 +1,40 @@
+@import "./../../common/constants";
+
+.socials {
+    &__link {
+
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all .4s;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin-left: .375rem;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            font-size: 16px;
+            color: $WHITE;
+            transition: all .4s;
+        }
+
+        &:hover{
+            background-color: $WHITE;
+            i{
+                color: $RRED;
+            }
+        }
+    }
+}

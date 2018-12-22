@@ -1,0 +1,20 @@
+@import "./../../common/constants";
+
+.reccomended {
+
+    &__item{
+        margin: 1rem 0;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin: 2rem 0;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            margin: 26px 0;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            margin: 2rem 0;
+        }
+    }
+}

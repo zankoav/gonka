@@ -1,0 +1,19 @@
+.sale
+    .container
+        .sale__inner
+            +subtitle('Товары на скидках')
+            .sale__container
+                .swiper-container.sale__swiper
+                    .swiper-wrapper.sale__swiper-wrapper
+                        .swiper-slide.sale__swiper-slide
+                            +product_sale('Деревянные коники в кониках 1', '100.00', 75.99 )
+                        .swiper-slide.sale__swiper-slide
+                            +product_sale('Собака', '50.00', 19.99 )
+                        .swiper-slide.sale__swiper-slide
+                            +product_sale('Деревянные коники в кониках 2', '75.00', 51.00 )
+                        .swiper-slide.sale__swiper-slide
+                            +product_sale('Ваза', '60.00', 29.99 )
+                        .swiper-slide.sale__swiper-slide
+                            +product_sale('Коники', '40.00', 29.99 )
+                .sale__button.sale__button_prev
+                .sale__button.sale__button_next

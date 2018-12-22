@@ -1,0 +1,32 @@
+@import "./../../common/constants";
+
+.profile{
+    display: flex;
+    align-items: center;
+
+    &:hover{
+        span {
+            color: $WHITE;
+        }
+    }
+
+    &_top{
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &__icon{
+        margin-right: .5rem;
+    }
+
+    &__link{
+        color: $WHITE;
+        font-size: 14px;
+        font-weight: bold;
+        transition: color .4s;
+        max-width: 150px;
+        display: inline-block;
+        overflow: hidden;
+    }
+}

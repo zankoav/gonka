@@ -24,12 +24,16 @@ const THEME_NAME = 'gonka';
 
 
 let entries = {
-    home: './home.js'
+    home: './home.js',
+    page: './page.js'
 };
 
 let pugs = {
     home: {
         title: "home title"
+    },
+    page: {
+        title: "page title"
     }
 };
 

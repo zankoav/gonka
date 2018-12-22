@@ -1,0 +1,15 @@
+// type = 1 // new product
+// type = 2 // sale product
+mixin product(title, type, price, oldPrice, image)
+    - var modType = (type === 1) ? 'product_new' : (type === 2) ? 'product_sale' : (type === 3) ? 'product_banner' : '';
+    - var imageSrc = image ? image : require('./../images/250x220.png');
+    div(class=`product ${modType}`)
+        a.product__fancybox(href=imageSrc title=title)
+            img.product__image(src=imageSrc alt=title)
+        a.product__title(href="#" target="_blank")= title
+        footer.product__footer
+            .product__prices
+                - if (oldPrice)
+                    span.product__price.product__price_old= oldPrice
+                span.product__price.product__price_new= price
+            a.product__add-to-cart(href="#") В корзину

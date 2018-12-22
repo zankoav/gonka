@@ -1,10 +1,35 @@
 //COLOR:
 $BLACK: #000000;
-$DARK: #181a1f;
-$GRAY: rgb(73,76,82);
-$GRAY_LIGHT: rgb(112,115,121);
+$BLACK_05: rgba(#000000, .5);
+$BLACK_04: rgba(#000000, .4);
 $WHITE: #FFFFFF;
-$RED: #fd3c3d;
+$WHITE_08: rgba(#FFFFFF, .8);
+$WHITE_05: rgba(#FFFFFF, .5);
+$WHITE_04: rgba(#FFFFFF, .4);
+$WHITE_03: rgba(#FFFFFF, .3);
+$GRAY: #e8e8e8;
+$GRAY_LIGHT: #e3e3e3;
+$GRAY_100: #cbcbcb;
+$GRAY_DARK: #777777;
+$RED: #ce4839;
+$RED_LIGHT: #e97f6b;
+$ORANGE: #f19104;
+$VIOL: #28055b;
+$VIOL_LIGHT: #8240be;
+$VIOL_DARK: #151550;
+$GREEN: #60b800;
+$BLUE:#3023ae;
+$BLUE:#3023ae;
+$PURPLE:#c86dd7;
+
+// Gonka Colors
+$DARK: #181a1f;
+$DARK_2: #23262c;
+$DARK_3: #31343c;
+$DARK_LIGHT: rgb(73,76,82);
+$RRED: #fd3c3d;
+$RRED_HOVER: #b02c2c;
+// End Gonka Colors
 
 //SIZE:
 $MAX-WIDTH: 1200px;

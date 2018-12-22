@@ -1,0 +1,48 @@
+@import "./../../common/constants";
+
+.menu {
+
+    flex-direction: column;
+
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__item {
+        padding-bottom: .5rem;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            padding-right: 1.5rem;
+            padding-bottom: initial;
+        }
+
+        &:last-child {
+            padding-right: initial;
+            padding-bottom: 0;
+        }
+
+        a {
+            display: block;
+            font-size: 12px;
+            line-height: 12px;
+            font-weight: bold;
+            color: $WHITE;
+            transition: color .6s;
+
+            &:hover {
+                color: $RRED;
+            }
+        }
+
+        &_active {
+            a {
+                color: $RED;
+            }
+        }
+
+
+    }
+}

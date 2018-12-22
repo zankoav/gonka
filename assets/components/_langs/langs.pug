@@ -1,0 +1,10 @@
+mixin _langs()
+    .langs
+        a.langs__current(href="#", data-current-lang="ru")
+            | RU
+            i.fas.fa-angle-down
+        ul.langs__list
+            li.langs__item
+                a(href="#", data-lang="ru") RU
+            li.langs__item
+                a(href="#", data-lang="en") EN

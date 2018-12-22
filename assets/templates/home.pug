@@ -1,10 +1,7 @@
-include ../mixins
+include ./../mixins
 include ./../components/head
 body
-    // Top Header Start
-    +top-header()
-    // Top Header End
-
-    // Bottom Header Start
-    +bottom-header()
-    // Bottom Header End
+    +header(true)
+    .container
+        +content('content_gonka')
+    +_footer()
