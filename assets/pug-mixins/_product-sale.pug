@@ -1,0 +1,9 @@
+mixin product_sale(title, oldPrice, newPrice)
+    .product-sale
+        img.product-sale__image(src="http://via.placeholder.com/250x220")
+        h4.product-sale__title= title
+        footer.product-sale__footer
+            .product-sale__prices
+                span.product-sale__price.product-sale__price_old= oldPrice
+                span.product-sale__price.product-sale__price_new= newPrice
+            a.product-sale__add-to-cart(href="#") В корзину

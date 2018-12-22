@@ -1,0 +1,13 @@
+@import "./../../common/constants";
+
+.subtitle{
+    color: $VIOL_DARK;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        font-size: 24px;
+        text-align: initial;
+    }
+}

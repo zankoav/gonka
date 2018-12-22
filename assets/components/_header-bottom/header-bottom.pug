@@ -1,0 +1,13 @@
+mixin _header-bottom()
+    header.header-bottom
+        .container
+            .header-bottom__inner
+                .header-bottom__profile
+                    +profile()
+                .header-bottom__logo
+                    a.header-bottom__logo-link(href="/")
+                        img.header-bottom__logo-icon(src=require('./../images/logo.svg'), alt="logo")
+                .header-bottom__socials
+                    +_socials()
+
+

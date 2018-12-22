@@ -1,0 +1,29 @@
+.popular
+    .container
+        .popular__inner
+            +subtitle('Популярные товары')
+            .popular__container
+                .swiper-container.popular__swiper.popular__js
+                    .swiper-wrapper.popular__swiper-wrapper
+                        .swiper-slide.popular__swiper-slide
+                            +product('Кот', 3, 75.99, false, require('./../images/250x520.png'))
+                        .swiper-slide.popular__swiper-slide
+                            +product('Собака', false, 75.99)
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники',false, 75.99)
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники',false, 75.99)
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники',false, '18.00')
+                        .swiper-slide.popular__swiper-slide
+                            +product('Собака',false, 75.99)
+                        .swiper-slide.popular__swiper-slide
+                            +product('Ваза', 3, 75.99, false, require('./../images/250x520.png'))
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники', 1, 75.99)
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники', 2, 75.99, '100.00')
+                        .swiper-slide.popular__swiper-slide
+                            +product('Деревянные коники',false, 75.99)
+                .popular__button.popular__button_prev
+                .popular__button.popular__button_next

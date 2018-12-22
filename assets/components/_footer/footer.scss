@@ -1,0 +1,134 @@
+@import "./../../common/constants";
+
+.footer {
+    background-color: $DARK_3;
+    padding: 2rem 0;
+    font-family: 'Lato', sans-serif;
+    color: $WHITE;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        padding: 3rem 0;
+
+    }
+
+    &__logo-icon{
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+
+    &__text{
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    &__categories-item, &__menu-item{
+        margin-bottom: .75rem;
+        a{
+            color: $WHITE;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            transition: .4s;
+        }
+
+        &:hover,&_active{
+            a{
+                color: $RRED;
+            }
+        }
+    }
+
+    &__row{
+        max-width: initial;
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+    }
+
+    &__col{
+        font-family: 'Montserrat', sans-serif;
+        padding: 0 .5rem 2.5rem;
+        max-width: 100%;
+        flex: 1 0 100%;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            max-width: 50%;
+            flex: 1 0 50%;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            padding: 0 1rem 1rem;
+            max-width: 25%;
+            flex: 1 0 25%;
+        }
+    }
+
+    &__bottom{
+        background-color: $DARK;
+    }
+
+    &__bottom-inner{
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex-direction: row;
+        }
+    }
+
+    &__pay-systems{
+        margin-bottom: .5rem;
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin-bottom: 0;
+        }
+
+        img{
+            max-height: 30px;
+            margin-right: .5rem;
+        }
+    }
+
+    &__copy-right{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        color: $WHITE_05;
+    }
+
+    &__title{
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 2rem;
+
+        display: flex;
+        flex-direction: column;
+
+        &:after{
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 4px;
+            background-color: $RRED;
+            margin-top: 8px;
+        }
+    }
+
+    &__item{
+        font-family: 'Lato', sans-serif;
+        margin-bottom: .5rem;
+        display: block;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+}

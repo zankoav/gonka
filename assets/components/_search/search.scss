@@ -1,0 +1,84 @@
+@import "./../../common/constants";
+
+.search {
+
+    &_gonka {
+        display: flex;
+        align-items: center;
+        background-color: $DARK_LIGHT;
+        padding: .5rem 1rem;
+        box-shadow: 0 2px 4px $BLACK_04;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            background-color: transparent;
+            padding: initial;
+            box-shadow: none;
+
+        }
+
+        .search__input {
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            max-width: 100%;
+            flex: 1 0 auto;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: bold;
+
+            color: $WHITE;
+
+            &::placeholder {
+                font-weight: normal;
+                color: $WHITE_05;
+            }
+
+            &:focus {
+                outline: none;
+
+                &+button{
+                    color: $WHITE;
+                }
+            }
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                max-width: 80px;
+                flex: 0 0 80px;
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+
+        }
+
+        .search__button {
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            transition: all .4s;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 14px;
+            color: $RRED;
+
+            //&:hover{
+            //    color: $WHITE;
+            //}
+
+            &:focus {
+                outline: none;
+            }
+
+            @media (min-width: map_get($MEDIA, SM)) {
+                font-size: 16px;
+                line-height: 16px;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+}

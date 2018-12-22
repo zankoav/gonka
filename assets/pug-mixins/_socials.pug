@@ -1,0 +1,11 @@
+mixin socials(onlyMobile, isContactsPlace, isFooter)
+    - var mobileFooter = isFooter ? 'socials_footer' : '';
+    - var mobileMod = onlyMobile ? 'socials_mobile' : '';
+    - var contactsMod = isContactsPlace ? 'socials_contacts' : '';
+    div(class=`socials ${mobileMod} ${contactsMod} ${mobileFooter}`)
+        a.socials__link(href="#")
+            img.socials__icon(src=require("./../images/vk.svg"))
+        a.socials__link(href="#")
+            img.socials__icon(src=require("./../images/facebook.svg"))
+        a.socials__link(href="#")
+            img.socials__icon(src=require("./../images/instagramm.svg"))

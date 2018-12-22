@@ -1,0 +1,41 @@
+@import "./../../common/constants";
+
+.header {
+
+    &_main {
+        height: 100vh;
+        min-height: 500px;
+        max-height: 1080px;
+
+        .header-top {
+            background-color: rgba($DARK, 0);
+        }
+
+        .categories {
+            background-color: rgba($DARK, 0);
+        }
+
+        .header-bottom {
+            background-color: transparent;
+        }
+
+        .header-bottom__logo-icon{
+            height: 80px;
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        height: 100vh;
+        min-height: 500px;
+        max-height: 1080px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
+    &__categories{
+        background-color: $RRED;
+    }
+}

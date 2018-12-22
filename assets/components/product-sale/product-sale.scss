@@ -1,0 +1,73 @@
+@import "./../../common/constants";
+
+.product-sale {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    &__title {
+        line-height: 1.5;
+        font-size: 18px;
+        font-weight: 600;
+        color: $GRAY_DARK;
+        margin-top: .75rem;
+        margin-bottom: 1.5rem;
+        flex: 1 0 auto;
+    }
+
+    &__footer {
+        padding-top: 4px;
+        border-top: 2px solid $GRAY_LIGHT;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__prices {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__add-to-cart {
+        display: inline-block;
+        align-self: flex-end;
+        font-size: 10px;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: $GRAY_LIGHT;
+        color: $BLACK;
+        padding: 7px 16px;
+        transition: all .4s;
+
+        &:hover {
+            color: $WHITE;
+            background-color: $RED;
+        }
+    }
+
+    &__price {
+
+        &:after {
+            content: 'p.';
+            margin-left: 2px;
+        }
+
+        &_old {
+            font-size: 10px;
+            color: $GRAY_DARK;
+            text-decoration: line-through;
+        }
+
+        &_new {
+            font-size: 18px;
+            font-weight: 600;
+            color: $ORANGE;
+        }
+    }
+}

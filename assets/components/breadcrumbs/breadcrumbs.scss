@@ -1,0 +1,31 @@
+@import "./../../common/constants";
+
+.breadcrumbs {
+    display: none;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        display: block;
+    }
+
+    &__item {
+        font-size: 12px;
+        color: $GRAY_DARK;
+    }
+
+    &__link {
+
+        transition: all .6s;
+
+        &:hover{
+            color: $RED;
+        }
+
+        &:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            content: "\f105";
+            margin: 0 .5rem;
+            color: $GRAY_100;
+        }
+    }
+}

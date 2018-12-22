@@ -1,0 +1,75 @@
+@import "./../../common/constants";
+
+.sale {
+    background-color: $WHITE;
+    padding: 32px 0 42px;
+
+    &__swiper-slide {
+        height: auto;
+    }
+
+    &__container {
+        padding: 1rem 2rem 0;
+        position: relative;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            padding: 1rem 76px 0;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            padding: 1rem 1rem 0;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            padding: 1rem 100px 0;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: calc(50% - 6px);
+        width: 40px;
+        height: 40px;
+        background: url("./../../images/arrow-normal.svg") no-repeat;
+        background-size: cover;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            width: 44px;
+            height: 44px;
+            top: calc(50% - 8px);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.swiper-button-disabled {
+            background: url("./../../images/arrow-off.svg") no-repeat;
+            background-size: cover;
+        }
+
+        &_prev {
+            transform: rotate(180deg);
+            left: -.5rem;
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                left: -44px;
+            }
+
+            @media (min-width: map_get($MEDIA, LG)) {
+                left: 0;
+            }
+        }
+
+        &_next {
+            right: -.5rem;
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                right: -44px;
+            }
+            @media (min-width: map_get($MEDIA, LG)) {
+                right: 0;
+            }
+        }
+    }
+}

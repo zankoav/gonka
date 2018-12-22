@@ -1,43 +1,52 @@
 @import "./../../common/constants";
 
 .search {
-    display: flex;
+
+    display: none;
+    flex: 1 0 auto;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        display: flex;
+    }
 
     &__input {
         border: none;
-        flex: 1 0 auto;
-        font-size: 14px;
-        line-height: 17px;
-        padding: 2px 0;
-        color: $WHITE;
+        border-radius: 0;
         background-color: transparent;
-        transition: all .6s;
-        width: 100px;
-        border-bottom: 1px solid transparent;
+        padding: 8px 1rem;
+        flex: 0 0 auto;
+        font-size: 16px;
+        line-height: 16px;
+        color: $WHITE;
+
+        &::placeholder{
+            color: $WHITE;
+        }
 
         &:focus {
             outline: none;
-
-        }
-        &::placeholder{
-            color: $WHITE;
         }
     }
 
     &__button {
         border: none;
-        display: flex;
+        border-radius: 0;
         background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 68px;
+        transition: all .6s;
         cursor: pointer;
+
 
         &:focus {
             outline: none;
         }
 
-        i{
-            font-size: 14px;
-            color: $RED;
-        }
     }
 
+    &__icon{
+        height: 22px;
+    }
 }

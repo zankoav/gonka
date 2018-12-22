@@ -1,0 +1,44 @@
+@import "./../../common/constants";
+
+.shopping-cart {
+
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        display: flex;
+    }
+
+    &:hover{
+        .shopping-cart__total-price{
+            color: $WHITE;
+        }
+    }
+
+    &__basket {
+        position: relative;
+        padding-left: 1rem;
+        display: flex;
+    }
+
+    &__icon{
+        width: 22px;
+        height: 22px;
+    }
+
+    &__point{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14px;
+        height: 14px;
+        color: $WHITE;
+        background-color: $RED;
+        border-radius: 50%;
+        font-size: 8px;
+        line-height: 8px;
+        font-weight: bold;
+        top: 0;
+        right: -3px;
+        box-shadow: 0 2px 4px $BLACK_05;
+    }
+}

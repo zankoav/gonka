@@ -1,0 +1,5 @@
+mixin _search(mod)
+    form(class=`search ${mod}`, action='/', method="get")
+        input.search__input(type="text", placeholder="Поиск...")
+        button.search__button(type="submit")
+            i.fas.fa-search

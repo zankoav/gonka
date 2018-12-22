@@ -1,0 +1,122 @@
+@import "./../../common/constants";
+
+.header-top {
+    background-color: $DARK;
+    position: relative;
+    z-index: 3;
+    font-family: 'Lato', sans-serif;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding: .5rem 0;
+        justify-content: space-between;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            justify-content: initial;
+        }
+    }
+
+    &__menu {
+        position: relative;
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex: 1 0 auto;
+        }
+    }
+
+    &__search, &__cart, &__langs {
+        flex: 0 0 auto;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin-left: 2.5rem;
+        }
+    }
+
+    &__langs {
+        padding: .25rem 0 .25rem 1rem;
+    }
+
+    &__search-button {
+        font-size: 16px;
+        color: $WHITE;
+        padding: .25rem 0 .25rem 1rem;
+        transition: all .4s;
+
+        &_active{
+            color: $WHITE;
+        }
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &__search_mobile_fixed {
+        position: absolute;
+        max-width: initial;
+        width: 100vw;
+        display: none;
+        left: 0;
+        top: 43px;
+        z-index: 998;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            position: initial;
+            z-index: initial;
+            display: flex;
+            width: initial;
+        }
+    }
+
+    &__menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 16px;
+        width: 20px;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: $WHITE;
+            transition: all .4s;
+            transform-origin: left center;
+        }
+
+        &_active {
+            span {
+                background-color: $WHITE;
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: scale(0);
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            & + .menu_gonka-top {
+                display: flex;
+                animation: show-menu .4s;
+            }
+        }
+    }
+}
+
+@keyframes show-menu {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,48 @@
+mixin _footer()
+    footer.footer
+        .container
+            .footer__row
+                .footer__col
+                    h3.footer__title Betta club
+                    a.footer__logo-link(href="/")
+                        img.footer__logo-icon(src=require("./../images/logo.svg"))
+                    p.footer__text
+                        |Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.
+                .footer__col
+                    h3.footer__title Меню
+                    ul.footer__categories
+                        li.footer__categories-item.footer__categories-item_active
+                            a(href="#") Главная
+                        li.footer__categories-item
+                            a(href="#") Календарь
+                        li.footer__categories-item
+                            a(href="#") Рейтинги
+                        li.footer__categories-item
+                            a(href="#") Медиа
+                        li.footer__categories-item
+                            a(href="#") Гонки
+                .footer__col
+                    h3.footer__title Контакты
+                    .footer__item.footer__item_location Минск, ул. Коллекторная, 18
+                    a.footer__item.footer__item_email(href="mailto:info@gifty") info@gifty
+                    a.footer__item.footer__item_phone(href="tel:+375 29 987 65 43") +375 29 987 65 43
+                    +_socials()
+                .footer__col
+                    h3.footer__title Ссылки
+                    ul.footer__menu
+                        li.footer__menu-item
+                            a(href="#") Новости
+                        li.footer__menu-item.footer__menu-item_active
+                            a(href="#") Контакты
+                        li.footer__menu-item
+                            a(href="#") Партнеры
+                        li.footer__menu-item
+                            a(href="#") FAQ?
+    footer.footer__bottom
+        .container
+            .footer__bottom-inner
+                .footer__pay-systems
+                    img(src=require('./../images/pay-systems/master-card.png'))
+                    img(src=require('./../images/pay-systems/visa.png'))
+                .footer__copy-right
+                    | &copy; 2019 Все права защищены.

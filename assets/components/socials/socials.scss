@@ -1,0 +1,52 @@
+@import "./../../common/constants";
+
+.socials {
+
+    display: flex;
+    align-items: center;
+
+    &_footer{
+        display: none;
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            display: flex;
+        }
+    }
+
+    &_mobile {
+        display: flex;
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &_contacts {
+        display: none;
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: flex;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            display: none;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        transition: all .6s;
+
+        &:hover{
+            transform: scale(1.25);
+        }
+    }
+}

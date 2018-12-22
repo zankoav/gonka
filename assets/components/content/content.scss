@@ -1,0 +1,87 @@
+@import "./../../common/constants";
+
+.content {
+
+    &_gonka {
+        padding: 1rem 0;
+        color: $WHITE;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            padding: 1rem 0;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            padding: 2rem 0;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            padding: 3rem 0;
+        }
+
+        .content__inner {
+            background-color: $DARK_3;
+            padding: 1rem;
+            max-width: initial;
+            margin-left: -1rem;
+            margin-right: -1rem;
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                padding: 40px;
+                margin-left: initial;
+                margin-right: initial;
+            }
+
+            @media (min-width: map_get($MEDIA, LG)) {
+                padding: 60px;
+            }
+
+        }
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: .67em 0
+    }
+    h2 {
+        font-size: 1.5em;
+        margin: .75em 0
+    }
+    h3 {
+        font-size: 1.17em;
+        margin: .83em 0
+    }
+    h5 {
+        font-size: .83em;
+        margin: 1.5em 0
+    }
+    h6 {
+        font-size: .75em;
+        margin: 1.67em 0
+    }
+    h1, h2, h3, h4,
+    h5, h6 {
+        font-weight: bolder
+    }
+
+    p {
+        font-family: 'Lato', sans-serif;
+        display: block;
+        margin: 1em 0;
+    }
+
+    ul {
+        font-family: 'Lato', sans-serif;
+        display: block;
+        list-style-type: disc;
+        margin: 1em 0;
+        padding-left: 40px;
+    }
+
+    ol {
+        font-family: 'Lato', sans-serif;
+        display: block;
+        list-style-type: decimal;
+        margin: 1em 0;
+        padding-left: 40px;
+    }
+}

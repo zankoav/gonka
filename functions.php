@@ -6,10 +6,15 @@
 	 * Time: 5:00 PM
 	 */
 
-	define('BASE_URL','/wp-content/themes/' . get_template());
+	define( 'THEME_NAME', get_template() );
+	define('BASE_URL','/wp-content/themes/' . THEME_NAME);
 
 	require_once __DIR__ . '/utils/Lang.php';
 	require_once __DIR__ . '/utils/Assets.php';
 
+	require_once __DIR__ . '/core/init_theme.php';
+	require_once __DIR__ . '/core/menu.php';
+
 	require_once __DIR__ . '/core/styles.php';
 	require_once __DIR__ . '/core/scripts.php';
+
