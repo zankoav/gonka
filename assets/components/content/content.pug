@@ -1,12 +1,7 @@
-mixin content(mod)
+mixin content(mod, title)
     main(class=`content ${mod}`)
         .content__inner
-            h1 Lorem ipsum dolor sit amet, consectetur.
-            h2 Lorem ipsum dolor sit amet, consectetur.
-            h3 Lorem ipsum dolor sit amet, consectetur.
-            h4 Lorem ipsum dolor sit amet, consectetur.
-            h5 Lorem ipsum dolor sit amet, consectetur.
-            h6 Lorem ipsum dolor sit amet, consectetur.
+            h2= title
             p
                 | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 | Alias deserunt dignissimos excepturi similique vel.
@@ -22,10 +17,22 @@ mixin content(mod)
                 | Alias deserunt dignissimos excepturi similique vel.
                 | Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
                 | Dicta libero quos sunt. Praesentium, veniam.
-            ul
-                li Item 1
-                li Item 2
-
-            ol
-                li Item 1
-                li Item 2
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                | Alias deserunt dignissimos excepturi similique vel.
+                | Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
+                | Dicta libero quos sunt. Praesentium, veniam.
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                | Alias deserunt dignissimos excepturi similique vel.
+                | Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
+                | Dicta libero quos sunt. Praesentium, veniam.
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                | Alias deserunt dignissimos excepturi similique vel.
+                | Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
+                | Dicta libero quos sunt. Praesentium, veniam.
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                | Alias deserunt dignissimos excepturi similique vel.
+                | Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
+                | Dicta libero quos sunt. Praesentium, veniam.

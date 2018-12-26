@@ -1,0 +1,66 @@
+@import "./../../common/constants";
+
+.house-media-library {
+    display: flex;
+    padding-bottom: 1rem;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        flex-wrap: wrap;
+        margin: 0 -.25rem;
+    }
+
+    &__item {
+        max-width: 100%;
+        flex: 1 0 100%;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            padding: .25rem;
+            margin-left: initial;
+            max-width: 25%;
+            flex: 1 0 25%;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            max-width: 20%;
+            flex: 1 0 20%;
+        }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            max-width: 16.6666%;
+            flex: 1 0 16.6666%;
+        }
+    }
+
+    &__media-wrapper {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__media {
+        min-height: 100%;
+        width: 100%;
+        display: block;
+        max-width: initial;
+    }
+
+    &__button-next, &__button-prev {
+        display: block;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: none;
+        }
+    }
+
+    &__container{
+        margin: 0 -1.5rem;
+        max-width: initial;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            margin: initial;
+            max-width: 100%;
+        }
+    }
+
+}

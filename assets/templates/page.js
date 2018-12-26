@@ -10,13 +10,16 @@ import './../components/_langs/langs';
 import './../components/_socials/socials';
 import './../components/_search/search';
 import '../components/_footer/footer';
+import '../components/_title-h1/title-h1';
 
 
 
 // Custom Components
 import './../components/content/content';
+import './../components/page/page';
+
+
 import './../components/banner/banner';
-import './../components/mastak/mastak';
 import './../components/subtitle/subtitle';
 import './../components/section-sale/sale';
 import './../components/product-sale/product-sale';

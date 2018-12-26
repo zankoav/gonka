@@ -1,0 +1,118 @@
+@import "./../../common/constants";
+
+.accordion-mixed {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: $WHITE;
+    overflow: hidden;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            height: 50px;
+            width: 100%;
+            content: "";
+            background-color: $DARK_LIGHT;
+            z-index: 0;
+        }
+
+    }
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        justify-content: flex-start;
+    }
+
+    &__tab {
+        position: relative;
+        font-size: 14px;
+        flex-shrink: 1;
+        background-color: $DARK_LIGHT;
+        color: $WHITE;
+        display: flex;
+        font-weight: bold;
+        cursor: pointer;
+        border-bottom: 1px solid $DARK-10;
+        padding: 1rem;
+
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            flex: 1 0 auto;
+            background-color: $DARK_LIGHT;
+            transition: color .3s linear;
+        }
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            flex: initial;
+        }
+
+        &--active {
+            background-color: $WHITE;
+            color: $RRED;
+
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+
+        &:hover {
+            color: $RRED;
+        }
+
+        &:after {
+            margin-left: 1rem;
+            content: '\25BA';
+            font-size: 12px;
+            display: inline-block;
+            transition: transform .4s;
+            transform-origin: center center;
+        }
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            border: none;
+            order: -1;
+            padding: 1rem 2rem;
+
+            &:after {
+                display: none;
+            }
+
+        }
+    }
+
+    &__content-inner {
+        @media (min-width: map_get($MEDIA, SM)) {
+            animation: fade-mixed .6s;
+        }
+
+    }
+
+    &__content {
+        padding: 1.5rem;
+        background-color: $WHITE;
+        display: none;
+
+        &--active {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@keyframes fade-mixed {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+

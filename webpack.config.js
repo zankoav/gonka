@@ -25,7 +25,8 @@ const THEME_NAME = 'gonka';
 
 let entries = {
     home: './home.js',
-    page: './page.js'
+    page: './page.js',
+    gonka: './gonka.js'
 };
 
 let pugs = {
@@ -34,6 +35,9 @@ let pugs = {
     },
     page: {
         title: "page title"
+    },
+    gonka: {
+        title: "gonka title"
     }
 };
 

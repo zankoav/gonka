@@ -11,7 +11,7 @@
             </div>
             <div class="footer__col">
                 <h3 class="footer__title">Контакты</h3>
-                <div class="footer__item footer__item_location">Минск, ул. Коллекторная, 18</div><a class="footer__item footer__item_email" href="mailto:info@gifty">info@gifty</a><a class="footer__item footer__item_phone" href="tel:+375 29 987 65 43">+375 29 987 65 43</a>
+                <div class="footer__item footer__item_location">Минск, ул. Карла Маркса 10</div><a class="footer__item footer__item_email" href="mailto:info@gifty">info@example.com</a><a class="footer__item footer__item_phone" href="tel:+375 29 222 83 38">+375 29 222 83 38</a>
                 <div class="socials undefined"><a class="socials__link" href="#" target="_blank"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
             </div>
             <div class="footer__col">

@@ -6,13 +6,21 @@
 		const LANGUAGES = [ 'ru', 'en' ];
 		const BASE_LANG = 'ru';
 		const CONSTANTS = [
-			'404_title'       => [
-				'ru' => 'Ошибка 404',
-				'en' => 'Error 404'
+			'login'       => [
+				'ru' => 'Вход / Регистрация',
+				'en' => 'Login / Registration'
 			],
-			'404_description' => [
-				'ru' => 'Страница не найдена',
-				'en' => 'Page not found'
+			'search'       => [
+				'ru' => 'Поиск...',
+				'en' => 'Search...'
+			],
+			'search-empty'=>[
+				'ru' => 'Поиск не принес результатов',
+				'en' => 'Search returned no results'
+			],
+			'search-empty-description' => [
+				'ru' => 'По вашему запросу нет данных, попробуйте ввести другой запрос',
+				'en' => 'No data available on your request, please try another request'
 			]
 		];
 

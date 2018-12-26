@@ -1,3 +1,12 @@
+<?php
+    $point = (int) WC()->cart->get_cart_contents_count();
+	$login = Lang::get('login');
+    if(is_user_logged_in()){
+	    $current_user = wp_get_current_user();
+	    $login     = $current_user->user_firstname ? $current_user->user_firstname : $current_user->user_email;
+    }
+
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -18,7 +27,7 @@
 						<?php get_template_part( 'template-parts/menu/top-menu' ); ?>
                     </div>
                     <div class="header-top__langs">
-                        <div class="langs"><a class="langs__current" href="#" data-current-lang="ru">RU<i
+                        <div class="langs"><a class="langs__current" href="#" data-current-lang="<?=Lang::current()?>"><?=Lang::current()?><i
                                         class="fas fa-angle-down"></i></a>
                             <ul class="langs__list">
                                 <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
@@ -29,16 +38,13 @@
                     <div class="header-top__cart"><a class="shopping-cart" href="#">
                             <div class="shopping-cart__basket"><img class="shopping-cart__icon"
                                                                     src="/wp-content/themes/gonka/src/icons/shopping-cart.3ba73f.svg"><span
-                                        class="shopping-cart__point">1</span></div>
+                                        class="shopping-cart__point"><?= $point; ?></span></div>
                         </a>
                     </div>
                     <div class="header-top__search"><a class="header-top__search-button"><i
                                     class="fas fa-search"></i></a>
                         <div class="header-top__search_mobile_fixed">
-                            <form class="search search_gonka" action="/" method="get">
-                                <input class="search__input" type="text" placeholder="Поиск...">
-                                <button class="search__button" type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                            <?php get_search_form(); ?>
                         </div>
                     </div>
                 </div>
@@ -51,7 +57,7 @@
                         <div class="profile "><img class="profile__icon"
                                                    src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
                                                    alt="profile"><a class="profile__default" href="#"><span
-                                        class="profile__link profile__link_login">Вход / Регистрация</span></a>
+                                        class="profile__link profile__link_login"><?=$login?></span></a>
                         </div>
                     </div>
                     <div class="header-bottom__logo"><a class="header-bottom__logo-link" href="/"><img
@@ -131,7 +137,7 @@
 						<?php get_template_part( 'template-parts/menu/top-menu' ); ?>
                     </div>
                     <div class="header-top__langs">
-                        <div class="langs"><a class="langs__current" href="#" data-current-lang="ru">RU<i
+                        <div class="langs"><a class="langs__current" href="#" data-current-lang="<?=Lang::current()?>"><?=Lang::current()?><i
                                         class="fas fa-angle-down"></i></a>
                             <ul class="langs__list">
                                 <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
@@ -142,16 +148,13 @@
                     <div class="header-top__cart"><a class="shopping-cart" href="#">
                             <div class="shopping-cart__basket"><img class="shopping-cart__icon"
                                                                     src="/wp-content/themes/gonka/src/icons/shopping-cart.3ba73f.svg"><span
-                                        class="shopping-cart__point">1</span></div>
+                                        class="shopping-cart__point"><?= $point; ?></span></div>
                         </a>
                     </div>
                     <div class="header-top__search"><a class="header-top__search-button"><i
                                     class="fas fa-search"></i></a>
                         <div class="header-top__search_mobile_fixed">
-                            <form class="search search_gonka" action="/" method="get">
-                                <input class="search__input" type="text" placeholder="Поиск...">
-                                <button class="search__button" type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+	                        <?php get_search_form(); ?>
                         </div>
                     </div>
                 </div>
@@ -164,7 +167,7 @@
                         <div class="profile "><img class="profile__icon"
                                                    src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
                                                    alt="profile"><a class="profile__default" href="#"><span
-                                        class="profile__link profile__link_login">Вход / Регистрация</span></a>
+                                        class="profile__link profile__link_login"><?=$login?></span></a>
                         </div>
                     </div>
                     <div class="header-bottom__logo"><a class="header-bottom__logo-link" href="/"><img

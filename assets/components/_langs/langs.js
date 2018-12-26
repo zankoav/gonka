@@ -4,8 +4,8 @@ import './../../utils/_cookies';
 
 const LANG_KEY = 'lang';
 
-$('.langs__item a').on('click', function () {
-
+$('.langs__item a').on('click', function (event) {
+    event.preventDefault();
     let lang = $(this).data('lang');
     let currentLang = $('.langs__current').data('current-lang');
 
@@ -17,6 +17,7 @@ $('.langs__item a').on('click', function () {
     }
 });
 
-$('.langs__current').on('click', function () {
+$('.langs__current').on('click', function (event) {
+    event.preventDefault();
     $('.langs').toggleClass('langs_active');
 });

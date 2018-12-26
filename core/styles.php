@@ -22,6 +22,8 @@
 				wp_enqueue_style( 'projects', Assets::getCss('projects'), false, null );
 			}else if(is_page_template('template-services.php')){
 				wp_enqueue_style( 'services', Assets::getCss('services'), false, null );
+			}else if ( is_singular( 'gonka' ) ) {
+				wp_enqueue_style( 'gonka', Assets::getCss('gonka'), false, null );
 			}
 
 			wp_enqueue_style( 'style', BASE_URL . '/style.css', false, null );

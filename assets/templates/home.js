@@ -15,7 +15,6 @@ import '../components/_footer/footer';
 // Custom Components
 import './../components/content/content';
 import './../components/banner/banner';
-import './../components/mastak/mastak';
 import './../components/subtitle/subtitle';
 import './../components/section-sale/sale';
 import './../components/product-sale/product-sale';

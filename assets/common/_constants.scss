@@ -27,8 +27,12 @@ $DARK: #181a1f;
 $DARK_2: #23262c;
 $DARK_3: #31343c;
 $DARK_LIGHT: rgb(73,76,82);
-$RRED: #fd3c3d;
+$DARK-10: #D8D8D8;
+$RRED: #df3a3a;
 $RRED_HOVER: #b02c2c;
+
+$BLUE-LIGHT: blue;
+$BLUE-DARK: orange;
 // End Gonka Colors
 
 //SIZE:
@@ -46,3 +50,50 @@ $MEDIA: (
 );
 
 //MIXINS
+@mixin button {
+    text-decoration: none;
+    border-radius: 0;
+    padding: .7rem 1rem;
+    background-color: $RRED;
+    text-transform: uppercase;
+    color: $WHITE;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s;
+
+    &:hover {
+        background-color: $RRED_HOVER;
+    }
+
+    &:active {
+        background-color: $RRED_HOVER;
+    }
+}
+
+@mixin title-h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $WHITE;
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+
+    @media (min-width: map_get($MEDIA, MD)) {
+        font-size: 30px;
+        margin: 2rem 0;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 135px;
+        height: 6px;
+        margin: .4rem auto 0;
+        background-color: $RRED;
+    }
+}
