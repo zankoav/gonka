@@ -1,6 +1,6 @@
 mixin accordion-mixed()
     .accordion-mixed
-        div(class="accordion-mixed__tab accordion-mixed__tab--active", data-mixed-tab="1") ОПИСАНИЕ
+        div(class="accordion-mixed__tab accordion-mixed__tab--active", data-mixed-tab="1") РЕГЛАМЕНТ
         div(class="accordion-mixed__content accordion-mixed__content--active", data-mixed-conent="1")
             .accordion-mixed__content-inner
                 .house-description
@@ -47,7 +47,7 @@ mixin accordion-mixed()
                         .swiper-button-prev.house-media-library__button-prev
         div(class="accordion-mixed__tab", data-mixed-tab="3") КАРТА
         div(class="accordion-mixed__content", data-mixed-conent="3")
-            div(id="map", class="map-zoom")
+            div(id="map1", class="map-zoom")
                 img.map-zoom__image(
                 src="https://wallpapercave.com/wp/brvwNP1.jpg",
                 alt="map",
@@ -57,11 +57,15 @@ mixin accordion-mixed()
         div(class="accordion-mixed__content", data-mixed-conent="4")
             .video_wrapper
                 iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
-        div(class="accordion-mixed__tab", data-mixed-tab="5") ДОКУМЕНТЫ
+        div(class="accordion-mixed__tab", data-mixed-tab="5") КАРТА ПРОЕЗДА
         div(class="accordion-mixed__content", data-mixed-conent="5")
-            .accordion-mixed__content-inner
-                +content(false, "Документы")
-        div(class="accordion-mixed__tab", data-mixed-tab="6") РЕИТИНГ
+            div(id="map2", class="map-zoom")
+                img.map-zoom__image(
+                src="https://wallpapercave.com/wp/brvwNP1.jpg",
+                alt="map",
+                data-big="https://wallpapercave.com/wp/brvwNP1.jpg")
+                p.map-zoom__title Кликни
+        div(class="accordion-mixed__tab", data-mixed-tab="6") РЕЗУЛЬТАТЫ
         div(class="accordion-mixed__content", data-mixed-conent="6")
             .accordion-mixed__content-inner
                 +_table('table_full-width')

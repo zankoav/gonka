@@ -6,7 +6,7 @@
             <div class="gonka">
                 <div class="container">
                     <div class="gonka__inner">
-                        <h1 class="title-h1">Гонка на выживание</h1>
+                        <h1 class="title-h1"><?= get_the_title();?></h1>
                         <div class="accordion-mixed">
                             <div class="accordion-mixed__tab accordion-mixed__tab--active" data-mixed-tab="1">ОПИСАНИЕ</div>
                             <div class="accordion-mixed__content accordion-mixed__content--active" data-mixed-conent="1">

@@ -54,7 +54,10 @@ $("[data-mixed-tab]").click(function () {
 });
 
 
-$('#map').zoom({
+$('#map1').zoom({
     on:'click'
 });
 
+$('#map2').zoom({
+    on:'click'
+});

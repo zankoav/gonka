@@ -7,7 +7,7 @@
 
     @media (min-width: map_get($MEDIA, SM)) {
         padding: 1rem 0;
-        justify-content: center;
+        justify-content: flex-end;
     }
 
     &__item {
@@ -17,11 +17,15 @@
         width: initial;
 
         @media (min-width: map_get($MEDIA, SM)) {
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             border-right: 1px solid $WHITE;
             width: initial;
         }
 
+        @media (min-width: map_get($MEDIA, MD)) {
+            padding: 0 2rem;
+        }
+        
         &:last-child{
             border-right: none;
         }

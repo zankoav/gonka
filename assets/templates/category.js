@@ -10,17 +10,13 @@ import './../components/_langs/langs';
 import './../components/_socials/socials';
 import './../components/_search/search';
 import './../components/_footer/footer';
-import './../components/_title/title';
 import './../components/_logo/logo';
-
-
+import './../components/_title/title';
+import './../components/_single/single';
 
 
 // Custom Components
-import './../components/gonka/gonka';
-import './../components/_accordion-mixed/accordion-mixed';
-import './../components/_table/table';
-
+import './../components/content/content';
 import './../components/banner/banner';
 import './../components/subtitle/subtitle';
 import './../components/section-sale/sale';
@@ -29,6 +25,7 @@ import './../components/section-popular/popular';
 import './../components/header/header';
 import './../components/profile/profile';
 import './../components/categories/categories';
+import './../components/category/category';
 import './../components/shopping-cart/shopping-cart';
 import './../components/main-slider/main-slider';
 

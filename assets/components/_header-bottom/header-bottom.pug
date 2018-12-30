@@ -1,13 +1,12 @@
-mixin _header-bottom()
+mixin _header-bottom(isMain)
     header.header-bottom
         .container
             .header-bottom__inner
-                .header-bottom__profile
-                    +profile()
                 .header-bottom__logo
-                    a.header-bottom__logo-link(href="/")
-                        img.header-bottom__logo-icon(src=require('./../images/logo.svg'), alt="logo")
-                .header-bottom__socials
-                    +_socials()
+                    +_logo(require('./../images/logo.svg'), isMain)
+                .header-bottom__menu
+                    +categories()
+    - if(!isMain)
+        marquee(class='header-bottom__line' , scrollamount="15") Бегущая строка cлева направо
 
 

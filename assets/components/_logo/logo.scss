@@ -1,0 +1,16 @@
+@import "./../../common/constants";
+
+.logo {
+
+    &_home-page {
+        .logo__icon {
+            @media (min-width: map_get($MEDIA, SM)) {
+                height: 80px;
+            }
+        }
+    }
+
+    &__icon {
+        height: 32px;
+    }
+}

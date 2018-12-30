@@ -1,0 +1,5 @@
+//require('./../images/logo.svg')
+mixin _logo(img, isHome)
+    - var mod = isHome ? 'logo_home-page' : ''
+    a(class=`logo ${mod}`, href="/")
+        img.logo__icon(src=img, alt="logo")

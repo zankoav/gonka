@@ -10,7 +10,8 @@ import './../components/_langs/langs';
 import './../components/_socials/socials';
 import './../components/_search/search';
 import '../components/_footer/footer';
-import '../components/_title-h1/title-h1';
+import '../components/_title/title';
+import '../components/_logo/logo';
 
 
 

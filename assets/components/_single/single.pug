@@ -1,0 +1,44 @@
+mixin _single(title, image)
+    li.single(style=`background-image:url(${image})`)
+        .single__content
+            .single__from
+                .single__date 09.02.2018
+                .single__by by
+                .single__autor betta
+            h3.single__title= title
+            .single__button
+                +_button('read more', 'button_gonka')
+
+mixin singleBig(title, image)
+    li.single-big
+        .single-big__content-image(style=`background-image:url(${image})`)
+            .single-big__tags
+                +_button( 'GYM', 'button_gonka button_gonka_tag')
+                +_button( 'GYM', 'button_gonka button_gonka_tag')
+                +_button( 'GYM', 'button_gonka button_gonka_tag')
+        .single-big__content
+            h3.single-big__title= title
+            .single-big__from
+                .single-big__date 09.02.2018
+                .single-big__by by
+                .single-big__autor betta
+            p.single-big__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fugit incidunt molestias quaerat quam rem totam unde veniam! Eos, laboriosam, provident. Adipisci aspernatur dicta ex non odio qui repellendus reprehenderit.
+            .single-big__button
+                +_button('read more', 'button_gonka')
+
+
+mixin _single-list()
+    ul.single-list
+        +_single('Новость 1', require('./../images/250x220.png'))
+        +_single('Новость 2', require('./../images/250x220.png'))
+        +_single('Новость 3', require('./../images/250x220.png'))
+
+mixin singleBigList()
+    ul.single-big-list
+        +singleBig('Новость 1', require('./../images/250x220.png'))
+        +singleBig('Новость 2', require('./../images/250x220.png'))
+        +singleBig('Новость 3', require('./../images/250x220.png'))
+
+
+
+

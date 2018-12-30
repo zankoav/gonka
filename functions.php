@@ -20,3 +20,14 @@
 	require_once __DIR__ . '/core/styles.php';
 	require_once __DIR__ . '/core/scripts.php';
 
+	require_once __DIR__ . '/core/cmb2/common.php';
+
+
+	add_filter('the_title', function ($title, $id){
+		$titleLang = get_post_meta($id, 'gonka_title_'.Lang::current(), 1);
+		if (isset($titleLang) and !empty($titleLang)){
+			return $titleLang;
+		}else{
+			return $title;
+		}
+	}, 10, 2);

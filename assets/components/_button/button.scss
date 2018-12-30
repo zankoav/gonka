@@ -5,7 +5,7 @@
 
     &_gonka {
         background: $RRED;
-        box-shadow: 0 2px 4px $BLACK_04;
+        box-shadow: 0 1px 2px $BLACK_04;
         color: $WHITE;
         padding: 10px 30px;
         text-transform: uppercase;
@@ -14,7 +14,19 @@
         transition: all .4s;
 
         &:hover {
-            background: $RRED_HOVER;
+            background: $WHITE;
+            color: $DARK;
+        }
+
+        &_tag{
+            font-weight: 300;
+            font-style: italic;
+            padding: 4px;
+            margin-right: 6px;
+
+            &:last-child{
+                margin-right: 0;
+            }
         }
     }
 }

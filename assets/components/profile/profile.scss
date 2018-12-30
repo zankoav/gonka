@@ -10,14 +10,13 @@
         }
     }
 
-    &_top{
-        @media (min-width: map_get($MEDIA, SM)) {
-            display: none;
-        }
-    }
-
     &__icon{
         margin-right: .5rem;
+        height: 24px;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            height: 20px;
+        }
     }
 
     &__link{
@@ -26,7 +25,11 @@
         font-weight: bold;
         transition: color .4s;
         max-width: 150px;
-        display: inline-block;
         overflow: hidden;
+        display: none;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            display: block;
+        }
     }
 }

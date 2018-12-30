@@ -7,7 +7,6 @@
     background-color: $RRED;
 
     &__inner {
-        padding: .75rem 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -15,41 +14,42 @@
 
         @media (min-width: map_get($MEDIA, SM)) {
             flex-wrap: nowrap;
-            padding: 1rem 0;
         }
     }
 
-    &__profile, &__socials {
-
-        @media (min-width: map_get($MEDIA, SM)) {
-            min-width: 180px;
-        }
-
-    }
-
-    &__socials {
-        .socials {
-            float: right;
-        }
-    }
-
-    &__logo-icon {
-        height: 40px;
-        @media (min-width: map_get($MEDIA, SM)) {
-            height: 50px;
-        }
+    &__profile {
+        margin-left: auto;
     }
 
     &__logo {
         order: -1;
-        flex: 1 0 100%;
+        flex: 0 0 auto;
         text-align: center;
         margin-bottom: .25rem;
+        padding: 1rem 0;
+        margin-right: 2rem ;
 
         @media (min-width: map_get($MEDIA, SM)) {
             order: initial;
-            flex: initial;
             margin-bottom: initial;
+            padding: .5rem 0;
         }
+
+        @media (min-width: map_get($MEDIA, LG)) {
+            padding: 2rem 0;
+        }
+    }
+
+    &__menu {
+        flex: 1;
+    }
+
+    &__line{
+        background-color: $DARK_3;
+        padding: .5rem 0;
+        color: $WHITE;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
     }
 }

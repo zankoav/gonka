@@ -1,48 +1,7 @@
 mixin category()
     .category
         .container
-            .category__breadcrumbs
-                +breadcrumbs()
-            +subtitle("Сувениры")
-            .category__mobile-triggers
-                a.category__mobile-trigger.category__mobile-trigger_list(href="#")
-                    span.category__mobile-list-title Копилки
-                a.category__mobile-trigger.category__mobile-trigger_filters(href="#")
-                    span.category__mobile-filters-title Фильтры
-            .category__row.category__row_settings
-                .category__col.category__col_left
-                .category__col.category__col_right
-                    .category__fillters-and-settings
-                        header.category__mobile-product-types
-                            a.category__mobile-button.category__mobile-button_settings
-                                i.fas.fa-times
-                        .category__fillters
-                            .category__fillter-group
-                                input.category__fillter(type="checkbox", name="new-product", id="filter-new")
-                                label.category__fillter-label(for="filter-new") Новинки
-                            .category__fillter-group
-                                input.category__fillter(type="checkbox", name="sale-product", id="filter-sale")
-                                label.category__fillter-label(for="filter-sale") На скидке
-                        .category__settings
-                            .category__sorts
-                                select.category__sorting(name="sort-by")
-                                    option(value='0') По популярности
-                                    option(value='1') По цене
-                                    option(value='2') По непопулрности
-                            .category__pagination-settings
-                                span.category__pagination-settings-title Показывать по:
-                                a.category__pagination-settings-link.category__pagination-settings-link_active(href="#") 12
-                                a.category__pagination-settings-link(href="#") 24
-                                a.category__pagination-settings-link(href="#") 48
             .category__row
-                .category__col.category__col_left.category__col_product-types
-                    header.category__mobile-product-types
-                        a.category__mobile-button.category__mobile-button_product-types
-                            i.fas.fa-times
-                    +product-types()
-                    .category__reccomended
-                        +reccomended()
-                .category__col.category__col_right
-                    +product-list()
-                    .category__pagination
-                        +pagination()
+                .category__col
+                    +singleBigList()
+                .category__col Sidebar

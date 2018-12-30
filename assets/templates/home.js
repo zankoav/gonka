@@ -9,7 +9,10 @@ import './../components/_header-bottom/header-bottom';
 import './../components/_langs/langs';
 import './../components/_socials/socials';
 import './../components/_search/search';
-import '../components/_footer/footer';
+import './../components/_footer/footer';
+import './../components/_logo/logo';
+import './../components/_title/title';
+import './../components/_single/single';
 
 
 // Custom Components
