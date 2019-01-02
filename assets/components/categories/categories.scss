@@ -7,6 +7,11 @@
 
     @media (min-width: map_get($MEDIA, SM)) {
         padding: 1rem 0;
+        justify-content: center;
+    }
+
+    @media (min-width: map_get($MEDIA, MD)) {
+        padding: 1rem 0;
         justify-content: flex-end;
     }
 
@@ -34,7 +39,8 @@
             position: relative;
             font-size: 16px;
             line-height: 16px;
-            font-weight: bold;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
             color: $WHITE;
             text-transform: uppercase;
 
@@ -47,12 +53,16 @@
                 content: '';
                 position: absolute;
                 bottom: -1rem;
-                height: 4px;
+                height: 5px;
                 width: 0;
                 left: 50%;
                 transform: translateX(-50%);
                 background-color: $WHITE;
                 transition: all .4s;
+
+                @media (min-width: map_get($MEDIA, MD)) {
+                    bottom: -.5rem;
+                }
             }
 
         }

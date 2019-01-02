@@ -1,0 +1,30 @@
+include ./../mixins
+include ./../components/head
+body
+    +header()
+    .category
+        .container
+            +breadcrumbs('Новость 1')
+            .category__row(id="blog-content")
+                .category__col(id="blog-news" )
+                    .single-big
+                        .single-big__content-image
+                            a(href="#")
+                                img.single-big__image(src='http://lorempixel.com/800/400', alt='Новость 1')
+                            .single-big__tags
+                                +_button( 'GYM', 'button_gonka button_gonka_tag')
+                                +_button( 'GYM', 'button_gonka button_gonka_tag')
+                                +_button( 'GYM', 'button_gonka button_gonka_tag')
+                        .single-big__content
+                            h1.single-big__title Новость 1
+                            .single-big__from
+                                .single-big__date 09.02.2018
+                                .single-big__by by
+                                .single-big__autor betta
+                            +content('content_white', 'Page')
+                .category__col(id="blog-sidebar")
+                    .category__sidebar-inner
+                        +widjet('Resent Posts', 0)
+                        +widjet('Tags', 1)
+                        +widjet('Socials', 2)
+    +_footer()

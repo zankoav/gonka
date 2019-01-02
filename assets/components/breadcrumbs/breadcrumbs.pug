@@ -1,4 +1,6 @@
-mixin breadcrumbs()
+mixin breadcrumbs(title)
     .breadcrumbs
-        a.breadcrumbs__item.breadcrumbs__link(href="#") Главная
-        span.breadcrumbs__item Сувениры
+        h2.breadcrumbs__title= title
+        .breadcrumbs__nav
+            a.breadcrumbs__item.breadcrumbs__link(href="#") Home
+            span.breadcrumbs__item= title

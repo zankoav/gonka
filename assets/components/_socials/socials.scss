@@ -1,6 +1,27 @@
 @import "./../../common/constants";
 
 .socials {
+
+    &_widjet {
+
+        .socials__link {
+            width: 36px;
+            height: 36px;
+            border: 1px solid $WHITE;
+            margin-right: .5rem;
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                width: 44px;
+                height: 44px;
+                border: 2px solid $WHITE;
+
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
     &__link {
 
         width: 30px;
@@ -30,9 +51,9 @@
             transition: all .4s;
         }
 
-        &:hover{
+        &:hover {
             background-color: $WHITE;
-            i{
+            i {
                 color: $RRED;
             }
         }

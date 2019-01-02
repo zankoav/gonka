@@ -28,6 +28,7 @@ import './../components/categories/categories';
 import './../components/category/category';
 import './../components/shopping-cart/shopping-cart';
 import './../components/main-slider/main-slider';
+import './../components/breadcrumbs/breadcrumbs';
 
 
 

@@ -13,14 +13,17 @@
 
     &__col{
         padding: 0 1rem;
+        will-change: min-height;
 
         &:first-child{
             max-width: 100%;
             flex: 1 0 100%;
+            margin-bottom: 2rem;
 
             @media (min-width: map_get($MEDIA, MD)) {
                 max-width: 70%;
                 flex: 1 0 70%;
+                margin-bottom: 0;
             }
         }
 
@@ -33,5 +36,12 @@
                 flex: 1 0 30%;
             }
         }
+    }
+
+    &__sidebar-inner{
+        position: relative;
+        transform: translate(0, 0); /* For browsers don't support translate3d. */
+        transform: translate3d(0, 0, 0);
+        will-change: position, transform;
     }
 }

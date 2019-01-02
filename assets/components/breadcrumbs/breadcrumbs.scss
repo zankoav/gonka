@@ -1,31 +1,51 @@
 @import "./../../common/constants";
 
 .breadcrumbs {
-    display: none;
+    margin: 0 0 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.4;
+    font-family: Montserrat, sans-serif;
+    color: $WHITE;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-    @media (min-width: map_get($MEDIA, SM)) {
-        display: block;
+    @media (min-width: map_get($MEDIA, MD)) {
+        flex-direction: row;
+        align-items: center;
     }
 
-    &__item {
-        font-size: 12px;
-        color: $GRAY_DARK;
-    }
+    &__title{
+        display: inline-flex;
+        padding-bottom: .25rem;
+        padding-right: 1rem;
+        border-bottom: 1px solid $WHITE;
+        margin-bottom: .5rem;
 
-    &__link {
-
-        transition: all .6s;
-
-        &:hover{
-            color: $RED;
+        @media (min-width: map_get($MEDIA, MD)) {
+            padding-bottom: 0;
+            border-bottom: none;
+            border-right: 1px solid $WHITE;
+            font-size: 20px;
+            margin-right: 2rem;
+            padding-right: 2rem;
+            margin-bottom: 0;
         }
+    }
 
-        &:after {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 600;
-            content: "\f105";
+    &__item{
+        &:after{
+            content: '/';
             margin: 0 .5rem;
-            color: $GRAY_100;
+        }
+
+        &:last-child{
+            &:after{
+                content: none;
+            }
         }
     }
+
 }

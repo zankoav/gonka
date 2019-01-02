@@ -12,7 +12,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @media (min-width: map_get($MEDIA, SM)) {
+        @media (min-width: map_get($MEDIA, MD)) {
             flex-wrap: nowrap;
         }
     }
@@ -23,7 +23,9 @@
 
     &__logo {
         order: -1;
-        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        flex: 1 0 100%;
         text-align: center;
         margin-bottom: .25rem;
         padding: 1rem 0;
@@ -35,8 +37,12 @@
             padding: .5rem 0;
         }
 
+        @media (min-width: map_get($MEDIA, MD)) {
+            flex: 0 0 auto;
+        }
+
         @media (min-width: map_get($MEDIA, LG)) {
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
     }
 
@@ -45,7 +51,7 @@
     }
 
     &__line{
-        background-color: $DARK_3;
+        background-color: $DARK_2;
         padding: .5rem 0;
         color: $WHITE;
         font-size: 14px;

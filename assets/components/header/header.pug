@@ -1,8 +1,8 @@
 mixin header(isMain)
     - var mainMod = isMain ? 'header_main' : '';
-    header(class=`header ${mainMod}`)
+    header(class=`header`)
         +_header-top()
-        +_header-bottom(isMain)
+        +_header-bottom()
         - if(isMain)
              .header__slider
                  +main-slider()

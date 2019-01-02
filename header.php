@@ -15,36 +15,34 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body>
 
 <?php if ( is_page_template( 'template-home.php' ) ): ?>
-    <header class="header header_main">
+    <header class="header">
         <header class="header-top">
             <div class="container">
                 <div class="header-top__inner">
-                    <div class="header-top__menu"><a
-                                class="header-top__menu-button"><span></span><span></span><span></span></a>
-						<?php get_template_part( 'template-parts/menu/top-menu' ); ?>
+                    <div class="header-top__menu"><a class="header-top__menu-button"><span></span><span></span><span></span></a>
+                        <ul class="menu menu_gonka-top">
+                            <li class="menu__item menu__item_active"><a href="#">Новости</a></li>
+                            <li class="menu__item"><a href="#">Партнеры</a></li>
+                        </ul>
                     </div>
                     <div class="header-top__langs">
-                        <div class="langs"><a class="langs__current" href="#" data-current-lang="<?=Lang::current()?>"><?=Lang::current()?><i
-                                        class="fas fa-angle-down"></i></a>
-                            <ul class="langs__list">
-                                <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
-                                <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
-                            </ul>
-                        </div>
+                        <!--+_langs()-->
                     </div>
-                    <div class="header-top__cart"><a class="shopping-cart" href="#">
-                            <div class="shopping-cart__basket"><img class="shopping-cart__icon"
-                                                                    src="/wp-content/themes/gonka/src/icons/shopping-cart.3ba73f.svg"><span
-                                        class="shopping-cart__point"><?= $point; ?></span></div>
-                        </a>
+                    <div class="header-top__cart">
+                        <!--+shopping-cart(false,'100.00')-->
                     </div>
-                    <div class="header-top__search"><a class="header-top__search-button"><i
-                                    class="fas fa-search"></i></a>
+                    <div class="header-bottom__profile"><a class="profile" href="#"><img class="profile__icon" src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg" alt="profile">
+                            <div class="profile__default"><span class="profile__link profile__link_login">Личный кабинет</span></div></a>
+                    </div>
+                    <div class="header-top__search"><a class="header-top__search-button"><i class="fas fa-search"></i></a>
                         <div class="header-top__search_mobile_fixed">
-                            <?php get_search_form(); ?>
+                            <form class="search search_gonka" action="/" method="get">
+                                <input class="search__input" type="text" placeholder="Поиск...">
+                                <button class="search__button" type="submit"><i class="fas fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -53,108 +51,62 @@
         <header class="header-bottom">
             <div class="container">
                 <div class="header-bottom__inner">
-                    <div class="header-bottom__profile">
-                        <div class="profile "><img class="profile__icon"
-                                                   src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
-                                                   alt="profile"><a class="profile__default" href="#"><span
-                                        class="profile__link profile__link_login"><?=$login?></span></a>
-                        </div>
+                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a>
                     </div>
-                    <div class="header-bottom__logo"><a class="header-bottom__logo-link" href="/"><img
-                                    class="header-bottom__logo-icon"
-                                    src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a></div>
-                    <div class="header-bottom__socials">
-                        <div class="socials undefined"><a class="socials__link" href="#" target="_blank"><i
-                                        class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a><a class="socials__link" href="#"
-                                                                             target="_blank"><i
-                                        class="fab fa-linkedin-in"></i></a></div>
+                    <div class="header-bottom__menu">
+                        <div class="categories-container swiper-container">
+                            <ul class="categories swiper-wrapper">
+                                <li class="categories__item swiper-slide"><a href="#">Положение</a></li>
+                                <li class="categories__item swiper-slide categories__item_active" data-active-menu="1"><a href="#">Кубок</a></li>
+                                <li class="categories__item swiper-slide"><a href="#">Гонки</a></li>
+                                <li class="categories__item swiper-slide"><a href="#">Медиа</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="header__categories">
-            <div class="container">
-                <div class="categories-container swiper-container">
-					<?php get_template_part( 'template-parts/menu/main-menu' ); ?>
-                </div>
-            </div>
-        </div>
+        <marquee class="header-bottom__line" scrollamount="15">Бегущая строка cлева направо</marquee>
         <div class="header__slider">
-            <div class="swiper-container main-slider">
-                <div class="main-slider__parallax"
-                     style="background-image:url(/wp-content/themes/gonka/src/icons/javelin.81aeb3.jpg)"
-                     data-swiper-parallax="-23%"></div>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide main-slider__slide">
-                        <div class="container">
-                            <div class="main-slider__title" data-swiper-parallax="-300">Гонки на выживание</div>
-                            <div class="main-slider__subtitle" data-swiper-parallax="-200">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis
-                                pariatur?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.
-                            </div>
-                            <a class="button button_gonka" href="#" target="_blank">Подробнее</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide main-slider__slide">
-                        <div class="container">
-                            <div class="main-slider__title" data-swiper-parallax="-300">Гонки на выживание</div>
-                            <div class="main-slider__subtitle" data-swiper-parallax="-200">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis
-                                pariatur?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.
-                            </div>
-                            <a class="button button_gonka" href="#" target="_blank">Подробнее</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide main-slider__slide">
-                        <div class="container">
-                            <div class="main-slider__title" data-swiper-parallax="-300">Гонки на выживание</div>
-                            <div class="main-slider__subtitle" data-swiper-parallax="-200">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis
-                                pariatur?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing.
-                            </div>
-                            <a class="button button_gonka" href="#" target="_blank">Подробнее</a>
-                        </div>
-                    </div>
+            <div class="main-slider">
+                <div class="main-slider__parallax" style="background-image:url(/wp-content/themes/gonka/src/icons/javelin.81aeb3.jpg)" data-swiper-parallax="-23%"></div>
+                <div class="container">
+                    <div class="main-slider__title" data-swiper-parallax="-300">Гонки на выживание</div>
+                    <div class="main-slider__subtitle" data-swiper-parallax="-200">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, repellendus!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nam officiis pariatur?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </div><a class="button button_gonka" href="#" target="_blank">Подробнее</a>
                 </div>
-                <div class="swiper-pagination swiper-pagination-white main-slider__pagination"></div>
             </div>
         </div>
     </header>
 <?php else: ?>
-    <header class="header ">
+    <header class="header">
         <header class="header-top">
             <div class="container">
                 <div class="header-top__inner">
-                    <div class="header-top__menu"><a
-                                class="header-top__menu-button"><span></span><span></span><span></span></a>
-						<?php get_template_part( 'template-parts/menu/top-menu' ); ?>
+                    <div class="header-top__menu"><a class="header-top__menu-button"><span></span><span></span><span></span></a>
+                        <ul class="menu menu_gonka-top">
+                            <li class="menu__item menu__item_active"><a href="#">Новости</a></li>
+                            <li class="menu__item"><a href="#">Партнеры</a></li>
+                        </ul>
                     </div>
                     <div class="header-top__langs">
-                        <div class="langs"><a class="langs__current" href="#" data-current-lang="<?=Lang::current()?>"><?=Lang::current()?><i
-                                        class="fas fa-angle-down"></i></a>
-                            <ul class="langs__list">
-                                <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
-                                <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
-                            </ul>
-                        </div>
+                        <!--+_langs()-->
                     </div>
-                    <div class="header-top__cart"><a class="shopping-cart" href="#">
-                            <div class="shopping-cart__basket"><img class="shopping-cart__icon"
-                                                                    src="/wp-content/themes/gonka/src/icons/shopping-cart.3ba73f.svg"><span
-                                        class="shopping-cart__point"><?= $point; ?></span></div>
-                        </a>
+                    <div class="header-top__cart">
+                        <!--+shopping-cart(false,'100.00')-->
                     </div>
-                    <div class="header-top__search"><a class="header-top__search-button"><i
-                                    class="fas fa-search"></i></a>
+                    <div class="header-bottom__profile"><a class="profile" href="#"><img class="profile__icon" src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg" alt="profile">
+                            <div class="profile__default"><span class="profile__link profile__link_login">Личный кабинет</span></div></a>
+                    </div>
+                    <div class="header-top__search"><a class="header-top__search-button"><i class="fas fa-search"></i></a>
                         <div class="header-top__search_mobile_fixed">
-	                        <?php get_search_form(); ?>
+                            <form class="search search_gonka" action="/" method="get">
+                                <input class="search__input" type="text" placeholder="Поиск...">
+                                <button class="search__button" type="submit"><i class="fas fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -163,32 +115,21 @@
         <header class="header-bottom">
             <div class="container">
                 <div class="header-bottom__inner">
-                    <div class="header-bottom__profile">
-                        <div class="profile "><img class="profile__icon"
-                                                   src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
-                                                   alt="profile"><a class="profile__default" href="#"><span
-                                        class="profile__link profile__link_login"><?=$login?></span></a>
-                        </div>
+                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a>
                     </div>
-                    <div class="header-bottom__logo"><a class="header-bottom__logo-link" href="/"><img
-                                    class="header-bottom__logo-icon"
-                                    src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a></div>
-                    <div class="header-bottom__socials">
-                        <div class="socials undefined"><a class="socials__link" href="#" target="_blank"><i
-                                        class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a><a class="socials__link" href="#"
-                                                                             target="_blank"><i
-                                        class="fab fa-linkedin-in"></i></a></div>
+                    <div class="header-bottom__menu">
+                        <div class="categories-container swiper-container">
+                            <ul class="categories swiper-wrapper">
+                                <li class="categories__item swiper-slide"><a href="#">Положение</a></li>
+                                <li class="categories__item swiper-slide categories__item_active" data-active-menu="1"><a href="#">Кубок</a></li>
+                                <li class="categories__item swiper-slide"><a href="#">Гонки</a></li>
+                                <li class="categories__item swiper-slide"><a href="#">Медиа</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="header__categories">
-            <div class="container">
-                <div class="categories-container swiper-container">
-					<?php get_template_part( 'template-parts/menu/main-menu' ); ?>
-                </div>
-            </div>
-        </div>
+        <marquee class="header-bottom__line" scrollamount="15">Бегущая строка cлева направо</marquee>
     </header>
 <?php endif; ?>

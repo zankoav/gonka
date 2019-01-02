@@ -1,0 +1,50 @@
+@import "./../../common/constants";
+
+.faq {
+    margin: .25rem 0;
+
+    @media (min-width: map_get($MEDIA, MD)) {
+        margin: .5rem 0;
+    }
+
+    &:first-child{
+        margin-top: 2rem;
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    .content{
+        display: none;
+    }
+
+    &__title{
+        display: flex;
+        padding: 1rem 1rem;
+        background-color: #31343c;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $WHITE;
+        transition: .4s;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover, &_active{
+            color: $RRED;
+
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+
+        &:after {
+            margin-left: 1rem;
+            content: '\25BA';
+            font-size: 12px;
+            display: inline-block;
+            transition: transform .4s;
+            transform-origin: center center;
+        }
+    }
+}

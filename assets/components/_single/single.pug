@@ -11,13 +11,16 @@ mixin _single(title, image)
 
 mixin singleBig(title, image)
     li.single-big
-        .single-big__content-image(style=`background-image:url(${image})`)
+        .single-big__content-image
+            a(href="#")
+                img.single-big__image(src=image, alt=title)
             .single-big__tags
                 +_button( 'GYM', 'button_gonka button_gonka_tag')
                 +_button( 'GYM', 'button_gonka button_gonka_tag')
                 +_button( 'GYM', 'button_gonka button_gonka_tag')
         .single-big__content
-            h3.single-big__title= title
+            a(href="#")
+                h3.single-big__title= title
             .single-big__from
                 .single-big__date 09.02.2018
                 .single-big__by by
@@ -29,16 +32,51 @@ mixin singleBig(title, image)
 
 mixin _single-list()
     ul.single-list
-        +_single('Новость 1', require('./../images/250x220.png'))
-        +_single('Новость 2', require('./../images/250x220.png'))
-        +_single('Новость 3', require('./../images/250x220.png'))
+        +_single('Новость 1', 'http://lorempixel.com/800/400')
+        +_single('Новость 2', 'http://lorempixel.com/800/400')
+        +_single('Новость 3', 'http://lorempixel.com/800/400')
 
 mixin singleBigList()
     ul.single-big-list
-        +singleBig('Новость 1', require('./../images/250x220.png'))
-        +singleBig('Новость 2', require('./../images/250x220.png'))
-        +singleBig('Новость 3', require('./../images/250x220.png'))
+        +singleBig('Новость 1', 'http://lorempixel.com/800/400')
+        +singleBig('Новость 2', 'http://lorempixel.com/800/400')
+        +singleBig('Новость 3', 'http://lorempixel.com/800/400')
+
+mixin widjet(title, isTags)
+    .widjet
+        h3.widjet__title= title
+        - if (isTags === 1)
+            +widjetTags()
+        - else if (isTags === 0)
+            +widjetResentPosts()
+        - else if (isTags === 2)
+            +_socials('socials_widjet')
 
 
 
 
+mixin widjetTags()
+    .widjet-tags
+        a.widjet-tags__item(href="#") Tag1
+        a.widjet-tags__item(href="#") Tag2
+        a.widjet-tags__item(href="#") Tag3
+        a.widjet-tags__item(href="#") Tag4
+        a.widjet-tags__item(href="#") Tag5
+
+mixin widjetResentPosts()
+    ul.widjet-recent-posts
+        li.widjet-recent-posts__item
+            p.widjet-recent-posts__item-date 20.10.2019
+            a(href="#") Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur
+        li.widjet-recent-posts__item
+            p.widjet-recent-posts__item-date 20.10.2019
+            a(href="#") Lorem ipsum dolor sit amet, consectetur amet, consectetur.
+        li.widjet-recent-posts__item
+            p.widjet-recent-posts__item-date 20.10.2019
+            a(href="#") Lorem ipsum dolor sit amet, consectetur.
+        li.widjet-recent-posts__item
+            p.widjet-recent-posts__item-date 20.10.2019
+            a(href="#") Lorem ipsum dolor sit amet, consectetur dolor sit amet, consectetur.
+        li.widjet-recent-posts__item
+            p.widjet-recent-posts__item-date 20.10.2019
+            a(href="#") Lorem ipsum dolor sit amet, consectetur.

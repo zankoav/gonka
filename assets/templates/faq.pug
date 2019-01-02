@@ -1,0 +1,13 @@
+include ./../mixins
+include ./../components/head
+body
+    +header()
+    .page
+        .container
+            .page__inner
+                +_title("Популярные вопросы", 'h1')
+                .faqs
+                    +faq('Вопрос 1 ?')
+                    +faq('Вопрос 2 ?')
+                    +faq('Вопрос 3 ?')
+    +_footer()

@@ -27,12 +27,20 @@ let entries = {
     home: './home.js',
     page: './page.js',
     category: './category.js',
+    single: './single.js',
+    faq: './faq.js',
     gonka: './gonka.js'
 };
 
 let pugs = {
     home: {
         title: "home title"
+    },
+    single: {
+        title: "single title"
+    },
+    faq: {
+        title: "faq title"
     },
     page: {
         title: "page title"

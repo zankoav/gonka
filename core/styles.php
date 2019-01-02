@@ -14,16 +14,14 @@
 
 			if(is_page_template('template-home.php')){
 				wp_enqueue_style( 'home', Assets::getCss('home'), false, null );
-			}else if(is_page_template('template-about-us.php')){
-				wp_enqueue_style( 'about-us', Assets::getCss('about'), false, null );
-			}else if(is_page_template('template-contacts.php')){
-				wp_enqueue_style( 'contacts', Assets::getCss('contacts'), false, null );
-			}else if(is_page_template('template-projects.php')){
-				wp_enqueue_style( 'projects', Assets::getCss('projects'), false, null );
-			}else if(is_page_template('template-services.php')){
-				wp_enqueue_style( 'services', Assets::getCss('services'), false, null );
+			}else if ( is_archive() ) {
+				wp_enqueue_style( 'category', Assets::getCss('category'), false, null );
+			}else if ( is_page_template( 'template-faq.php' ) ) {
+				wp_enqueue_style( 'faq', Assets::getCss('faq'), false, null );
 			}else if ( is_singular( 'gonka' ) ) {
 				wp_enqueue_style( 'gonka', Assets::getCss('gonka'), false, null );
+			}else if ( is_singular( 'post' ) ) {
+				wp_enqueue_style( 'single', Assets::getCss('single'), false, null );
 			}
 
 			wp_enqueue_style( 'style', BASE_URL . '/style.css', false, null );

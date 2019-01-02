@@ -7,16 +7,26 @@
             </div>
             <div class="footer__col">
                 <h3 class="footer__title">Меню</h3>
-	            <?php get_template_part( 'template-parts/menu/footer-menu' ); ?>
+                <ul class="footer__categories">
+                    <li class="footer__categories-item footer__categories-item_active"><a href="#">Положение</a></li>
+                    <li class="footer__categories-item"><a href="#">Кубок</a></li>
+                    <li class="footer__categories-item"><a href="#">Гонки</a></li>
+                    <li class="footer__categories-item"><a href="#">Медиа</a></li>
+                </ul>
             </div>
             <div class="footer__col">
                 <h3 class="footer__title">Контакты</h3>
-                <div class="footer__item footer__item_location">Минск, ул. Карла Маркса 10</div><a class="footer__item footer__item_email" href="mailto:info@gifty">info@example.com</a><a class="footer__item footer__item_phone" href="tel:+375 29 222 83 38">+375 29 222 83 38</a>
+                <div class="footer__item footer__item_location">Минск, ул. Коллекторная, 18</div><a class="footer__item footer__item_email" href="mailto:info@gifty">info@gifty</a><a class="footer__item footer__item_phone" href="tel:+375 29 987 65 43">+375 29 987 65 43</a>
                 <div class="socials undefined"><a class="socials__link" href="#" target="_blank"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
             </div>
             <div class="footer__col">
                 <h3 class="footer__title">Ссылки</h3>
-	            <?php get_template_part( 'template-parts/menu/footer-menu-links' ); ?>
+                <ul class="footer__menu">
+                    <li class="footer__menu-item"><a href="#">Новости</a></li>
+                    <li class="footer__menu-item footer__menu-item_active"><a href="#">Контакты</a></li>
+                    <li class="footer__menu-item"><a href="#">Партнеры</a></li>
+                    <li class="footer__menu-item"><a href="#">FAQ?</a></li>
+                </ul>
             </div>
         </div>
     </div>

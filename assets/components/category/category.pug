@@ -1,7 +1,13 @@
 mixin category()
     .category
         .container
-            .category__row
-                .category__col
+            +breadcrumbs('Blog')
+            .category__row(id="blog-content")
+                .category__col(id="blog-news" )
                     +singleBigList()
-                .category__col Sidebar
+                .category__col(id="blog-sidebar")
+                    .category__sidebar-inner
+                        +widjet('Resent Posts', 0)
+                        +widjet('Tags', 1)
+                        +widjet('Socials', 2)
+

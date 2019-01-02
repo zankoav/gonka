@@ -6,16 +6,15 @@
             <div class="gonka">
                 <div class="container">
                     <div class="gonka__inner">
-                        <h1 class="title-h1"><?= get_the_title();?></h1>
+                        <h1 class="title">Гонка на выживание</h1>
                         <div class="accordion-mixed">
-                            <div class="accordion-mixed__tab accordion-mixed__tab--active" data-mixed-tab="1">ОПИСАНИЕ</div>
+                            <div class="accordion-mixed__tab accordion-mixed__tab--active" data-mixed-tab="1">РЕГЛАМЕНТ</div>
                             <div class="accordion-mixed__content accordion-mixed__content--active" data-mixed-conent="1">
                                 <div class="accordion-mixed__content-inner">
                                     <div class="house-description">
                                         <div class="house-description__header"><img class="house-description__image" src="http://cn12.nevsedoma.com.ua/photo/18/4/s_t05_RT.jpg" alt="picture">
                                             <main class="content false">
                                                 <div class="content__inner">
-                                                    <h2>Seo Text</h2>
                                                     <p>
                                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                                         Alias deserunt dignissimos excepturi similique vel.
@@ -87,7 +86,7 @@
                             </div>
                             <div class="accordion-mixed__tab" data-mixed-tab="3">КАРТА</div>
                             <div class="accordion-mixed__content" data-mixed-conent="3">
-                                <div class="map-zoom" id="map"><img class="map-zoom__image" src="https://wallpapercave.com/wp/brvwNP1.jpg" alt="map" data-big="https://wallpapercave.com/wp/brvwNP1.jpg">
+                                <div class="map-zoom" id="map1"><img class="map-zoom__image" src="https://wallpapercave.com/wp/brvwNP1.jpg" alt="map" data-big="https://wallpapercave.com/wp/brvwNP1.jpg">
                                     <p class="map-zoom__title">Кликни</p>
                                 </div>
                             </div>
@@ -97,57 +96,13 @@
                                     <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <div class="accordion-mixed__tab" data-mixed-tab="5">ДОКУМЕНТЫ</div>
+                            <div class="accordion-mixed__tab" data-mixed-tab="5">СХЕМА ПРОЕЗДА</div>
                             <div class="accordion-mixed__content" data-mixed-conent="5">
-                                <div class="accordion-mixed__content-inner">
-                                    <main class="content false">
-                                        <div class="content__inner">
-                                            <h2>Документы</h2>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                Alias deserunt dignissimos excepturi similique vel.
-                                                Amet assumenda consequuntur cum eveniet fugiat natus omnis soluta voluptatum?
-                                                Dicta libero quos sunt. Praesentium, veniam.
-                                            </p>
-                                        </div>
-                                    </main>
+                                <div class="map-zoom" id="map2"><img class="map-zoom__image" src="https://wallpapercave.com/wp/brvwNP1.jpg" alt="map" data-big="https://wallpapercave.com/wp/brvwNP1.jpg">
+                                    <p class="map-zoom__title">Кликни</p>
                                 </div>
                             </div>
-                            <div class="accordion-mixed__tab" data-mixed-tab="6">РЕИТИНГ</div>
+                            <div class="accordion-mixed__tab" data-mixed-tab="6">РЕЗУЛЬТАТЫ</div>
                             <div class="accordion-mixed__content" data-mixed-conent="6">
                                 <div class="accordion-mixed__content-inner">
                                     <div class="table table_full-width">

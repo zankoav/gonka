@@ -1,0 +1,204 @@
+
+<!--common Components-->
+<!--require('./../images/logo.svg')-->
+<!--custom Components-->
+<!-- type = 1 // new product-->
+<!-- type = 2 // sale product--><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>category title</title>
+  <link href="/src/css/common.081fd0ee38aad43130cc.min.css" rel="stylesheet"></head>
+</html>
+<body>
+  <header class="header">
+    <header class="header-top">
+      <div class="container">
+        <div class="header-top__inner">
+          <div class="header-top__menu"><a class="header-top__menu-button"><span></span><span></span><span></span></a>
+            <ul class="menu menu_gonka-top">
+              <li class="menu__item menu__item_active"><a href="#">Новости</a></li>
+              <li class="menu__item"><a href="#">Партнеры</a></li>
+            </ul>
+          </div>
+          <div class="header-top__langs">
+            <!--+_langs()-->
+          </div>
+          <div class="header-top__cart">
+            <!--+shopping-cart(false,'100.00')-->
+          </div>
+          <div class="header-bottom__profile"><a class="profile" href="#"><img class="profile__icon" src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg" alt="profile">
+              <div class="profile__default"><span class="profile__link profile__link_login">Личный кабинет</span></div></a>
+          </div>
+          <div class="header-top__search"><a class="header-top__search-button"><i class="fas fa-search"></i></a>
+            <div class="header-top__search_mobile_fixed">
+              <form class="search search_gonka" action="/" method="get">
+                <input class="search__input" type="text" placeholder="Поиск...">
+                <button class="search__button" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="header-bottom">
+      <div class="container">
+        <div class="header-bottom__inner">
+          <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a>
+          </div>
+          <div class="header-bottom__menu">
+            <div class="categories-container swiper-container">
+              <ul class="categories swiper-wrapper">
+                <li class="categories__item swiper-slide"><a href="#">Положение</a></li>
+                <li class="categories__item swiper-slide categories__item_active" data-active-menu="1"><a href="#">Кубок</a></li>
+                <li class="categories__item swiper-slide"><a href="#">Гонки</a></li>
+                <li class="categories__item swiper-slide"><a href="#">Медиа</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <marquee class="header-bottom__line" scrollamount="15">Бегущая строка cлева направо</marquee>
+  </header>
+  <div class="category">
+    <div class="container">
+      <div class="breadcrumbs">
+        <h2 class="breadcrumbs__title">Blog</h2>
+        <div class="breadcrumbs__nav"><a class="breadcrumbs__item breadcrumbs__link" href="#">Home</a><span class="breadcrumbs__item">Blog</span></div>
+      </div>
+      <div class="category__row" id="blog-content">
+        <div class="category__col" id="blog-news">
+          <ul class="single-big-list">
+            <li class="single-big">
+              <div class="single-big__content-image"><a href="#"><img class="single-big__image" src="http://lorempixel.com/800/400" alt="Новость 1"></a>
+                <div class="single-big__tags"><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a>
+                </div>
+              </div>
+              <div class="single-big__content"><a href="#">
+                  <h3 class="single-big__title">Новость 1</h3></a>
+                <div class="single-big__from">
+                  <div class="single-big__date">09.02.2018</div>
+                  <div class="single-big__by">by</div>
+                  <div class="single-big__autor">betta</div>
+                </div>
+                <p class="single-big__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fugit incidunt molestias quaerat quam rem totam unde veniam! Eos, laboriosam, provident. Adipisci aspernatur dicta ex non odio qui repellendus reprehenderit.</p>
+                <div class="single-big__button"><a class="button button_gonka" href="#" target="_blank">read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="single-big">
+              <div class="single-big__content-image"><a href="#"><img class="single-big__image" src="http://lorempixel.com/800/400" alt="Новость 2"></a>
+                <div class="single-big__tags"><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a>
+                </div>
+              </div>
+              <div class="single-big__content"><a href="#">
+                  <h3 class="single-big__title">Новость 2</h3></a>
+                <div class="single-big__from">
+                  <div class="single-big__date">09.02.2018</div>
+                  <div class="single-big__by">by</div>
+                  <div class="single-big__autor">betta</div>
+                </div>
+                <p class="single-big__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fugit incidunt molestias quaerat quam rem totam unde veniam! Eos, laboriosam, provident. Adipisci aspernatur dicta ex non odio qui repellendus reprehenderit.</p>
+                <div class="single-big__button"><a class="button button_gonka" href="#" target="_blank">read more</a>
+                </div>
+              </div>
+            </li>
+            <li class="single-big">
+              <div class="single-big__content-image"><a href="#"><img class="single-big__image" src="http://lorempixel.com/800/400" alt="Новость 3"></a>
+                <div class="single-big__tags"><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a><a class="button button_gonka button_gonka_tag" href="#" target="_blank">GYM</a>
+                </div>
+              </div>
+              <div class="single-big__content"><a href="#">
+                  <h3 class="single-big__title">Новость 3</h3></a>
+                <div class="single-big__from">
+                  <div class="single-big__date">09.02.2018</div>
+                  <div class="single-big__by">by</div>
+                  <div class="single-big__autor">betta</div>
+                </div>
+                <p class="single-big__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fugit incidunt molestias quaerat quam rem totam unde veniam! Eos, laboriosam, provident. Adipisci aspernatur dicta ex non odio qui repellendus reprehenderit.</p>
+                <div class="single-big__button"><a class="button button_gonka" href="#" target="_blank">read more</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="category__col" id="blog-sidebar">
+          <div class="category__sidebar-inner">
+            <div class="widjet">
+              <h3 class="widjet__title">Resent Posts</h3>
+              <ul class="widjet-recent-posts">
+                <li class="widjet-recent-posts__item">
+                  <p class="widjet-recent-posts__item-date">20.10.2019</p><a href="#">Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur</a>
+                </li>
+                <li class="widjet-recent-posts__item">
+                  <p class="widjet-recent-posts__item-date">20.10.2019</p><a href="#">Lorem ipsum dolor sit amet, consectetur amet, consectetur.</a>
+                </li>
+                <li class="widjet-recent-posts__item">
+                  <p class="widjet-recent-posts__item-date">20.10.2019</p><a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                </li>
+                <li class="widjet-recent-posts__item">
+                  <p class="widjet-recent-posts__item-date">20.10.2019</p><a href="#">Lorem ipsum dolor sit amet, consectetur dolor sit amet, consectetur.</a>
+                </li>
+                <li class="widjet-recent-posts__item">
+                  <p class="widjet-recent-posts__item-date">20.10.2019</p><a href="#">Lorem ipsum dolor sit amet, consectetur.</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widjet">
+              <h3 class="widjet__title">Tags</h3>
+              <div class="widjet-tags"><a class="widjet-tags__item" href="#">Tag1</a><a class="widjet-tags__item" href="#">Tag2</a><a class="widjet-tags__item" href="#">Tag3</a><a class="widjet-tags__item" href="#">Tag4</a><a class="widjet-tags__item" href="#">Tag5</a></div>
+            </div>
+            <div class="widjet">
+              <h3 class="widjet__title">Socials</h3>
+              <div class="socials socials_widjet"><a class="socials__link" href="#" target="_blank"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">
+        <div class="footer__col">
+          <h3 class="footer__title">Betta club</h3><a class="footer__logo-link" href="/"><img class="footer__logo-icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg"></a>
+          <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Меню</h3>
+          <ul class="footer__categories">
+            <li class="footer__categories-item footer__categories-item_active"><a href="#">Главная</a></li>
+            <li class="footer__categories-item"><a href="#">Календарь</a></li>
+            <li class="footer__categories-item"><a href="#">Рейтинги</a></li>
+            <li class="footer__categories-item"><a href="#">Медиа</a></li>
+            <li class="footer__categories-item"><a href="#">Гонки</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Контакты</h3>
+          <div class="footer__item footer__item_location">Минск, ул. Коллекторная, 18</div><a class="footer__item footer__item_email" href="mailto:info@gifty">info@gifty</a><a class="footer__item footer__item_phone" href="tel:+375 29 987 65 43">+375 29 987 65 43</a>
+          <div class="socials undefined"><a class="socials__link" href="#" target="_blank"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Ссылки</h3>
+          <ul class="footer__menu">
+            <li class="footer__menu-item"><a href="#">Новости</a></li>
+            <li class="footer__menu-item footer__menu-item_active"><a href="#">Контакты</a></li>
+            <li class="footer__menu-item"><a href="#">Партнеры</a></li>
+            <li class="footer__menu-item"><a href="#">FAQ?</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-inner">
+        <div class="footer__pay-systems"><img src="/wp-content/themes/gonka/src/icons/master-card.5d5a59.png"><img src="/wp-content/themes/gonka/src/icons/visa.49832b.png"></div>
+        <div class="footer__copy-right">&copy; 2019 Все права защищены.</div>
+      </div>
+    </div>
+  </footer>
+<script type="text/javascript" src="/src/js/common.081fd0ee38aad43130cc.min.js"></script><script type="text/javascript" src="/src/js/category.081fd0ee38aad43130cc.min.js"></script></body>
