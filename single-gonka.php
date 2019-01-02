@@ -92,8 +92,21 @@
                             </div>
                             <div class="accordion-mixed__tab" data-mixed-tab="4">ВИДЕО</div>
                             <div class="accordion-mixed__content" data-mixed-conent="4">
-                                <div class="video_wrapper">
-                                    <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                <div class="video">
+                                    <div class="video__list">
+                                        <div class="video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="video__wrapper">
+                                            <iframe src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="accordion-mixed__tab" data-mixed-tab="5">СХЕМА ПРОЕЗДА</div>
@@ -253,9 +266,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <footer class="house-booking"><a class="house-booking__button" href="#" targe="_blank">Зарегистрироваться</a>
-                                <p class="house-booking__info"><span class="house-booking__price-per-men">25</span></p>
-                            </footer>
+                            <footer class="house-booking"><a class="house-booking__button" href="#" targe="_blank">Зарегистрироваться</a></footer>
                         </div>
                     </div>
                 </div>

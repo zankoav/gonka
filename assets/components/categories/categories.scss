@@ -11,7 +11,6 @@
     }
 
     @media (min-width: map_get($MEDIA, MD)) {
-        padding: 1rem 0;
         justify-content: flex-end;
     }
 
@@ -30,9 +29,14 @@
         @media (min-width: map_get($MEDIA, MD)) {
             padding: 0 2rem;
         }
-        
-        &:last-child{
+
+        &:last-child {
             border-right: none;
+
+            @media (min-width: map_get($MEDIA, MD)) {
+                padding-right: 0;
+            }
+
         }
 
         a {
@@ -49,7 +53,7 @@
                 transition: all .4s;
             }
 
-            &:after{
+            &:after {
                 content: '';
                 position: absolute;
                 bottom: -1rem;
@@ -60,16 +64,16 @@
                 background-color: $WHITE;
                 transition: all .4s;
 
-                @media (min-width: map_get($MEDIA, MD)) {
-                    bottom: -.5rem;
-                }
+                //@media (min-width: map_get($MEDIA, MD)) {
+                //    bottom: -.5rem;
+                //}
             }
 
         }
 
         &:hover, &_active {
             a {
-                &:after{
+                &:after {
                     width: 100%;
                 }
             }
@@ -79,7 +83,7 @@
     }
 }
 
-.categories-container{
+.categories-container {
     max-width: initial;
     margin-left: -1rem;
     margin-right: -1rem;

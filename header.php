@@ -29,7 +29,12 @@
                         </ul>
                     </div>
                     <div class="header-top__langs">
-                        <!--+_langs()-->
+                        <div class="langs"><a class="langs__current" href="#" data-current-lang="ru">RU<i class="fas fa-angle-down"></i></a>
+                            <ul class="langs__list">
+                                <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
+                                <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="header-top__cart">
                         <!--+shopping-cart(false,'100.00')-->
@@ -51,9 +56,12 @@
         <header class="header-bottom">
             <div class="container">
                 <div class="header-bottom__inner">
-                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a>
+                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/BettaWT.65743c.svg" alt="logo"></a>
                     </div>
                     <div class="header-bottom__menu">
+                        <div class="header-bottom__registration"><a class="header-bottom__registration-link" href="#"><img class="header-bottom__registration-image" src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg"><span class="header-bottom__registration-title">Регистрация</span></a>
+                            <div class="header-bottom__time" href="#"><img class="header-bottom__registration-image" src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg"><span class="header-bottom__registration-title">48:30:20</span></div>
+                        </div>
                         <div class="categories-container swiper-container">
                             <ul class="categories swiper-wrapper">
                                 <li class="categories__item swiper-slide"><a href="#">Положение</a></li>
@@ -93,7 +101,12 @@
                         </ul>
                     </div>
                     <div class="header-top__langs">
-                        <!--+_langs()-->
+                        <div class="langs"><a class="langs__current" href="#" data-current-lang="ru">RU<i class="fas fa-angle-down"></i></a>
+                            <ul class="langs__list">
+                                <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
+                                <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="header-top__cart">
                         <!--+shopping-cart(false,'100.00')-->
@@ -115,9 +128,12 @@
         <header class="header-bottom">
             <div class="container">
                 <div class="header-bottom__inner">
-                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg" alt="logo"></a>
+                    <div class="header-bottom__logo"><a class="logo " href="/"><img class="logo__icon" src="/wp-content/themes/gonka/src/icons/BettaWT.65743c.svg" alt="logo"></a>
                     </div>
                     <div class="header-bottom__menu">
+                        <div class="header-bottom__registration"><a class="header-bottom__registration-link" href="#"><img class="header-bottom__registration-image" src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg"><span class="header-bottom__registration-title">Регистрация</span></a>
+                            <div class="header-bottom__time" href="#"><img class="header-bottom__registration-image" src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg"><span class="header-bottom__registration-title">48:30:20</span></div>
+                        </div>
                         <div class="categories-container swiper-container">
                             <ul class="categories swiper-wrapper">
                                 <li class="categories__item swiper-slide"><a href="#">Положение</a></li>

@@ -12,5 +12,9 @@
 
     &__icon {
         height: 50px;
+
+        @media (min-width: map_get($MEDIA, MD)) {
+            height: 70px;
+        }
     }
 }

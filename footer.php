@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer__row">
             <div class="footer__col">
-                <h3 class="footer__title">Betta club</h3><a class="footer__logo-link" href="/"><img class="footer__logo-icon" src="/wp-content/themes/gonka/src/icons/logo.5b210d.svg"></a>
+                <h3 class="footer__title">Betta Sport</h3><a class="footer__logo-link" href="/"><img class="footer__logo-icon" src="/wp-content/themes/gonka/src/icons/BettaWT.65743c.svg"></a>
                 <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.</p>
             </div>
             <div class="footer__col">

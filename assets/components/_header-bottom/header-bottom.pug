@@ -3,8 +3,15 @@ mixin _header-bottom(isMain)
         .container
             .header-bottom__inner
                 .header-bottom__logo
-                    +_logo(require('./../images/logo.svg'), isMain)
+                    +_logo(require('./../images/BettaWT.svg'), isMain)
                 .header-bottom__menu
+                    .header-bottom__registration
+                        a.header-bottom__registration-link(href="#")
+                            img.header-bottom__registration-image(src=require('./../images/registration.svg'))
+                            span.header-bottom__registration-title Регистрация
+                        .header-bottom__time(href="#")
+                            img.header-bottom__registration-image(src=require('./../images/time.svg'))
+                            span.header-bottom__registration-title 48:30:20
                     +categories()
     - if(!isMain)
         marquee(class='header-bottom__line' , scrollamount="15") Бегущая строка cлева направо
