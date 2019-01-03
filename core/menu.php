@@ -8,7 +8,6 @@
 
 	add_filter( 'nav_menu_css_class', 'change_class_tag_li', 1, 3 );
 	function change_class_tag_li( $classes, $item, $args ) {
-
 		if($args->theme_location === 'main-menu'){
 
 			if($args->menu === 'Main'){
@@ -30,18 +29,26 @@
 		if($args->theme_location === 'top-menu'){
 
 			if($args->menu === 'Top'){
-				$classes[] = 'menu__item';
+				$classes[] = 'menu__item test_top';
 
 				if ( in_array( 'current_page_item', $classes ) ) {
-					$classes[] = 'menu__item_active';
+					$classes[] = 'menu__item_active ';
 				}
 			}else if($args->menu === 'Footer Links'){
-				$classes[] = 'footer__menu-item';
+				$classes[] = 'footer__menu-item ';
 
 				if ( in_array( 'current_page_item', $classes ) ) {
-					$classes[] = 'footer__menu-item_active';
+					$classes[] = 'footer__menu-item_active test_footer';
 				}
 			}
+		}
+
+		if($args->theme_location === 'link-menu'){
+				$classes[] = 'footer__menu-item ';
+
+				if ( in_array( 'current-menu-item', $classes ) || in_array( 'current-page-item', $classes )) {
+					$classes[] = 'footer__menu-item_active ';
+				}
 		}
 
 //		$item->title = get_post_meta( $item->object_id, 'btk_title_' . LANG::current(), 1 );

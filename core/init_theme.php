@@ -22,6 +22,7 @@
 
 		register_nav_menu( 'top-menu', 'Top Menu' );
 		register_nav_menu( 'main-menu', 'Main Menu' );
+		register_nav_menu( 'link-menu', 'Link Menu' );
 
 		/**
 		 * add html5 support

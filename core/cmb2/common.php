@@ -49,18 +49,80 @@
 		 * to be unique within this box.
 		 * Prefix is not needed.
 		 */
+//logo
+
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'Логотип компании', THEME_NAME ),
 			'id'      => 'bg_color',
 			'type'    => 'title',
 		) );
-
-
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'Логотип Картинка', THEME_NAME ),
 			'id'      => 'logo_light',
 			'type'    => 'file',
 		) );
+
+//КОНТАКТЫ
+
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'КОНТАКТЫ', THEME_NAME ),
+			'id'      => 'contacts_option_title',
+			'type'    => 'title',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Адресс', THEME_NAME ),
+			'id'      => 'address_ru',
+			'type'    => 'text',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Address', THEME_NAME ),
+			'id'      => 'address_en',
+			'type'    => 'text',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'email', THEME_NAME ),
+			'id'      => 'email',
+			'type'    => 'text_email',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Телефон', THEME_NAME ),
+			'id'      => 'phone',
+			'type'    => 'text',
+			'default' => '+375 29 987 65 43',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'В контакте', THEME_NAME ),
+			'id'      => 'vk_link',
+			'type'    => 'text_url',
+			'default' => 'https://vk.com/',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Facebook', THEME_NAME ),
+			'id'      => 'fb_link',
+			'type'    => 'text_url',
+			'default' => 'https://www.facebook.com/',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Linkedin', THEME_NAME ),
+			'id'      => 'linkedin_link',
+			'type'    => 'text_url',
+			'default' => 'https://www.linkedin.com/',
+		) );
+
+//footer paragraph
+
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Подвал параграф', THEME_NAME ),
+			'id'      => 'footer_paragraph_option_title',
+			'type'    => 'title',
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Подвал параграф', THEME_NAME ),
+			'id'      => 'footer_paragraph',
+			'type'    => 'textarea',
+			'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.',
+		) );
+
 
 	}
 
@@ -109,14 +171,14 @@
 		) );
 
 		$cmb_demo->add_field( array(
-			'name'       => esc_html__( 'Test Text RU', 'cmb2' ),
+			'name'       => esc_html__( 'Title RU', 'cmb2' ),
 			'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
 			'id'         => $prefix . 'title_ru',
 			'type'       => 'text',
 		) );
 
 		$cmb_demo->add_field( array(
-			'name'       => esc_html__( 'Test Text EN', 'cmb2' ),
+			'name'       => esc_html__( 'Title EN', 'cmb2' ),
 			'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
 			'id'         => $prefix . 'title_en',
 			'type'       => 'text',

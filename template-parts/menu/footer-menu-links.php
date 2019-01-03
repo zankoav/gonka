@@ -8,8 +8,7 @@
 
 
 	wp_nav_menu( array(
-		'theme_location'  => 'top-menu',
-		'menu'            => 'Footer Links',
+		'theme_location'  => 'link-menu',
 		'container'       => '',
 		'menu_class'      => 'footer__menu',
 		'echo'            => true,

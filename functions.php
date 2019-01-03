@@ -21,6 +21,7 @@
 	require_once __DIR__ . '/core/scripts.php';
 
 	require_once __DIR__ . '/core/cmb2/common.php';
+	require_once __DIR__ . '/utils/SingletonOptions.php';
 
 
 	add_filter('the_title', function ($title, $id){
