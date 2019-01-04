@@ -21,6 +21,30 @@
 			'search-empty-description' => [
 				'ru' => 'По вашему запросу нет данных, попробуйте ввести другой запрос',
 				'en' => 'No data available on your request, please try another request'
+			],
+			'by' => [
+				'ru' => ' ',
+				'en' => 'by'
+			],
+			'read more' => [
+				'ru' => 'читать больше',
+				'en' => 'read more'
+			],
+			'blog' => [
+				'ru' => 'блог',
+				'en' => 'blog'
+			],
+			'home' => [
+				'ru' => 'главная',
+				'en' => 'home'
+			],
+			'resent posts' => [
+				'ru' => 'последние посты',
+				'en' => 'resent posts'
+			],
+			'tags' => [
+				'ru' => 'теги',
+				'en' => 'tags'
 			]
 		];
 

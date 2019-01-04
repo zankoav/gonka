@@ -123,6 +123,20 @@
 			'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.',
 		) );
 
+// move line
+
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Движущаяся строка', THEME_NAME ),
+			'id'      => 'move_line_op_title',
+			'type'    => 'title'
+		) );
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'текст', THEME_NAME ),
+			'id'      => 'move_line',
+			'type'    => 'textarea',
+			'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.'
+		) );
+
 
 	}
 
