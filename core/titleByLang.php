@@ -13,9 +13,9 @@ function change_title($title, $id){
 	if(isset($post_meta['title_'.$current_lg][0])){
 		return $title;
 	}
-	$current_lang_title = $post_meta["ML_title_for_menu_".$current_lg][0];
+//	$current_lang_title = $post_meta["ML_title_for_menu_".$current_lg][0];
 
 
-	$title = $current_lang_title ;
+//	$title = $current_lang_title ;
 	return $title;
 }

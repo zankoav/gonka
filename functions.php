@@ -16,6 +16,7 @@ require_once __DIR__ . '/core/init_theme.php';
 require_once __DIR__ . '/core/customTypes/gonka.php';
 require_once __DIR__ . '/core/menu.php';
 require_once __DIR__ . '/core/woocommerce.php';
+require_once __DIR__ . '/core/hooks/hooks.php';
 
 require_once __DIR__ . '/core/styles.php';
 require_once __DIR__ . '/core/scripts.php';

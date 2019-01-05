@@ -6,7 +6,7 @@ function add_redactors_to_post() {
 
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'redactors',
-		'title'         => esc_html__( 'content', 'cmb2' ),
+		'title'         => esc_html__( 'Контент', 'cmb2' ),
 		'object_types'  => [ 'post' ], // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
@@ -41,27 +41,35 @@ function add_redactors_to_post() {
 //short description
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'description ru', 'cmb2' ),
-		'desc'       => esc_html__( 'for archive', 'cmb2' ),
+		'name'       => esc_html__( 'Краткое описание RU', 'cmb2' ),
+		'desc'       => esc_html__( 'Отображается на странице новостей RU', 'cmb2' ),
 		'id'         => $prefix . 'description_ru',
-		'type'       => 'textarea',
+		'type'       => 'textarea_small',
 	) );
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'description en', 'cmb2' ),
-		'desc'       => esc_html__( 'for archive', 'cmb2' ),
+		'name'       => esc_html__( 'Краткое описание EN', 'cmb2' ),
+		'desc'       => esc_html__( 'Отображается на странице новостей EN', 'cmb2' ),
 		'id'         => $prefix . 'description_en',
-		'type'       => 'textarea',
+		'type'       => 'textarea_small',
 	) );
 
+
 //main content
+
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'redactor ru', 'cmb2' ),
+		'name'       => esc_html__( 'Основной контент', 'cmb2' ),
+		'id'         => $prefix . 'title_post',
+		'type'       => 'title',
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'       => esc_html__( 'Редактор RU', 'cmb2' ),
 		'id'         => $prefix . 'redactor_ru',
 		'type'       => 'wysiwyg',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'redactor en', 'cmb2' ),
+		'name'       => esc_html__( 'Редактор EN', 'cmb2' ),
 		'id'         => $prefix . 'redactor_en',
 		'type'       => 'wysiwyg',
 	) );

@@ -8,7 +8,7 @@
 
     &_gonka {
 
-        padding: 1rem 0;
+        margin-bottom: 1rem;
         color: #fff;
 
         .content__inner {
@@ -30,11 +30,11 @@
         }
 
         @media (min-width: map_get($MEDIA, MD)) {
-            padding: 2rem 0;
+            margin-bottom: 2rem;
         }
 
         @media (min-width: map_get($MEDIA, LG)) {
-            padding: 3rem 0;
+            margin-bottom: 3rem;
         }
     }
 

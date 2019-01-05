@@ -6,9 +6,45 @@
 		const LANGUAGES = [ 'ru', 'en' ];
 		const BASE_LANG = 'ru';
 		const CONSTANTS = [
+			'All rights reserved.'=>[
+				'ru' => 'Все права защищены.',
+				'en'=>'All rights reserved.'
+			],
+			'blog' => [
+				'ru' => 'блог',
+				'en' => 'blog'
+			],
+			'by' => [
+				'ru' => ' ',
+				'en' => 'by'
+			],
+			'Contacts'=>[
+				'ru' => 'Контакты',
+				'en' => 'Contacts'
+			],
+			'home' => [
+				'ru' => 'главная',
+				'en' => 'home'
+			],
+			'Links'       => [
+				'ru' => 'Ссылки',
+				'en' => 'Links'
+			],
 			'login'       => [
 				'ru' => 'Вход / Регистрация',
 				'en' => 'Login / Registration'
+			],
+			'Menu'       => [
+				'ru' => 'Меню',
+				'en' => 'Menu'
+			],
+			'read more' => [
+				'ru' => 'подробнее',
+				'en' => 'read more'
+			],
+			'resent posts' => [
+				'ru' => 'последние новости',
+				'en' => 'recent news'
 			],
 			'search'       => [
 				'ru' => 'Поиск...',
@@ -22,25 +58,9 @@
 				'ru' => 'По вашему запросу нет данных, попробуйте ввести другой запрос',
 				'en' => 'No data available on your request, please try another request'
 			],
-			'by' => [
-				'ru' => ' ',
-				'en' => 'by'
-			],
-			'read more' => [
-				'ru' => 'читать больше',
-				'en' => 'read more'
-			],
-			'blog' => [
-				'ru' => 'блог',
-				'en' => 'blog'
-			],
-			'home' => [
-				'ru' => 'главная',
-				'en' => 'home'
-			],
-			'resent posts' => [
-				'ru' => 'последние посты',
-				'en' => 'resent posts'
+			'Socials' => [
+				'ru' => 'Социальные сети',
+				'en' => 'Socials'
 			],
 			'tags' => [
 				'ru' => 'теги',

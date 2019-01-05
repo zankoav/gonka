@@ -10,12 +10,8 @@ $args = array(
 	'category'         => 0,
 	'orderby'          => 'post_date',
 	'order'            => 'DESC',
-	'include'          => '',
-	'exclude'          => '',
-	'meta_key'         => '',
-	'meta_value'       => '',
 	'post_type'        => 'post',
-	'post_status'      => 'draft, publish, future, pending, private',
+	'post_status'      => 'publish',
 	'suppress_filters' => true
 );
 
@@ -65,7 +61,7 @@ $tags         = Lang::get( 'tags' );
 		</div>
 
 		<div class="widjet">
-			<h3 class="widjet__title">Socials</h3>
+			<h3 class="widjet__title"><?= Lang::get('Socials');?></h3>
 			<div class="socials socials_widjet">
 
 				<a class="socials__link" href="<?= $vk_link; ?>" target="_blank"><i class="fab fa-vk"></i></a>

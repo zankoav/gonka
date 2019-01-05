@@ -52,37 +52,62 @@
 //logo
 
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Логотип компании', THEME_NAME ),
-			'id'      => 'bg_color',
-			'type'    => 'title',
+			'name' => esc_html__( 'Логотип компании', THEME_NAME ),
+			'id'   => 'bg_color',
+			'type' => 'title',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Логотип Картинка', THEME_NAME ),
-			'id'      => 'logo_light',
-			'type'    => 'file',
+			'name' => esc_html__( 'Логотип', THEME_NAME ),
+			'id'   => 'logo_light',
+			'type' => 'file',
+		) );
+
+// move line
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Бегущая строка', THEME_NAME ),
+			'id'   => 'move_line_op_title',
+			'type' => 'title'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Включить строку', THEME_NAME ),
+			'id'   => 'move_active',
+			'type' => 'checkbox'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Текст RU', THEME_NAME ),
+			'id'   => 'move_line_ru',
+			'type' => 'textarea_small'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Текст EN', THEME_NAME ),
+			'id'   => 'move_line_en',
+			'type' => 'textarea_small'
 		) );
 
 //КОНТАКТЫ
 
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'КОНТАКТЫ', THEME_NAME ),
-			'id'      => 'contacts_option_title',
-			'type'    => 'title',
+			'name' => esc_html__( 'КОНТАКТЫ', THEME_NAME ),
+			'id'   => 'contacts_option_title',
+			'type' => 'title',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Адресс', THEME_NAME ),
-			'id'      => 'address_ru',
-			'type'    => 'text',
+			'name' => esc_html__( 'Адрес RU', THEME_NAME ),
+			'id'   => 'address_ru',
+			'type' => 'text',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Address', THEME_NAME ),
-			'id'      => 'address_en',
-			'type'    => 'text',
+			'name' => esc_html__( 'Адрес EN', THEME_NAME ),
+			'id'   => 'address_en',
+			'type' => 'text',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'email', THEME_NAME ),
-			'id'      => 'email',
-			'type'    => 'text_email',
+			'name' => esc_html__( 'Email', THEME_NAME ),
+			'id'   => 'email',
+			'type' => 'text_email',
 		) );
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'Телефон', THEME_NAME ),
@@ -91,7 +116,7 @@
 			'default' => '+375 29 987 65 43',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'В контакте', THEME_NAME ),
+			'name'    => esc_html__( 'VK', THEME_NAME ),
 			'id'      => 'vk_link',
 			'type'    => 'text_url',
 			'default' => 'https://vk.com/',
@@ -100,41 +125,46 @@
 			'name'    => esc_html__( 'Facebook', THEME_NAME ),
 			'id'      => 'fb_link',
 			'type'    => 'text_url',
-			'default' => 'https://www.facebook.com/',
+			'default' => 'https://facebook.com/',
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Linkedin', THEME_NAME ),
+			'name'    => esc_html__( 'LinkedIn', THEME_NAME ),
 			'id'      => 'linkedin_link',
 			'type'    => 'text_url',
-			'default' => 'https://www.linkedin.com/',
+			'default' => 'https://linkedin.com/',
 		) );
 
 //footer paragraph
 
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Подвал параграф', THEME_NAME ),
-			'id'      => 'footer_paragraph_option_title',
-			'type'    => 'title',
-		) );
-		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Подвал параграф', THEME_NAME ),
-			'id'      => 'footer_paragraph',
-			'type'    => 'textarea',
-			'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.',
+			'name' => esc_html__( 'Подвал', THEME_NAME ),
+			'id'   => 'footer_paragraph_option_title',
+			'description' => 'Столбец с логотипом',
+			'type' => 'title',
 		) );
 
-// move line
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Заголовок RU', THEME_NAME ),
+			'id'   => 'footer_unp_title_ru',
+			'type' => 'text'
+		) );
 
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'Движущаяся строка', THEME_NAME ),
-			'id'      => 'move_line_op_title',
-			'type'    => 'title'
+			'name' => esc_html__( 'Заголовок EN', THEME_NAME ),
+			'id'   => 'footer_unp_title_en',
+			'type' => 'text'
 		) );
+
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'текст', THEME_NAME ),
-			'id'      => 'move_line',
-			'type'    => 'textarea',
-			'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto culpa, dignissimos ex, illum.'
+			'name' => esc_html__( 'УНП RU', THEME_NAME ),
+			'id'   => 'footer_paragraph_ru',
+			'type' => 'textarea_small'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'УНП EN', THEME_NAME ),
+			'id'   => 'footer_paragraph_en',
+			'type' => 'textarea_small'
 		) );
 
 
@@ -151,9 +181,9 @@
 		 * Sample metabox to demonstrate each field type included
 		 */
 		$cmb_demo = new_cmb2_box( array(
-			'id'            => $prefix . 'metabox',
-			'title'         => esc_html__( 'Test Metabox', 'cmb2' ),
-			'object_types'  => [ 'post' , 'page', 'gonka'], // Post type
+			'id'           => $prefix . 'metabox',
+			'title'        => esc_html__( 'Заголовок', 'cmb2' ),
+			'object_types' => [ 'post', 'page', 'gonka' ], // Post type
 			// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
 			// 'context'    => 'normal',
 			// 'priority'   => 'high',
@@ -185,17 +215,17 @@
 		) );
 
 		$cmb_demo->add_field( array(
-			'name'       => esc_html__( 'Title RU', 'cmb2' ),
-			'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
-			'id'         => $prefix . 'title_ru',
-			'type'       => 'text',
+			'name' => esc_html__( 'Заголовок RU', 'cmb2' ),
+			'desc' => esc_html__( 'Основной заголовок страицы RU', 'cmb2' ),
+			'id'   => $prefix . 'title_ru',
+			'type' => 'text',
 		) );
 
 		$cmb_demo->add_field( array(
-			'name'       => esc_html__( 'Title EN', 'cmb2' ),
-			'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
-			'id'         => $prefix . 'title_en',
-			'type'       => 'text',
+			'name' => esc_html__( 'Заголовок EN', 'cmb2' ),
+			'desc' => esc_html__( 'Основной заголовок страицы EN', 'cmb2' ),
+			'id'   => $prefix . 'title_en',
+			'type' => 'text',
 		) );
 
 
