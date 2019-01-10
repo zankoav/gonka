@@ -1,0 +1,55 @@
+mixin media()
+    .media
+        .container
+            +breadcrumbs('Медиа')
+            +_title("Видео", 'h2')
+            .swiper-container.media-video__container
+                .swiper-wrapper.media-video-library
+                    .swiper-slide.media-video-library__item
+                        iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
+                    .swiper-slide.media-video-library__item
+                        iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
+                    .swiper-slide.media-video-library__item
+                        iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
+                    .swiper-slide.media-video-library__item
+                        iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
+                    .swiper-slide.media-video-library__item
+                        iframe( src="https://www.youtube.com/embed/QLbFX6WtIqw" frameborder="0" allow="encrypted-media" allowfullscreen)
+                .media-video__pagination
+            +_title("Фото", 'h2')
+            .swiper-container.accordion-mixed__content-inner.house-media-library__container.media-library__container
+                .swiper-wrapper.house-media-library
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg')
+                            img.house-media-library__media(src='https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://www.youngisthan.in/hindi/wp-content/uploads/2015/03/successful1.jpg')
+                            img.house-media-library__media(src='https://www.youngisthan.in/hindi/wp-content/uploads/2015/03/successful1.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://uk.toluna.com/dpolls_images/2018/03/20/34f2184a-d759-4fb0-aae8-966bbfb97c74.jpg')
+                            img.house-media-library__media(src='https://uk.toluna.com/dpolls_images/2018/03/20/34f2184a-d759-4fb0-aae8-966bbfb97c74.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://onemanshow.com.cy/wp-content/uploads/2017/09/alexander-redl-185764-1000x600.jpg')
+                            img.house-media-library__media(src='https://onemanshow.com.cy/wp-content/uploads/2017/09/alexander-redl-185764-1000x600.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://runners.igte.ch/wp-content/uploads/2015/02/Untitled-199.jpg')
+                            img.house-media-library__media(src='https://runners.igte.ch/wp-content/uploads/2015/02/Untitled-199.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg')
+                            img.house-media-library__media(src='https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://www.youngisthan.in/hindi/wp-content/uploads/2015/03/successful1.jpg')
+                            img.house-media-library__media(src='https://www.youngisthan.in/hindi/wp-content/uploads/2015/03/successful1.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://uk.toluna.com/dpolls_images/2018/03/20/34f2184a-d759-4fb0-aae8-966bbfb97c74.jpg')
+                            img.house-media-library__media(src='https://uk.toluna.com/dpolls_images/2018/03/20/34f2184a-d759-4fb0-aae8-966bbfb97c74.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://onemanshow.com.cy/wp-content/uploads/2017/09/alexander-redl-185764-1000x600.jpg')
+                            img.house-media-library__media(src='https://onemanshow.com.cy/wp-content/uploads/2017/09/alexander-redl-185764-1000x600.jpg', alt="picture")
+                    .swiper-slide.house-media-library__item
+                        a.house-media-library__media-wrapper(rel='group', href='https://runners.igte.ch/wp-content/uploads/2015/02/Untitled-199.jpg')
+                            img.house-media-library__media(src='https://runners.igte.ch/wp-content/uploads/2015/02/Untitled-199.jpg', alt="picture")
+                .house-media-library__container
+                    .b-container.house-media-library__container-wrapper
+                        .swiper-button-next.media-library__button-next
+                        .swiper-button-prev.media-library__button-prev

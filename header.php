@@ -11,6 +11,11 @@
 	$options   = SingletonOptions::getOptions();
 	$logo      = $options['logo_light'];
 	$move_line = $options[ "move_line_" . $ln ];
+
+	$bannerTitle       = $options[ 'banner_title_' . $ln ];
+	$bannerDescription = $options[ 'banner_description_' . $ln ];
+	$bannerImageUrl    = $options['banner_image'];
+	$bannerUrl         = $options['banner_button_url'];
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -85,7 +90,7 @@
                                  src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
                             <span class="header-bottom__registration-title">Регистрация</span>
                         </a>
-                        <div class="header-bottom__time" >
+                        <div class="header-bottom__time">
                             <img class="header-bottom__registration-image"
                                  src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg">
                             <span class="header-bottom__registration-title">48:30:20</span>
@@ -102,5 +107,20 @@
     </header>
 	<?php if ( isset( $options["move_active"] ) ): ?>
         <marquee class="header-bottom__line" scrollamount="15"><?= $move_line; ?></marquee>
+	<?php endif; ?>
+	<?php if ( is_page_template( 'template-home.php' ) ) : ?>
+        <div class="header__slider">
+            <div class="main-slider">
+                <div class="main-slider__parallax"
+                     style="background-image:url(<?= $bannerImageUrl; ?>)"
+                     data-swiper-parallax="-23%"></div>
+                <div class="container">
+                    <div class="main-slider__title" data-swiper-parallax="-300"><?= $bannerTitle; ?></div>
+                    <div class="main-slider__subtitle" data-swiper-parallax="-200"><?= $bannerDescription; ?></div>
+                    <a class="button button_gonka" href="<?= $bannerUrl; ?>"
+                       target="_blank"><?= Lang::get( 'read more' ); ?></a>
+                </div>
+            </div>
+        </div>
 	<?php endif; ?>
 </header>

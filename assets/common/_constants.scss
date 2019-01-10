@@ -102,3 +102,27 @@ $MEDIA: (
         background-color: $RRED;
     }
 }
+
+@mixin sm {
+    @media (min-width: map_get($MEDIA, SM)){
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: map_get($MEDIA, MD)){
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: map_get($MEDIA, LG)){
+        @content;
+    }
+}
+
+@mixin hd {
+    @media (min-width: map_get($MEDIA, HD)){
+        @content;
+    }
+}

@@ -11,6 +11,7 @@ define( 'BASE_URL', '/wp-content/themes/' . THEME_NAME );
 
 require_once __DIR__ . '/utils/Lang.php';
 require_once __DIR__ . '/utils/Assets.php';
+require_once __DIR__ . '/utils/SingletonOptions.php';
 
 require_once __DIR__ . '/core/init_theme.php';
 require_once __DIR__ . '/core/customTypes/gonka.php';
@@ -23,7 +24,8 @@ require_once __DIR__ . '/core/scripts.php';
 
 require_once __DIR__ . '/core/cmb2/common.php';
 require_once __DIR__ . '/core/cmb2/metaPostData.php';
-require_once __DIR__ . '/utils/SingletonOptions.php';
+require_once __DIR__ . '/core/cmb2/media.php';
+
 
 
 add_filter( 'the_title', function ( $title, $id ) {

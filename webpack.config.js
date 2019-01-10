@@ -29,6 +29,7 @@ let entries = {
     category: './category.js',
     single: './single.js',
     faq: './faq.js',
+    media: './media.js',
     gonka: './gonka.js'
 };
 
@@ -50,6 +51,9 @@ let pugs = {
     },
     category: {
         title: "category title"
+    },
+    media: {
+        title: "media title"
     }
 };
 

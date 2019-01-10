@@ -101,6 +101,7 @@
     }
 
     &__line {
+        display: block;
         background-color: $DARK_2;
         padding: .5rem 0;
         color: $WHITE;

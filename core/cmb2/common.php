@@ -56,10 +56,20 @@
 			'id'   => 'bg_color',
 			'type' => 'title',
 		) );
+
 		$cmb_options->add_field( array(
 			'name' => esc_html__( 'Логотип', THEME_NAME ),
 			'id'   => 'logo_light',
-			'type' => 'file',
+			'type' => 'file'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Ближайшая гонка', THEME_NAME ),
+			'id'   => 'early_gonka',
+			'type' => 'select',
+			'show_option_none' => true,
+			'default'          => 'custom',
+			'options_cb' => 'gonka_list',
 		) );
 
 // move line
@@ -85,6 +95,49 @@
 			'name' => esc_html__( 'Текст EN', THEME_NAME ),
 			'id'   => 'move_line_en',
 			'type' => 'textarea_small'
+		) );
+
+//		Баннер
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Баннер на главной странице', THEME_NAME ),
+			'id'   => 'banner_admin_title',
+			'type' => 'title'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Заголовок', THEME_NAME ),
+			'id'   => 'banner_title_ru',
+			'type' => 'text'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Заголовок EN', THEME_NAME ),
+			'id'   => 'banner_title_en',
+			'type' => 'text'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Картинка', THEME_NAME ),
+			'id'   => 'banner_image',
+			'type' => 'file'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Описание RU', THEME_NAME ),
+			'id'   => 'banner_description_ru',
+			'type' => 'textarea'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Описание EN', THEME_NAME ),
+			'id'   => 'banner_description_en',
+			'type' => 'textarea'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'URL button', THEME_NAME ),
+			'id'   => 'banner_button_url',
+			'type' => 'text_url'
 		) );
 
 //КОНТАКТЫ
@@ -133,6 +186,9 @@
 			'type'    => 'text_url',
 			'default' => 'https://linkedin.com/',
 		) );
+
+
+
 
 //footer paragraph
 
@@ -229,4 +285,21 @@
 		) );
 
 
+	}
+
+	function gonka_list($field){
+
+		$posts = get_posts([
+			'post_type'=>'gonka',
+			'numberposts' => -1
+		]);
+
+		$result = [];
+
+		foreach( $posts as $post ){
+
+			$result[$post->ID] = $post->post_title;
+		}
+
+		return $result;
 	}
