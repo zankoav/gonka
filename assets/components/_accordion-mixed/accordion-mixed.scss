@@ -31,6 +31,7 @@
 
     &__tab {
         position: relative;
+        text-transform: uppercase;
         font-size: 14px;
         flex-shrink: 1;
         background-color: $DARK_LIGHT;

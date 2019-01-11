@@ -36,4 +36,108 @@ a{
     }
 }
 
+.woocommerce{
 
+    input, textarea {
+        padding: .25rem;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid $GRAY_100;
+        color: $GRAY_DARK;
+        margin: .25rem 0 !important;
+        width: 100%;
+    }
+
+    .woocommerce-Button, .checkout-button, [name="update_cart"]{
+
+        &:before, &:after{
+            content: none;
+        }
+
+        background: $ORANGE !important;
+        color: $WHITE !important;
+        font-weight: normal !important;
+
+        &:hover{
+            background: $RED !important;
+        }
+    }
+
+    .woocommerce-MyAccount-navigation-link {
+        padding: .5rem 0;
+        border-bottom: 1px solid $GRAY_100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:after {
+            color: $GRAY_DARK;
+            font-family: "Font Awesome 5 Free", sans-serif;
+            font-weight: 600;
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        a {
+            color: $GRAY_DARK;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        &.is-active {
+
+            &:after {
+                color: $RED;
+            }
+
+            a {
+                font-weight: bold;
+                color: $RED;
+            }
+        }
+
+        &--dashboard {
+            &:after {
+                content: '\f3fd';
+
+            }
+        }
+
+        &--orders {
+            &:after {
+                content: '\f07b';
+            }
+        }
+
+        &--downloads {
+            &:after {
+                content: '\f019';
+            }
+        }
+
+        &--edit-address {
+            &:after {
+                content: '\f2b9';
+            }
+        }
+
+        &--edit-account {
+            &:after {
+                content: '\f406';
+            }
+        }
+
+        &--customer-logout {
+            &:after {
+                content: '\f2f5';
+            }
+        }
+    }
+}

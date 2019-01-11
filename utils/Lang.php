@@ -22,6 +22,10 @@
 				'ru' => 'Контакты',
 				'en' => 'Contacts'
 			],
+			'click'=>[
+				'ru' => 'Кликни',
+				'en' => 'Click'
+			],
 			'home' => [
 				'ru' => 'главная',
 				'en' => 'home'
@@ -33,6 +37,10 @@
 			'login'       => [
 				'ru' => 'Вход / Регистрация',
 				'en' => 'Login / Registration'
+			],
+			'map'       => [
+				'ru' => 'Карта',
+				'en' => 'Map'
 			],
 			'Menu'       => [
 				'ru' => 'Меню',
@@ -46,9 +54,21 @@
 				'ru' => 'подробнее',
 				'en' => 'read more'
 			],
+			'REGULATION' => [
+				'ru' => 'РЕГЛАМЕНТ',
+				'en' => 'REGULATION'
+			],
+			'registration' => [
+				'ru' => 'Зарегистрироваться',
+				'en' => 'Registration'
+			],
 			'resent posts' => [
 				'ru' => 'последние новости',
 				'en' => 'recent news'
+			],
+			'results' => [
+				'ru' => 'Результаты',
+				'en' => 'Results'
 			],
 			'search'       => [
 				'ru' => 'Поиск...',
@@ -61,6 +81,10 @@
 			'search-empty-description' => [
 				'ru' => 'По вашему запросу нет данных, попробуйте ввести другой запрос',
 				'en' => 'No data available on your request, please try another request'
+			],
+			'shema_delivery' => [
+				'ru' => 'Схема проезда',
+				'en' => 'Location map'
 			],
 			'Socials' => [
 				'ru' => 'Социальные сети',

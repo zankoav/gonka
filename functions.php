@@ -25,6 +25,7 @@ require_once __DIR__ . '/core/scripts.php';
 require_once __DIR__ . '/core/cmb2/common.php';
 require_once __DIR__ . '/core/cmb2/metaPostData.php';
 require_once __DIR__ . '/core/cmb2/media.php';
+require_once __DIR__ . '/core/cmb2/gonka.php';
 
 
 

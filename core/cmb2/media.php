@@ -45,6 +45,4 @@
 			'id'   => 'video',
 			'type' => 'oembed',
 		) );
-
-
 	}

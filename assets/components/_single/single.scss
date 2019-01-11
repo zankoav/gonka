@@ -3,34 +3,16 @@
 .single {
     flex: 1 0 100%;
     max-width: 100%;
-    padding: 90px 40px 80px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    padding: 0 1rem;
+
+
 
     @media (min-width: map_get($MEDIA, SM)) {
         flex: 1 0 33.333%;
         max-width: 33.333%;
     }
 
-    &:hover {
-        &:after {
-            background-color: transparent;
-        }
-    }
 
-    &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background-color: rgba($DARK, .5);
-        z-index: 0;
-        transition: .6s;
-    }
 
     &__content {
         position: relative;
@@ -39,6 +21,28 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        padding: 70px 10px 60px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            &:after {
+                background-color: transparent;
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba($DARK, .5);
+            z-index: 0;
+            transition: .6s;
+        }
     }
 
     &__title {
@@ -70,17 +74,17 @@
 .single-list {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     max-width: initial;
     margin: 2rem -1rem;
 
     @media (min-width: map_get($MEDIA, SM)) {
         flex-direction: row;
-        margin: 2rem 0;
         max-width: 100%;
     }
 
     @media (min-width: map_get($MEDIA, LG)) {
-        margin: 3rem 0;
+        margin: 3rem -1rem;
     }
 }
 

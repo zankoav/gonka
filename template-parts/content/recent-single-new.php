@@ -1,5 +1,5 @@
-<li class="single" style="<?= wp_get_attachment_image_url( get_the_ID(), 'full' ) ?>">
-    <div class="single__content">
+<li class="single">
+    <div class="single__content" style="background-image:url('<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>')">
         <div class="single__from">
             <div class="single__date"><?= get_the_date( 'd.m.y' ); ?></div>
             <div class="single__by"><?= Lang::get( 'by' ); ?></div>

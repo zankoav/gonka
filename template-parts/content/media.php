@@ -30,9 +30,9 @@
                     <div class="swiper-slide house-media-library__item">
                         <a class="house-media-library__media-wrapper"
                            rel="group"
-                           href="https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg"><img
+                           href="<?=$attachment_url;?>"><img
                                     class="house-media-library__media"
-                                    src="https://sfw.so/uploads/posts/2017-10/1508479989_57aaf067dfd3c994955926.jpg"
+                                    src="<?=$attachment_url;?>"
                                     alt="picture">
                         </a>
                     </div>
