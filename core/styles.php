@@ -20,6 +20,8 @@
 				wp_enqueue_style( 'faq', Assets::getCss( 'faq' ), false, null );
 			} else if ( is_page_template( 'template-media.php' ) ) {
 				wp_enqueue_style( 'media-css', Assets::getCss( 'media' ), false, null );
+			} else if ( is_page_template( 'template-registration.php' ) ) {
+				wp_enqueue_style( 'registration-css', Assets::getCss( 'registration' ), false, null );
 			} else if ( is_singular( 'gonka' ) ) {
 				wp_enqueue_style( 'gonka', Assets::getCss( 'gonka' ), false, null );
 			} else if ( is_singular( 'post' ) ) {

@@ -30,6 +30,7 @@ let entries = {
     single: './single.js',
     faq: './faq.js',
     media: './media.js',
+    registration: './registration.js',
     gonka: './gonka.js'
 };
 
@@ -48,6 +49,9 @@ let pugs = {
     },
     gonka: {
         title: "gonka title"
+    },
+    registration: {
+        title: "registration title"
     },
     category: {
         title: "category title"

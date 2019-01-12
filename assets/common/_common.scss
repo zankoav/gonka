@@ -103,24 +103,20 @@ a{
             }
         }
 
-        &--dashboard {
+        &--profile {
             &:after {
                 content: '\f3fd';
 
             }
         }
 
-        &--orders {
+        &--my-commands {
             &:after {
-                content: '\f07b';
+                content: '\f0c0';
+
             }
         }
 
-        &--downloads {
-            &:after {
-                content: '\f019';
-            }
-        }
 
         &--edit-address {
             &:after {
@@ -138,6 +134,20 @@ a{
             &:after {
                 content: '\f2f5';
             }
+        }
+    }
+
+    .woocommerce-MyAccount-content{
+        display: flex;
+        flex-direction: column;
+
+
+        @include md{
+            flex-direction: row;
+        }
+
+        ul{
+            padding-left: 0;
         }
     }
 }

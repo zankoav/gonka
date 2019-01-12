@@ -1,0 +1,53 @@
+mixin registration()
+    .registration
+        .container
+            .registration__inner
+                +_title("Регистрация на гонку", 'h1')
+                .registration__form
+                    form.registration-form(method='POST', action='/')
+                        .registration-form__group
+                            label.registration-form__group-label Имя
+                            input.registration-form__group-input(type='text', name='user-name', placeholder='Имя')
+                        .registration-form__group
+                            label.registration-form__group-label Email
+                            input.registration-form__group-input(type='email', name='user-email', placeholder='Email')
+                        .registration-form__group
+                            label.registration-form__group-label Возраст
+                            input.registration-form__group-input(type='number', name='user-age', placeholder='18')
+                        .registration-form__group
+                            .registration-form__group-sex
+                                .registration-form__group-sex-item
+                                    label.registration-form__group-label(for="user-male") Муж
+                                    input.registration-form__group-input(id="user-male", type='radio', name='user-sex', value='male', checked="checked")
+                                .registration-form__group-sex-item
+                                    label.registration-form__group-label(for="user-female") Жен
+                                    input.registration-form__group-input(id="user-female", type='radio', name='user-sex', value='female')
+                        .registration-form__group.registration-form__group_select
+                            label.registration-form__group-label Группа
+                            select.registration-form__group-input.registration-form__group-select(name="user-group-type")
+                                option(disabled, selected) Группа
+                                option( value="Ниньзя") Ниньзя
+                                option( value="М + Ж") М + Ж
+                                option( value="M") M
+                                option( value="Ж") Ж
+                        .registration-form__group
+                            .registration-form__group_is-group
+                                a.registration-form__group-submit.registration-form__group-submit-js-1.registration-form__group-submit_tab.registration-form__group-submit_active(href="#") Один
+                                a.registration-form__group-submit.registration-form__group-submit-js-1.registration-form__group-submit_tab(href="#", command) Команда
+                                .registration-form__command
+                                    a.registration-form__group-submit.registration-form__group-submit-js-2.registration-form__group-submit_tab.registration-form__group-submit_active(href="#") Хочу в команду
+                                    a.registration-form__group-submit.registration-form__group-submit-js-2.registration-form__group-submit_tab(href="#") Создать свою команду
+                                    .registration-form__command-select-wrapp
+                                        .registration-form__group.registration-form__group_select.registration-form__command-select.registration-form__command-select_active
+                                            label.registration-form__group-label Хочу в команду
+                                            select.registration-form__group-input.registration-form__group-select(name="user-group-command")
+                                                option(disabled, selected) Команда
+                                                option( value="mtbank") mtbank
+                                                option( value="69pixels") 69pixels
+                                                option( value="teslasuit") teslasuit
+                                                option( value="oops") oops
+                                        .registration-form__group.registration-form__command-select
+                                            label.registration-form__group-label Создать свою команду
+                                            input.registration-form__group-input(type='text', name='user-new-command', placeholder='Название команды')
+                        .registration-form__group.registration-form__group_center
+                            button.registration-form__group-submit(type='submit', disabled="disabled") Оплатить билет

@@ -22,6 +22,8 @@
 				wp_enqueue_script( 'faq', Assets::getJs( 'faq' ), false, null, true );
 			}else if ( is_page_template( 'template-media.php' ) ) {
 				wp_enqueue_script( 'media', Assets::getJs( 'media' ), false, null, true );
+			}else if ( is_page_template( 'template-registration.php' ) ) {
+				wp_enqueue_script( 'registration', Assets::getJs( 'registration' ), false, null, true );
 			}else if ( is_archive() ) {
 				wp_enqueue_script( 'category', Assets::getJs( 'category' ), false, null, true );
 			}
