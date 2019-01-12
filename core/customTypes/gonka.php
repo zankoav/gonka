@@ -19,13 +19,13 @@ function register_post_types(){
     ),
     'description'         => '',
     'public'              => true,
-    'publicly_queryable'  => null, // зависит от public
-    'exclude_from_search' => null, // зависит от public
-    'show_ui'             => null, // зависит от public
-    'show_in_menu'        => null, // показывать ли в меню адмнки
-    'show_in_admin_bar'   => null, // по умолчанию значение show_in_menu
-    'show_in_nav_menus'   => null, // зависит от public
-    'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+//    'publicly_queryable'  => null, // зависит от public
+//    'exclude_from_search' => null, // зависит от public
+//    'show_ui'             => null, // зависит от public
+//    'show_in_menu'        => null, // показывать ли в меню адмнки
+//    'show_in_admin_bar'   => null, // по умолчанию значение show_in_menu
+//    'show_in_nav_menus'   => null, // зависит от public
+//    'show_in_rest'        => null, // добавить в REST API. C WP 4.7
 //    'rest_base'           => null, // $post_type. C WP 4.7
 //    'menu_position'       => null,
     'menu_icon'           => 'dashicons-megaphone',
