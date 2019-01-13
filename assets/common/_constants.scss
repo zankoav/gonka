@@ -126,3 +126,24 @@ $MEDIA: (
         @content;
     }
 }
+
+@mixin btn(){
+    padding: .75rem 2rem;
+    background: $GRAY_DARK;
+    border: none;
+    color: $WHITE;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .4s;
+    cursor: pointer;
+
+    &:hover {
+        background: $RRED_HOVER;
+    }
+
+    &_active {
+        background: $RRED;
+    }
+}

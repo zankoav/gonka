@@ -1,0 +1,146 @@
+@import "./../../common/constants";
+
+.gonki {
+
+    padding: 2rem 0 3rem;
+
+    @media (min-width: map_get($MEDIA, SM)) {
+        padding: 1rem 0;
+    }
+
+    @media (min-width: map_get($MEDIA, MD)) {
+        padding: 2rem 0;
+    }
+
+    &__tabs {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+
+        @include sm{
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__tabs-item {
+        @include btn();
+        margin-right: 1rem;
+        width: 150px;
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 16px;
+
+        &:last-child {
+            margin-right: 0;
+
+        }
+
+        @include sm{
+            margin-right: 3rem;
+            width: 300px;
+            font-size: 16px;
+            padding: 12px 24px;
+        }
+    }
+
+    &__list {
+        display: none;
+        animation: show-list .4s;
+        &_active {
+            display: block;
+        }
+    }
+
+    &__item {
+        margin: 1rem 0;
+
+        @include sm{
+            margin: 2rem 0;
+        }
+    }
+}
+
+.gonka-item{
+    padding: 1rem;
+    background-color: $DARK_3;
+    display: flex;
+
+    @include sm{
+        padding: 2rem;
+
+    }
+
+    &__img{
+        width: 100px;
+        height: auto;
+        align-self: flex-start;
+
+        @include sm{
+            height: 100%;
+            width: auto;
+            flex: 0 0 auto;
+        }
+    }
+
+    &__content{
+        margin-left: 1rem;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        color: $WHITE;
+        font-family: 'Montserrat', sans-serif;
+
+        @include sm{
+            margin-left: 2rem;
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+
+        @include sm{
+            font-size: 22px;
+        }
+    }
+
+    &__description{
+        flex: 1 0 auto;
+        margin: 1rem 0;
+        line-height: 1.5;
+        display: none;
+
+        @include sm{
+            display: block;
+        }
+    }
+
+    &__footer{
+        flex: 0 0 auto;
+        margin-top: auto;
+    }
+
+    &__show-more{
+        @include btn;
+        display: inline-block;
+        font-size: 14px;
+        padding: 4px 16px;
+        background-color: $RED;
+
+        @include sm{
+            padding: 8px 24px;
+        }
+    }
+}
+
+@keyframes show-list {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -64,13 +64,11 @@
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => esc_html__( 'Ближайшая гонка', THEME_NAME ),
-			'id'   => 'early_gonka',
-			'type' => 'select',
-			'show_option_none' => true,
-			'default'          => 'custom',
-			'options_cb' => 'gonka_list',
+			'name' => esc_html__( 'Ссылка на регистрацию', THEME_NAME ),
+			'id'   => 'gonka_url',
+			'type' => 'text_url'
 		) );
+
 
 // move line
 		$cmb_options->add_field( array(
@@ -83,6 +81,13 @@
 			'name' => esc_html__( 'Включить строку', THEME_NAME ),
 			'id'   => 'move_active',
 			'type' => 'checkbox'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Скорость строки', THEME_NAME ),
+			'id'   => 'move_speed',
+			'description'   => 'Значение от 0 до 100 (не секунды)',
+			'type' => 'text_small'
 		) );
 
 		$cmb_options->add_field( array(

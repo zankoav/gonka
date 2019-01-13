@@ -31,7 +31,8 @@ let entries = {
     faq: './faq.js',
     media: './media.js',
     registration: './registration.js',
-    gonka: './gonka.js'
+    gonka: './gonka.js',
+    gonki: './gonki.js',
 };
 
 let pugs = {
@@ -49,6 +50,9 @@ let pugs = {
     },
     gonka: {
         title: "gonka title"
+    },
+    gonki: {
+        title: "gonki title"
     },
     registration: {
         title: "registration title"
