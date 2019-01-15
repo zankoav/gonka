@@ -38,10 +38,14 @@ a {
 
 .alignright{
     float: right;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
 }
 
 .alignleft{
     float: left;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
 }
 
 .account-content .woocommerce {
