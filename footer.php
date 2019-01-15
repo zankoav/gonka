@@ -15,7 +15,7 @@
     <div class="container">
         <div class="footer__row">
             <div class="footer__col">
-                <h3 class="footer__title"><?= $footer_unp_title; ?></h3>
+<!--                <h3 class="footer__title">--><?//= $footer_unp_title; ?><!--</h3>-->
                 <a class="footer__logo-link" href="/">
                     <img class="footer__logo-icon" src="<?= $logo; ?>">
                 </a>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="footer__col">
-                <h3 class="footer__title"><?= Lang::get( 'Links' ); ?></h3>
+<!--                <h3 class="footer__title">--><?//= Lang::get( 'Links' ); ?><!--</h3>-->
 				<?php get_template_part( 'template-parts/menu/footer-menu-links' ) ?>
             </div>
         </div>
