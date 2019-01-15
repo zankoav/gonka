@@ -41,14 +41,14 @@
 
 	function my_custom_endpoints() {
 		add_rewrite_endpoint( 'my-commands', EP_ROOT | EP_PAGES );
-		add_rewrite_endpoint( 'profile', EP_ROOT | EP_PAGES );
+//		add_rewrite_endpoint( 'profile', EP_ROOT | EP_PAGES );
 	}
 
 	add_action( 'init', 'my_custom_endpoints' );
 
 	function my_custom_query_vars( $vars ) {
 		$vars[] = 'my-commands';
-		$vars[] = 'profile';
+//		$vars[] = 'profile';
 
 		return $vars;
 	}
@@ -63,7 +63,7 @@
 
 	function my_custom_my_account_menu_items( $items ) {
 		$items = array(
-			'profile'       => __( 'Профиль', 'woocommerce' ),
+			'dashboard'       => __( 'Профиль', 'woocommerce' ),
 			//'edit-address'    => __( 'Addresses', 'woocommerce' ),
 			//'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
 			'edit-account'    => __( 'Изменить профиль', 'woocommerce' ),
@@ -82,46 +82,11 @@
 
 	add_action( 'woocommerce_account_my-commands_endpoint', 'my_custom_endpoint_content' );
 
-	function profile_endpoint_content() {
-		include 'woocommerce/myaccount/profile.php';
-	}
-
-	add_action( 'woocommerce_account_profile_endpoint', 'profile_endpoint_content' );
-
-
-	function wc_ninja_remove_password_strength() {
-		if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
-			wp_dequeue_script( 'wc-password-strength-meter' );
-		}
-	}
-	add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
-
-
-
-	// Add the code below to your theme's functions.php file to add a confirm password field on the register form under My Accounts.
-	add_filter('woocommerce_registration_errors', 'registration_errors_validation', 10,3);
-	function registration_errors_validation($reg_errors, $sanitized_user_login, $user_email) {
-		global $woocommerce;
-		extract( $_POST );
-
-		if ( trim(mb_strlen($password, 'UTF-8'))< 6 ) {
-			return new WP_Error( 'registration-error', __( 'Пароль должен быть болше 5 символов.', 'woocommerce' ) );
-		}
-
-		if ( strcmp( $password, $password2 ) !== 0 ) {
-			return new WP_Error( 'registration-error', __( 'Пароли не свопадают', 'woocommerce' ) );
-		}
-		return $reg_errors;
-	}
-	add_action( 'woocommerce_register_form', 'wc_register_form_password_repeat' );
-	function wc_register_form_password_repeat() {
-		?>
-		<p class="form-row form-row-wide">
-			<label for="reg_password2"><?php _e( 'Повторить пароль', 'woocommerce' ); ?> <span class="required">*</span></label>
-			<input type="password" class="input-text" name="password2" id="reg_password2" value="<?php if ( ! empty( $_POST['password2'] ) ) echo esc_attr( $_POST['password2'] ); ?>" />
-		</p>
-		<?php
-	}
+//	function profile_endpoint_content() {
+//		include 'woocommerce/myaccount/profile.php';
+//	}
+//
+//	add_action( 'woocommerce_account_profile_endpoint', 'profile_endpoint_content' );
 
 
 	function getEarlyGonka(){

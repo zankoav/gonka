@@ -23,7 +23,7 @@ $post_description = $meta_data["gonka_description_".$ln][0];
 			<?php foreach ( $tags as $tag ) :
 				$tag_link = get_term_link($tag->term_id);
 				$tag_name = $tag->name; ?>
-			<a class="button button_gonka button_gonka_tag" href="<?= $tag_link;?>" target="_blank"><?= $tag_name;?></a>
+			<a class="button button_gonka button_gonka_tag" href="<?= $tag_link;?>"><?= $tag_name;?></a>
 			<?php endforeach;?>
 		</div>
 
@@ -39,7 +39,7 @@ $post_description = $meta_data["gonka_description_".$ln][0];
 			<?= $post_description;?>
 		</p>
 		<div class="single-big__button">
-			<a class="button button_gonka" href="<?= $link;?>" target="_blank"><?= $read_more;?></a>
+			<a class="button button_gonka" href="<?= $link;?>"><?= $read_more;?></a>
 		</div>
 	</div>
 </li>

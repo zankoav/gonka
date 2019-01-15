@@ -9,16 +9,16 @@
 @import "constants";
 @import "reset";
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
     background-color: $DARK;
 }
 
-a{
+a {
     color: $RRED;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
@@ -36,7 +36,87 @@ a{
     }
 }
 
-.woocommerce{
+.alignright{
+    float: right;
+}
+
+.alignleft{
+    float: left;
+}
+
+.account-content .woocommerce {
+    display: flex;
+    flex-direction: column;
+
+    @include sm {
+        flex-direction: row;
+    }
+
+    .woocommerce-MyAccount-navigation{
+        flex: 1 0 100%;
+        margin-bottom: 1rem;
+
+        @include sm {
+            flex: 0 0 auto;
+            margin-bottom: 0;
+        }
+
+        li{
+            &:after{
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .woocommerce-MyAccount-content{
+        flex: 1;
+    }
+
+
+
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        @include sm {
+            padding: 0 2rem 0 0;
+        }
+    }
+
+    .my-profile{
+        color: $WHITE;
+        font-size: 14px;
+        &__group{
+            display: flex;
+            padding: .5rem 0;
+
+            &:first-child{
+                padding-top: 0;
+            }
+
+            &:last-child{
+                padding-bottom: 0;
+            }
+        }
+
+        &__title{
+            margin-right: 1rem;
+            text-transform: uppercase;
+            color: $GRAY_100;
+            font-weight: bold;
+            flex: 0 0 auto;
+        }
+
+        &__value{
+            &_full-width{
+                flex: 1 0 100%;
+            }
+        }
+    }
+}
+
+.woocommerce {
 
     input, textarea {
         padding: .25rem;
@@ -48,9 +128,9 @@ a{
         width: 100%;
     }
 
-    .woocommerce-Button, .checkout-button, [name="update_cart"]{
+    .woocommerce-Button, .checkout-button, [name="update_cart"] {
 
-        &:before, &:after{
+        &:before, &:after {
             content: none;
         }
 
@@ -58,7 +138,7 @@ a{
         color: $WHITE !important;
         font-weight: normal !important;
 
-        &:hover{
+        &:hover {
             background: $RED !important;
         }
     }
@@ -117,7 +197,6 @@ a{
             }
         }
 
-
         &--edit-address {
             &:after {
                 content: '\f2b9';
@@ -137,16 +216,15 @@ a{
         }
     }
 
-    .woocommerce-MyAccount-content{
+    .woocommerce-MyAccount-content {
         display: flex;
         flex-direction: column;
 
-
-        @include md{
+        @include md {
             flex-direction: row;
         }
 
-        ul{
+        ul {
             padding-left: 0;
         }
     }

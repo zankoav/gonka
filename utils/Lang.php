@@ -6,101 +6,133 @@
 		const LANGUAGES = [ 'ru', 'en' ];
 		const BASE_LANG = 'ru';
 		const CONSTANTS = [
-			'All rights reserved.'=>[
+			'All rights reserved.'                                                           => [
 				'ru' => 'Все права защищены.',
-				'en'=>'All rights reserved.'
+				'en' => 'All rights reserved.'
 			],
-			'blog' => [
+			'Attention: An email with the activation code was sent again. Check your email.' => [
+				'ru' => "Внимание: Письмо с кодом активации выслано повторно. Проверьте Ваш email.",
+				'en' => "Attention: An email with the activation code was sent again. Check your email."
+			],
+			'Attention: please Confirm your email address.'                                  => [
+				'ru' => "Внимание: Подтвердите Ваш email-адрес.",
+				'en' => "Attention: please Confirm your email address."
+			],
+			'Attention: Your account is inactive.'                                           => [
+				'ru' => "Внимание: Ваш аккаунт неактивен. Пожалуйста, перейдите по ссылке в письме, высланном Вам на почту.",
+				'en' => "Attention: Your account is inactive. Please follow the link in the email sent to you."
+			],
+			'blog'                                                                           => [
 				'ru' => 'блог',
 				'en' => 'blog'
 			],
-			'by' => [
+			'by'                                                                             => [
 				'ru' => ' ',
 				'en' => 'by'
 			],
-			'Contacts'=>[
+			'Click here to confirm your email address'                                       => [
+				'ru' => 'Для подтверждения email-адреса перейдите по ссылке',
+				'en' => 'Click here to confirm your email address',
+			],
+			'Confirm Email address'                                                          => [
+				'ru' => 'Подтверждение Email-адреса',
+				'en' => 'Confirm Email address'
+			],
+			'Congratulations: Your account is activated!'                                    => [
+				'ru' => "Поздравляем: Ваш аккаунт активирован!",
+				'en' => "Congratulations: Your account is activated!"
+			],
+			'Contacts'                                                                       => [
 				'ru' => 'Контакты',
 				'en' => 'Contacts'
 			],
-			'click'=>[
+			'click'                                                                          => [
 				'ru' => 'Кликни',
 				'en' => 'Click'
 			],
-			'home' => [
+			'Error: your account is not activated.'                                          => [
+				'ru' => "Ошибка: Ваш аккаунт не активирован.",
+				'en' => "Error: your account is not activated."
+			],
+			'home'                                                                           => [
 				'ru' => 'главная',
 				'en' => 'home'
 			],
-			'Links'       => [
+			'Links'                                                                          => [
 				'ru' => 'Ссылки',
 				'en' => 'Links'
 			],
-			'login'       => [
+			'login'                                                                          => [
 				'ru' => 'Вход / Регистрация',
 				'en' => 'Login / Registration'
 			],
-			'map'       => [
+			'map'                                                                            => [
 				'ru' => 'Карта',
 				'en' => 'Map'
 			],
-			'Menu'       => [
+			'Menu'                                                                           => [
 				'ru' => 'Меню',
 				'en' => 'Menu'
 			],
-			'partners'       => [
+			'partners'                                                                       => [
 				'ru' => 'Партнеры',
 				'en' => 'Partners'
 			],
-			'photo'       => [
+			'photo'                                                                          => [
 				'ru' => 'Фото',
 				'en' => 'Photo'
 			],
-			'read more' => [
+			'read more'                                                                      => [
 				'ru' => 'подробнее',
 				'en' => 'read more'
 			],
-			'REGULATION' => [
+			'REGULATION'                                                                     => [
 				'ru' => 'РЕГЛАМЕНТ',
 				'en' => 'REGULATION'
 			],
-			'registration' => [
+			'registration'                                                                   => [
 				'ru' => 'Зарегистрироваться',
 				'en' => 'Registration'
 			],
-			'resent posts' => [
+			'resent posts'                                                                   => [
 				'ru' => 'последние новости',
 				'en' => 'recent news'
 			],
-			'results' => [
+			'results'                                                                        => [
 				'ru' => 'Результаты',
 				'en' => 'Results'
 			],
-			'search'       => [
+			'search'                                                                         => [
 				'ru' => 'Поиск...',
 				'en' => 'Search...'
 			],
-			'search-empty'=>[
+			'search-empty'                                                                   => [
 				'ru' => 'Поиск не принес результатов',
 				'en' => 'Search returned no results'
 			],
-			'search-empty-description' => [
+			'search-empty-description'                                                       => [
 				'ru' => 'По вашему запросу нет данных, попробуйте ввести другой запрос',
 				'en' => 'No data available on your request, please try another request'
 			],
-			'shema_delivery' => [
+			'Send_again'                                                                     => [
+				'ru' => 'Выслать снова на ',
+				'en' => 'Send again to '
+			],
+			'shema_delivery'                                                                 => [
 				'ru' => 'Схема проезда',
 				'en' => 'Location map'
 			],
-			'Socials' => [
+			'Socials'                                                                        => [
 				'ru' => 'Социальные сети',
 				'en' => 'Socials'
 			],
-			'tags' => [
+			'tags'                                                                           => [
 				'ru' => 'теги',
 				'en' => 'tags'
 			],
-			'video' =>[
-				'ru'=>'Видео',
-				'en'=>'Video'
+			'video'                                                                          => [
+				'ru' => 'Видео',
+				'en' => 'Video'
 			]
 		];
 

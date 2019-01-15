@@ -8,19 +8,21 @@
 	}
 
 
-	$options   = SingletonOptions::getOptions();
-	$logo      = $options['logo_light'];
-	$move_line = $options[ "move_line_" . $ln ];
-	$move_speed        = $options['move_speed'];
+	$options    = SingletonOptions::getOptions();
+	$logo       = $options['logo_light'];
+	$move_line  = $options[ "move_line_" . $ln ];
+	$move_speed = $options['move_speed'];
 
 	$bannerTitle       = $options[ 'banner_title_' . $ln ];
 	$bannerDescription = $options[ 'banner_description_' . $ln ];
 	$bannerImageUrl    = $options['banner_image'];
 	$bannerUrl         = $options['banner_button_url'];
 
-	$gonkaUrl         = $options['gonka_url'];
+	$gonkaUrl = $options['gonka_url'];
 
 	$dateEarlyGonka = getEarlyGonka(); // 2019-01-16
+
+	$classWoocommerce = is_account_page() ? 'account-content' : '';
 
 ?>
 <!doctype html>
@@ -31,7 +33,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body class="<?= $classWoocommerce; ?>">
 
 <header class="header">
     <header class="header-top">
@@ -91,7 +93,7 @@
                 </div>
                 <div class="header-bottom__menu">
                     <div class="header-bottom__registration">
-                        <a class="header-bottom__registration-link" href="<?=$gonkaUrl;?>">
+                        <a class="header-bottom__registration-link" href="<?= $gonkaUrl; ?>">
                             <img class="header-bottom__registration-image"
                                  src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
                             <span class="header-bottom__registration-title">Регистрация</span>
@@ -99,7 +101,8 @@
                         <div class="header-bottom__time">
                             <img class="header-bottom__registration-image"
                                  src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg">
-                            <span class="header-bottom__registration-title header-bottom__registration-time" data-time="<?=$dateEarlyGonka?>">Осталось...</span>
+                            <span class="header-bottom__registration-title header-bottom__registration-time"
+                                  data-time="<?= $dateEarlyGonka ?>">Осталось...</span>
                         </div>
                     </div>
                     <div class="categories-container swiper-container">
@@ -112,7 +115,7 @@
         </div>
     </header>
 	<?php if ( isset( $options["move_active"] ) ): ?>
-        <marquee class="header-bottom__line" scrollamount="<?=$move_speed;?>"><?= $move_line; ?></marquee>
+        <marquee class="header-bottom__line" scrollamount="<?= $move_speed; ?>"><?= $move_line; ?></marquee>
 	<?php endif; ?>
 	<?php if ( is_page_template( 'template-home.php' ) ) : ?>
         <div class="header__slider">
