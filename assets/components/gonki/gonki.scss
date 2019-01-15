@@ -77,9 +77,18 @@
         align-self: flex-start;
 
         @include sm{
-            height: 100%;
-            width: auto;
-            flex: 0 0 auto;
+            width: 200px;
+            flex: 0 0 200px;
+        }
+
+        @include md{
+            width: 300px;
+            flex: 0 0 300px;
+        }
+
+        @include lg{
+            width: 400px;
+            flex: 0 0 400px;
         }
     }
 
