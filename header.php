@@ -20,6 +20,8 @@
 
 	$gonkaUrl         = $options['gonka_url'];
 
+	$dateEarlyGonka = getEarlyGonka(); // 2019-01-16
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -94,11 +96,11 @@
                                  src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
                             <span class="header-bottom__registration-title">Регистрация</span>
                         </a>
-<!--                        <div class="header-bottom__time">-->
-<!--                            <img class="header-bottom__registration-image"-->
-<!--                                 src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg">-->
-<!--                            <span class="header-bottom__registration-title">48:30:20</span>-->
-<!--                        </div>-->
+                        <div class="header-bottom__time">
+                            <img class="header-bottom__registration-image"
+                                 src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg">
+                            <span class="header-bottom__registration-title header-bottom__registration-time" data-time="<?=$dateEarlyGonka?>">Осталось...</span>
+                        </div>
                     </div>
                     <div class="categories-container swiper-container">
 

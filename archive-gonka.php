@@ -21,7 +21,7 @@
                         'meta_query' => array(
 				                'gonka_date' => array(
 					                'key'     => 'gonka_start',
-					                'value'   => date('d.m.Y'),
+					                'value'   => date('Y.m.d'),
 					                'compare' => '>=',
 				                ),
 			                ),
@@ -42,8 +42,7 @@
                                     <div class="gonka-item__content">
                                         <h2 class="gonka-item__title"><?= get_the_title();?></h2>
                                         <p class="gonka-item__description"><?= get_post_meta(get_the_ID(),'small_description',1)?></p>
-                                        <footer class="gonka-item__footer"><a class="gonka-item__show-more" href="<?= get_permalink();?>"
-                                                                              target="_blank">Подробнее</a></footer>
+                                        <footer class="gonka-item__footer"><a class="gonka-item__show-more" href="<?= get_permalink();?>">Подробнее</a></footer>
                                     </div>
                                 </div>
                             </li>
@@ -61,7 +60,7 @@
 			                'meta_query' => array(
 				                'gonka_date' => array(
 					                'key'     => 'gonka_start',
-					                'value'   => date('d.m.Y'),
+					                'value'   => date('Y.m.d'),
 					                'compare' => '<',
 				                ),
 			                ),
@@ -82,8 +81,7 @@
                                         <div class="gonka-item__content">
                                             <h2 class="gonka-item__title"><?= get_the_title();?></h2>
                                             <p class="gonka-item__description"><?= get_post_meta(get_the_ID(),'small_description',1)?></p>
-                                            <footer class="gonka-item__footer"><a class="gonka-item__show-more" href="<?= get_permalink();?>"
-                                                                                  target="_blank">Подробнее</a></footer>
+                                            <footer class="gonka-item__footer"><a class="gonka-item__show-more" href="<?= get_permalink();?>">Подробнее</a></footer>
                                         </div>
                                     </div>
                                 </li>

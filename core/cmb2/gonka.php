@@ -54,7 +54,7 @@
 			'id'   => 'gonka_start',
 			'type' => 'text_date',
 			// 'timezone_meta_key' => 'wiki_test_timezone',
-			 'date_format' => 'd.m.Y',
+			 'date_format' => 'Y.m.d',
 		) );
 
 		$cmb->add_field( array(

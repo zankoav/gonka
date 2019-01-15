@@ -3,16 +3,13 @@
 .single {
     flex: 1 0 100%;
     max-width: 100%;
-    padding: 0 1rem;
-
-
+    padding: 0 1rem 1rem;
 
     @media (min-width: map_get($MEDIA, SM)) {
         flex: 1 0 33.333%;
         max-width: 33.333%;
+        padding: 0 1rem;
     }
-
-
 
     &__content {
         position: relative;
@@ -22,9 +19,8 @@
         align-items: center;
         flex-direction: column;
         padding: 70px 10px 60px;
+        background: no-repeat center;
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
 
         &:hover {
             &:after {
@@ -40,7 +36,7 @@
             left: 0;
             top: 0;
             background-color: rgba($DARK, .5);
-            z-index: 0;
+            z-index: -1;
             transition: .6s;
         }
     }
@@ -76,15 +72,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-width: initial;
-    margin: 2rem -1rem;
+    margin: 0 -1rem;
 
     @media (min-width: map_get($MEDIA, SM)) {
         flex-direction: row;
-        max-width: 100%;
-    }
-
-    @media (min-width: map_get($MEDIA, LG)) {
-        margin: 3rem -1rem;
     }
 }
 

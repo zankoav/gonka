@@ -1,0 +1,24 @@
+@import "./../../common/constants";
+
+.partners {
+
+    max-width: initial;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem 1rem;
+        max-width: 50%;
+        flex: 1 0 50%;
+
+        @media (min-width: map_get($MEDIA, SM)) {
+            max-width: 20%;
+            flex: 1 0 20%;
+        }
+    }
+}

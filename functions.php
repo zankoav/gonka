@@ -122,4 +122,38 @@
 		</p>
 		<?php
 	}
+
+
+	function getEarlyGonka(){
+// задаем нужные нам критерии выборки данных из БД
+
+		$gonkaQuery = new WP_Query;
+
+
+		$args = array(
+			'posts_per_page' => 1,
+			'post_type'=>'gonka',
+			'meta_query' => array(
+				'gonka_date' => array(
+					'key'     => 'gonka_start',
+					'value'   => date('Y.m.d'),
+					'compare' => '>',
+				),
+			),
+			'orderby' => 'gonka_date',
+			'order'   => 'ASC',
+		);
+
+		$gonkaArr = $gonkaQuery->query($args);
+		$gonka = $gonkaArr[0];
+
+		$time = get_post_meta($gonka->ID, 'gonka_start', 1);
+
+		if(!empty($time)){
+            return $time;
+        }
+
+
+	    return '2030-01-20';
+    }
 ?>

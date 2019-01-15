@@ -193,7 +193,30 @@
 		) );
 
 
+//Partners
 
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Наши партнеры', THEME_NAME ),
+			'id'   => 'partners_title',
+			'type' => 'title'
+		) );
+
+		$partners = $cmb_options->add_field( array(
+			'id'      => 'partners',
+			'type'    => 'group',
+			'options' => array(
+				'group_title'   => __( 'Партнера {#}', THEME_NAME ),
+				'add_button'    => __( 'Добавить Партнера', THEME_NAME ),
+				'remove_button' => __( 'Удалить Партнера', THEME_NAME ),
+				'sortable'      => true,
+				'closed'        => true,
+			),
+		) );
+		$cmb_options->add_group_field( $partners, array(
+			'id'   => 'partner',
+			'description' => 'Реккомендуемый размер 250x220',
+			'type' => 'file'
+		) );
 
 //footer paragraph
 

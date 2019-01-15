@@ -46,6 +46,10 @@
 				'ru' => 'Меню',
 				'en' => 'Menu'
 			],
+			'partners'       => [
+				'ru' => 'Партнеры',
+				'en' => 'Partners'
+			],
 			'photo'       => [
 				'ru' => 'Фото',
 				'en' => 'Photo'
