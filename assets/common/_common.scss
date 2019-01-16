@@ -36,13 +36,13 @@ a {
     }
 }
 
-.alignright{
+.alignright {
     float: right;
     margin-left: 1rem;
     margin-bottom: .5rem;
 }
 
-.alignleft{
+.alignleft {
     float: left;
     margin-right: 1rem;
     margin-bottom: .5rem;
@@ -56,7 +56,7 @@ a {
         flex-direction: row;
     }
 
-    .woocommerce-MyAccount-navigation{
+    .woocommerce-MyAccount-navigation {
         flex: 1 0 100%;
         margin-bottom: 1rem;
 
@@ -65,19 +65,16 @@ a {
             margin-bottom: 0;
         }
 
-        li{
-            &:after{
+        li {
+            &:after {
                 margin-left: 1rem;
             }
         }
     }
 
-    .woocommerce-MyAccount-content{
+    .woocommerce-MyAccount-content {
         flex: 1;
     }
-
-
-
 
     ul {
         margin: 0;
@@ -88,23 +85,23 @@ a {
         }
     }
 
-    .my-profile{
+    .my-profile {
         color: $WHITE;
         font-size: 14px;
-        &__group{
+        &__group {
             display: flex;
             padding: .5rem 0;
 
-            &:first-child{
+            &:first-child {
                 padding-top: 0;
             }
 
-            &:last-child{
+            &:last-child {
                 padding-bottom: 0;
             }
         }
 
-        &__title{
+        &__title {
             margin-right: 1rem;
             text-transform: uppercase;
             color: $GRAY_100;
@@ -112,8 +109,8 @@ a {
             flex: 0 0 auto;
         }
 
-        &__value{
-            &_full-width{
+        &__value {
+            &_full-width {
                 flex: 1 0 100%;
             }
         }
@@ -122,7 +119,14 @@ a {
 
 .woocommerce {
 
-    input, textarea {
+    .contacts__form-group-message {
+        color: $RRED;
+        font-size: 12px;
+        display: block;
+        margin-top: 4px;
+    }
+
+    input, textarea, .select-group {
         padding: .25rem;
         font-size: 14px;
         border-radius: 6px;
@@ -130,6 +134,23 @@ a {
         color: $GRAY_DARK;
         margin: .25rem 0 !important;
         width: 100%;
+    }
+
+    .select-group {
+        height: 28px;
+    }
+
+    .radio-group, .radio-group-wrapp {
+        display: flex;
+
+    }
+
+    .radio-group {
+        align-items: center;
+        margin-right: 1.5rem;
+        label {
+            margin-right: 4px;
+        }
     }
 
     .woocommerce-Button, .checkout-button, [name="update_cart"] {

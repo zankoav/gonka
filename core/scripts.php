@@ -28,6 +28,8 @@
 				wp_enqueue_script( 'gonki', Assets::getJs( 'gonki' ), false, null, true );
 			}else if ( is_archive() ) {
 				wp_enqueue_script( 'category', Assets::getJs( 'category' ), false, null, true );
+			}else if ( is_page() ) {
+				wp_enqueue_script( 'page', Assets::getJs( 'page' ), false, null, true );
 			}
 
 		} );

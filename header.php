@@ -93,17 +93,18 @@
                 </div>
                 <div class="header-bottom__menu">
                     <div class="header-bottom__registration">
-                        <a class="header-bottom__registration-link" href="<?= $gonkaUrl; ?>">
-                            <img class="header-bottom__registration-image"
-                                 src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
-                            <span class="header-bottom__registration-title">Регистрация</span>
-                        </a>
                         <div class="header-bottom__time">
+                            <span class="header-bottom__registration-title header-bottom__registration-title_mr_4px">До ближайшей гонки осталось</span>
                             <img class="header-bottom__registration-image"
                                  src="/wp-content/themes/gonka/src/icons/time.a8efc5.svg">
                             <span class="header-bottom__registration-title header-bottom__registration-time"
                                   data-time="<?= $dateEarlyGonka ?>">Осталось...</span>
                         </div>
+                        <a class="header-bottom__registration-link" href="<?= $gonkaUrl; ?>">
+                            <img class="header-bottom__registration-image"
+                                 src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
+                            <span class="header-bottom__registration-title">Регистрация</span>
+                        </a>
                     </div>
                     <div class="categories-container swiper-container">
 

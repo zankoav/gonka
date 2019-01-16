@@ -121,4 +121,11 @@
 
 	    return '2030-01-20';
     }
+
+
+	add_action( 'woocommerce_register_form_start', 'add_custom_registrations_fields' );
+	function add_custom_registrations_fields(){
+		get_template_part( 'template-parts/registration/registration' );
+
+	}
 ?>
