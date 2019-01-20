@@ -119,6 +119,14 @@ a {
 
 .woocommerce {
 
+    .login .woocommerce-form__label-for-checkbox{
+        display: block !important;
+    }
+
+    #rememberme{
+        width: initial;
+    }
+
     .contacts__form-group-message {
         color: $RRED;
         font-size: 12px;

@@ -32,5 +32,11 @@
 				wp_enqueue_script( 'page', Assets::getJs( 'page' ), false, null, true );
 			}
 
+
+			wp_localize_script( 'commons', 'landing_ajax',
+				array(
+					'url' => admin_url( 'admin-ajax.php' )
+				)
+			);
 		} );
 	} );

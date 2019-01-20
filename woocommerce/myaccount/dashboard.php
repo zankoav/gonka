@@ -30,7 +30,11 @@
 <div class="my-profile">
     <div class="my-profile__group">
         <span class="my-profile__title">Имя:</span>
-        <span class="my-profile__value"><?= $user->first_name; ?></span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_name', 1 ); ?></span>
+    </div>
+    <div class="my-profile__group">
+        <span class="my-profile__title">Фамилия:</span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_surname', 1 ); ?></span>
     </div>
     <div class="my-profile__group">
         <span class="my-profile__title">Email:</span>
@@ -38,11 +42,24 @@
     </div>
     <div class="my-profile__group">
         <span class="my-profile__title">Возраст:</span>
-        <span class="my-profile__value">18</span>
+        <span class="my-profile__value"><?= date_diff( date_create( get_user_meta( $userId, 'user_date', 1 ) ), date_create( 'today' ) )->y;
+			?></span>
+    </div>
+    <div class="my-profile__group">
+        <span class="my-profile__title">Номер телефона:</span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_phone', 1 ) ?></span>
+    </div>
+    <div class="my-profile__group">
+        <span class="my-profile__title">Размер футболки:</span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_size', 1 ) ?></span>
+    </div>
+    <div class="my-profile__group">
+        <span class="my-profile__title">Страна:</span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_country', 1 ) ?></span>
     </div>
     <div class="my-profile__group">
         <span class="my-profile__title">Пол:</span>
-        <span class="my-profile__value">мужчина</span>
+        <span class="my-profile__value"><?= get_user_meta( $userId, 'user_sex', 1 ) ?></span>
     </div>
     <div class="my-profile__group">
         <span class="my-profile__title">О себе:</span>

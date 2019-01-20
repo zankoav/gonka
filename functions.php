@@ -15,6 +15,7 @@
 
 	require_once __DIR__ . '/core/init_theme.php';
 	require_once __DIR__ . '/core/customTypes/gonka.php';
+	require_once __DIR__ . '/core/customTypes/faq.php';
 	require_once __DIR__ . '/core/menu.php';
 	require_once __DIR__ . '/core/woocommerce.php';
 	require_once __DIR__ . '/core/hooks/hooks.php';
@@ -22,10 +23,14 @@
 	require_once __DIR__ . '/core/styles.php';
 	require_once __DIR__ . '/core/scripts.php';
 
+
+	require_once __DIR__ . '/core/ajax.php';
+
 	require_once __DIR__ . '/core/cmb2/common.php';
 	require_once __DIR__ . '/core/cmb2/metaPostData.php';
 	require_once __DIR__ . '/core/cmb2/media.php';
 	require_once __DIR__ . '/core/cmb2/gonka.php';
+	require_once __DIR__ . '/core/cmb2/faq.php';
 
 
 	add_filter( 'the_title', function ( $title, $id ) {
@@ -126,6 +131,5 @@
 	add_action( 'woocommerce_register_form_start', 'add_custom_registrations_fields' );
 	function add_custom_registrations_fields(){
 		get_template_part( 'template-parts/registration/registration' );
-
 	}
 ?>

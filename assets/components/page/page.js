@@ -2,11 +2,13 @@ import './page.scss';
 import $ from 'jquery';
 import {Validator} from "../../utils/_validateor";
 
-$('[name="user-sex"]').on('change', function () {
+$('[name="user-sex"]').on('change', buttonPressed);
+
+function buttonPressed() {
     let sexValue = $('[name="user-sex"]:checked').val();
     let html = changeSex(sexValue === 'male');
     $('[name="user_size"]').replaceWith(html);
-});
+}
 
 function changeSex(isMan) {
     return isMan ?
@@ -26,19 +28,47 @@ function changeSex(isMan) {
             </select>`;
 }
 
-$('[type="submit"]').on('click', function (event) {
+$('.register [type="submit"]').on('click', function (event) {
     event.preventDefault();
 
-    if (isFormValid()) {
-        let $submit = $(this);
-        $submit.html('Регистарция...');
-        setTimeout(function () {
-            $submit.html('Готово!');
-        }, 2000);
+    let data = isFormValid();
+    if (data) {
+        sendData(data);
     } else {
         console.log('error validation form');
     }
 });
+
+function sendData(data) {
+    let $submit = $('[type="submit"]');
+    $submit.html('Регистарция...').off('click',buttonPressed);
+
+    data['action'] = 'registration_user';
+
+    $.ajax(landing_ajax.url, {
+        data: data,
+        method: 'post',
+        dataType: 'json',
+        success: function (response) {
+            console.log(response);
+
+            $submit.html('Зарегистрироваться').off('click',buttonPressed)
+            if(response.status == 2){
+                alert('Пользователь с таким email уже существует. Авторизируйтесь.');
+            }else if(response.status == 1){
+                alert('Поздравляем с регистрацией! Для подтверждения аккаунта перейдите по ссылке отправленной вам в писме на почту');
+            }else{
+                alert('Ошибка соединения, попробуйте позже');
+            }
+
+        },
+        error: function (x) {
+            $submit.html('Зарегистрироваться').off('click',buttonPressed);
+            alert('Ошибка соединения, попробуйте позже');
+            console.log(x);
+        }
+    });
+}
 
 function isFormValid() {
 
@@ -187,9 +217,8 @@ function isFormValid() {
         user_phone: user_phone,
         user_password: user_password,
         user_password_confirm: user_password_confirm
-    }
+    };
 
-    console.log(data);
 
-    return true;
+    return data;
 }
