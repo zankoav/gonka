@@ -2,15 +2,19 @@
     font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Lato', sans-serif;
+    font-family: 'Exo 2', sans-serif;
  */
-@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700,900|Montserrat:400,500,600,700,800,900&subset=cyrillic,cyrillic-ext');
+
+//@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700,900|Montserrat:400,500,600,700,800,900&subset=cyrillic,cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,900&subset=cyrillic');
+
 @import './../../node_modules/swiper/dist/css/swiper.min.css';
 @import '~@fortawesome/fontawesome-free/css/all';
 @import "constants";
 @import "reset";
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     background-color: $DARK;
 }
 
@@ -120,7 +124,13 @@ a {
 .woocommerce {
 
     .login .woocommerce-form__label-for-checkbox{
-        display: block !important;
+        display: flex;
+        align-items: center;
+        padding-top: .5rem;
+
+        span{
+            margin-left: 4px;
+        }
     }
 
     #rememberme{

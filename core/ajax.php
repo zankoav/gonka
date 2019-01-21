@@ -78,7 +78,7 @@
 			// create the url
 			$url = get_site_url() . '/my-account/?p=' . base64_encode( serialize( $string ) );
 			// basically we will edit here to make this nicer
-			$html = '<span>' . Lang::get( 'Click here to confirm your email address' ) . '</span><br/><br/> <a href="' . $url . '">' . $url . '</a>';
+			$html = '<span>' . Lang::get( 'Click here to confirm your email address' ) . '</span><br/><br/> <a href="' . $url . '">https://betta.by/my-account/</a>';
 			// send an email out to user
 			//		wp_mail( $user_info->user_email, 'Подтверждение Email-адреса', $html, $headers = "Content-Type: text/html\r\n" );
 			wc_mail( $email, Lang::get( 'Confirm Email address' ), $html );

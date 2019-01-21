@@ -20,11 +20,11 @@ function changeSex(isMan) {
                 <option value="XXL">XXL</option>
             </select>` :
         `<select name="user_size" id="reg_user_size" class="select-group">
-                <option value="Беларусь">XS</option>
-                <option value="Россия">S</option>
-                <option value="Польша">M</option>
-                <option value="Украина">L</option>
-                <option value="Украина">XL</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
             </select>`;
 }
 
@@ -50,8 +50,6 @@ function sendData(data) {
         method: 'post',
         dataType: 'json',
         success: function (response) {
-            console.log(response);
-
             $submit.html('Зарегистрироваться').off('click',buttonPressed)
             if(response.status == 2){
                 alert('Пользователь с таким email уже существует. Авторизируйтесь.');

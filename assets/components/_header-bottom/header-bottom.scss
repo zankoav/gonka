@@ -3,7 +3,7 @@
 .header-bottom {
     position: relative;
     z-index: 2;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     background-color: $RRED;
 
     &__inner {
@@ -76,6 +76,11 @@
         }
     }
 
+    &__time{
+        text-align: center;
+    }
+
+
     &__registration-image {
         width: 20px;
         margin-right: 4px;
@@ -94,6 +99,10 @@
             margin-right: 8px;
         }
     }
+
+     &__registration-time{
+         min-width: 200px;
+     }
 
     &__menu {
         flex: 1 0 100%;

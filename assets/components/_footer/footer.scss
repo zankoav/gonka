@@ -3,7 +3,7 @@
 .footer {
     background-color: $DARK_3;
     padding: 2rem 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     color: $WHITE;
 
     @media (min-width: map_get($MEDIA, SM)) {
@@ -17,7 +17,7 @@
     }
 
     &__text{
-        font-family: 'Lato', sans-serif;
+        font-family: 'Exo 2', sans-serif;
         font-size: 16px;
         line-height: 1.2;
     }
@@ -53,7 +53,7 @@
     }
 
     &__col{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Exo 2', sans-serif;
         padding: 0 .5rem 2.5rem;
         max-width: 100%;
         flex: 1 0 100%;
@@ -99,13 +99,13 @@
     }
 
     &__copy-right{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Exo 2', sans-serif;
         font-size: 14px;
         color: $WHITE_05;
     }
 
     &__title{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Exo 2', sans-serif;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 22px;
@@ -125,7 +125,7 @@
     }
 
     &__item{
-        font-family: 'Lato', sans-serif;
+        font-family: 'Exo 2', sans-serif;
         margin-bottom: .5rem;
         display: block;
         font-size: 18px;
