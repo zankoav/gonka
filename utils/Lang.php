@@ -63,8 +63,8 @@
 				'en' => 'Links'
 			],
 			'login'                                                                          => [
-				'ru' => 'Вход / Регистрация',
-				'en' => 'Login / Registration'
+				'ru' => 'Login',
+				'en' => 'Login'
 			],
 			'map'                                                                            => [
 				'ru' => 'Карта',

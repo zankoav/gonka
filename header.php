@@ -103,7 +103,7 @@
                         <a class="header-bottom__registration-link" href="<?= $gonkaUrl; ?>">
                             <img class="header-bottom__registration-image"
                                  src="/wp-content/themes/gonka/src/icons/registration.9cba10.svg">
-                            <span class="header-bottom__registration-title">LOGIN</span>
+                            <span class="header-bottom__registration-title">Регистрация</span>
                         </a>
                     </div>
                     <div class="categories-container swiper-container">

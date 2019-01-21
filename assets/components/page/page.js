@@ -41,7 +41,7 @@ $('.register [type="submit"]').on('click', function (event) {
 
 function sendData(data) {
     let $submit = $('[type="submit"]');
-    $submit.html('Регистарция...').off('click',buttonPressed);
+    $submit.html('Регистрация...').off('click',buttonPressed);
 
     data['action'] = 'registration_user';
 
