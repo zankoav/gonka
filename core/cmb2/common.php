@@ -331,3 +331,29 @@
 
 		return $result;
 	}
+
+	function fresh_gonka_list(){
+
+		$posts = get_posts([
+			'posts_per_page' => -1,
+			'post_type'=>'gonka',
+			'meta_query' => array(
+				'gonka_date' => array(
+					'key'     => 'gonka_start',
+					'value'   => date('Y.m.d'),
+					'compare' => '>=',
+				),
+			),
+			'orderby' => 'gonka_date',
+			'order'   => 'DESC',
+		]);
+
+		$result = [];
+
+		foreach( $posts as $post ){
+
+			$result[$post->ID] = $post->post_title;
+		}
+
+		return $result;
+	}
