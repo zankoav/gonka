@@ -2,9 +2,10 @@ include ./../mixins
 include ./../components/head
 body
     +header(true)
-    .container
-        +_title('Последние новости', 'h2')
-        +_single-list()
-        +_title('Партнеры', 'h2')
-        +partners()
+    section.single-wrapper
+        .container
+            +_title('Последние новости', 'h2')
+            +_single-list()
+            +_title('Партнеры', 'h2')
+            +partners()
     +_footer()
