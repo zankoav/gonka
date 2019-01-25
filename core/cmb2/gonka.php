@@ -49,19 +49,43 @@
 			// 'mb_callback_args' => array( '__block_editor_compatible_meta_box' => false ),
 		) );
 
-		$cmb->add_field( array(
-			'name' => 'Дата начала гонки',
-			'id'   => 'gonka_start',
-			'type' => 'text_date',
-			// 'timezone_meta_key' => 'wiki_test_timezone',
-			 'date_format' => 'Y.m.d',
-		) );
+        $cmb->add_field( array(
+            'name' => 'Дата начала гонки',
+            'id'   => 'gonka_start',
+            'type' => 'text_date_timestamp',
+            'date_format' => 'd-m-Y',
+            'time_format' => 'H:i',
+            'attributes'  => array(
+                'required'    => 'required',
+            ),
+        ) );
+
+        $cmb->add_field( [
+            'name' => 'Дата конца гонки',
+            'id'   => 'gonka_end',
+            'type' => 'text_date_timestamp',
+            // 'timezone_meta_key' => 'wiki_test_timezone',
+            'date_format' => 'd-m-Y',
+            'time_format' => 'H:i',
+            'attributes'  => array(
+                'required'    => 'required',
+            ),
+
+        ] );
 
 		$cmb->add_field( array(
 			'name' => 'Короткое описание',
 			'id'   => 'small_description',
 			'type' => 'textarea_small',
 		) );
+
+        $cmb->add_field( [
+            'name' => 'Форматы',
+            'id'   => 'event_schema',
+            'type' => 'textarea_code',
+            'syntax_highlighting' => 'javascript',
+
+        ] );
 
 		$cmb->add_field( array(
 			'name' => 'Фото',

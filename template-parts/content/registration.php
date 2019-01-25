@@ -1,116 +1,376 @@
-<?php
-	// задаем нужные нам критерии выборки данных из БД
-	$gonkas = fresh_gonka_list();
-
-
-?>
-
-<div class="registration">
-    <div class="container">
-        <div class="registration__inner">
-            <h1 class="title">Регистрация на гонку</h1>
-            <div class="registration__form">
-                <form class="registration-form" method="POST" action="/">
-                    <div class="registration-form__group registration-form__group_select">
-                        <label class="registration-form__group-label">Выбери гонку</label>
-                        <select class="registration-form__group-input registration-form__group-select"
-                                name="user-gonka">
-                            <option disabled selected>Гонка</option>
-							<?php foreach ( $gonkas as $gonkaKey=>$gonkaValue ): ?>
-                                <option value="<?=$gonkaKey?>"><?=$gonkaValue;?></option>
-							<?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="registration-form__group registration-form__group_select">
-                        <label class="registration-form__group-label">Формат участия</label>
-                        <select class="registration-form__group-input registration-form__group-select"
-                                name="user-gonka-type">
-                            <option value="Elite" selected>BettaCup Elite</option>
-                            <option value="Age">BettaCup Age</option>
-                            <option value="Kids">BettaCup Kids</option>
-                            <option value="Trail_5">BettaCup Trail 5</option>
-                            <option value="Trail_10">BettaCup Trail 10</option>
-                            <option value="TEAM_RELAY">TEAM RELAY</option>
-                            <option value="TEAM_RACE">TEAM RACE</option>
-                        </select>
-                    </div>
-                    <div class="registration-form__group">
-                        <label class="registration-form__group-label">Имя</label>
-                        <input class="registration-form__group-input" type="text" name="user-name" placeholder="Имя">
-                    </div>
-                    <div class="registration-form__group">
-                        <label class="registration-form__group-label">Email</label>
-                        <input class="registration-form__group-input" type="email" name="user-email"
-                               placeholder="Email">
-                    </div>
-                    <div class="registration-form__group">
-                        <label class="registration-form__group-label">Возраст</label>
-                        <input class="registration-form__group-input" type="number" name="user-age" placeholder="18">
-                    </div>
-                    <div class="registration-form__group">
-                        <div class="registration-form__group-sex">
-                            <div class="registration-form__group-sex-item">
-                                <label class="registration-form__group-label" for="user-male">Муж</label>
-                                <input class="registration-form__group-input" id="user-male" type="radio"
-                                       name="user-sex" value="male" checked="checked">
-                            </div>
-                            <div class="registration-form__group-sex-item">
-                                <label class="registration-form__group-label" for="user-female">Жен</label>
-                                <input class="registration-form__group-input" id="user-female" type="radio"
-                                       name="user-sex" value="female">
+<?php if (isset($_GET['step']) && $_GET['step'] == 'success') : ?>
+    <div class="registration">
+        <div class="container">
+            <div class="registration__inner">
+                <h1 class="title">Регистрация завершена</h1>
+                <div class="registration__form">
+                    <form class="registration-form" method="POST" action="<?= strtok($_SERVER["REQUEST_URI"], '?') ?>">
+                        <div class="registration-form__group registration-form__group_center">
+                            <button class="registration-form__group-submit" type="submit">Зарегестрировать ещё
+                            </button>
+                            <div style="margin-top:10px;">
+                                <a href="/my-account/my-applies">Посмотреть список регистраций</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="registration-form__group registration-form__group_select">
-                        <label class="registration-form__group-label">Группа</label>
-                        <select class="registration-form__group-input registration-form__group-select"
-                                name="user-group-type">
-                            <option disabled selected>Группа</option>
-                            <option value="Ниньзя">Ниньзя</option>
-                            <option value="М + Ж">М + Ж</option>
-                            <option value="M">M</option>
-                            <option value="Ж">Ж</option>
-                        </select>
-                    </div>
-                    <div class="registration-form__group">
-                        <div class="registration-form__group_is-group"><a
-                                    class="registration-form__group-submit registration-form__group-submit-js-1 registration-form__group-submit_tab registration-form__group-submit_active"
-                                    href="#">Один</a><a
-                                    class="registration-form__group-submit registration-form__group-submit-js-1 registration-form__group-submit_tab"
-                                    href="#" command>Команда</a>
-                            <div class="registration-form__command"><a
-                                        class="registration-form__group-submit registration-form__group-submit-js-2 registration-form__group-submit_tab registration-form__group-submit_active"
-                                        href="#">Хочу в команду</a><a
-                                        class="registration-form__group-submit registration-form__group-submit-js-2 registration-form__group-submit_tab"
-                                        href="#">Создать свою команду</a>
-                                <div class="registration-form__command-select-wrapp">
-                                    <div class="registration-form__group registration-form__group_select registration-form__command-select registration-form__command-select_active">
-                                        <label class="registration-form__group-label">Хочу в команду</label>
-                                        <select class="registration-form__group-input registration-form__group-select"
-                                                name="user-group-command">
-                                            <option disabled selected>Команда</option>
-                                            <option value="mtbank">mtbank</option>
-                                            <option value="69pixels">69pixels</option>
-                                            <option value="teslasuit">teslasuit</option>
-                                            <option value="oops">oops</option>
-                                        </select>
-                                    </div>
-                                    <div class="registration-form__group registration-form__command-select">
-                                        <label class="registration-form__group-label">Создать свою команду</label>
-                                        <input class="registration-form__group-input" type="text"
-                                               name="user-new-command" placeholder="Название команды">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="registration-form__group registration-form__group_center">
-                        <button class="registration-form__group-submit" type="submit" disabled="disabled">Оплатить
-                            билет
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php elseif (isset($_GET['step']) && $_GET['step'] == 'failed') : ?>
+    <div class="registration">
+        <div class="container">
+            <div class="registration__inner">
+                <h1 class="title">Произошла ошибка оплаты</h1>
+            </div>
+        </div>
+    </div>
+<?php elseif (isset($_GET['step']) && $_GET['step'] == 'pay'): ?>
+    <?php
+    $competitor = betta_get_competitor($_GET['competitorId']);
+    $type = betta_get_type_by_id($competitor['event_id'], $competitor['event_type_id']);
+    ?>
+    <div class="registration">
+        <div class="container">
+            <div class="registration__inner">
+                <h1 class="title">Оплата онлайн</h1>
+                <div class="registration__form">
+                    <form class="registration-form" method="POST" action="<?= betta_get_webpay_url() ?>">
+                        <?= betta_generate_payment_fields($competitor['id']) ?>
+                        <div class="registration-form__group">
+                            <label class="registration-form__group-label">Формат: <span
+                                        style="color: #e8471e"><?= $type['name'] ?></span></label>
+                        </div>
+                        <div class="registration-form__group">
+                            <label class="registration-form__group-label">Имя: <span
+                                        style="color: #e8471e"><?= $competitor['firstName'] . ' ' . $competitor['lastName'] ?></span></label>
+                        </div>
+                        <div class="registration-form__group">
+                            <label class="registration-form__group-label">Цена: <span
+                                        style="color: #e8471e"><?= $type['price'] ?></span></label>
+                        </div>
+                        <div class="registration-form__group registration-form__group_center">
+                            <button class="registration-form__group-submit" type="submit">Приступить к оплате
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php else:
+
+    $user = wp_get_current_user();
+
+    $events = get_betta_events();
+
+    $events = array_filter($events, function ($event) {
+        if (betta_get_event_status($event['id']) != BETTA_EVENT_STATUS_REGISTRATION_OPEN) {
+            return false;
+        }
+        return true;
+    });
+
+    $kids = false;
+    if (isset($_GET['kids'])) {
+        $kids = $_GET['kids'] === "yes";
+    }
+
+    $kidsData = isset($_POST['kid-first-name']);
+
+    if ($kidsData) {
+        $firstName = $_POST['kid-first-name'];
+
+        if (!trim($firstName)) {
+            $kidsErrors['kid-first-name'] = 'Поле не может быть пустым';
+        }
+        if (!trim($firstName)) {
+            $kidsErrors['kid-last-name'] = 'Поле не может быть пустым';
+        }
+        if (!trim($firstName)) {
+            $kidsErrors['kid-b-date'] = 'Поле не может быть пустым';
+        }
+    }
+
+    $competitor = new \Betta\Competitor($user);
+    if (isset($_POST['kid-b-date']) && isset($_POST['kid-sex']) && !$kidsErrors) {
+        $kidsFilter = [
+            'sex' => $_POST['kid-sex'],
+            'bdate' => $_POST['kid-b-date'],
+        ];
+    }
+
+    foreach ($events as $event) {
+        $categoriesForEvent = $competitor->filterCategories($event['categories'], $event['id'], $kidsFilter);
+        if ($categoriesForEvent) {
+            $filteredCategories[$event['id']] = $categoriesForEvent;
+        }
+    }
+
+    ?>
+
+
+    <div class="registration">
+        <div class="container">
+            <div class="registration__inner">
+                <h1 class="title">Регистрация на гонку</h1>
+                <div class="registration__form">
+                    <div class="registration-form__group_is-group"><a
+                                class="registration-form__group-submit registration-form__group-submit_tab<?php if (!isset($_GET['kids']) || $_GET['kids'] === "no"): ?> registration-form__group-submit_active<?php endif; ?>"
+                                href="?kids=no">Взрослый</a><a
+                                class="registration-form__group-submit registration-form__group-submit_tab<?php if (isset($_GET['kids']) && $_GET['kids'] === "yes"): ?> registration-form__group-submit_active<?php endif; ?>"
+                                href="?kids=yes" command>Ребёнок</a>
+                    </div>
+                    <?php if ($kids && (!$kidsData || $kidsErrors)): ?>
+                        <form class="registration-form" method="POST"
+                              action="<?= strtok($_SERVER["REQUEST_URI"], '?') ?>?kids=yes">
+                            <div class="registration-form__group">
+                                <label class="registration-form__group-label">Имя</label>
+                                <input class="registration-form__group-input" type="text" name="kid-first-name"
+                                       placeholder="Имя">
+                                <?php if ($kidsErrors['kid-first-name']): ?>
+                                    <span style="color: #e8471e;font-size: 12px;display: block;margin-top:4px;">Ошибка: <?= $kidsErrors['kid-first-name'] ?></span>
+                                <?php endif ?>
+                            </div>
+                            <div class="registration-form__group">
+                                <label class="registration-form__group-label">Фамилия</label>
+                                <input class="registration-form__group-input" type="text" name="kid-last-name"
+                                       placeholder="Фамилия">
+                                <?php if ($kidsErrors['kid-last-name']): ?>
+                                    <span style="color: #e8471e;font-size: 12px;display: block;margin-top:4px;">Ошибка: <?= $kidsErrors['kid-last-name'] ?></span>
+                                <?php endif ?>
+                            </div>
+                            <div class="registration-form__group-sex">
+                                <div class="registration-form__group-sex-item">
+                                    <label class="registration-form__group-label" for="user-male">Муж</label>
+                                    <input class="registration-form__group-input" style="width: 20px" id="user-male"
+                                           type="radio" name="kid-sex" value="male" checked="checked">
+                                </div>
+                                <div class="registration-form__group-sex-item">
+                                    <label class="registration-form__group-label" for="user-female">Жен</label>
+                                    <input class="registration-form__group-input" style="width: 20px" id="user-female"
+                                           type="radio" name="kid-sex" value="female">
+                                </div>
+                            </div>
+                            <div class="registration-form__group">
+                                <label class="registration-form__group-label">Дата рождения</label>
+                                <input class="registration-form__group-input" type="date" name="kid-b-date"
+                                       placeholder="Дата рождения">
+                                <?php if ($kidsErrors['kid-b-date']): ?>
+                                    <span style="color: #e8471e;font-size: 12px;display: block;margin-top:4px;">Ошибка: <?= $kidsErrors['kid-b-date'] ?></span>
+                                <?php endif ?>
+                            </div>
+                            <div id="price-container" style="font-size:16px;color: #e8471e">Нажимая "Продолжить", вы
+                                подтверждаете, что является родителем/законным опекуном ребенка
+                            </div>
+                            <div class="registration-form__group registration-form__group_center">
+                                <button class="registration-form__group-submit" type="submit">Продолжить
+                                </button>
+                            </div>
+                        </form>
+                    <?php else: ?>
+                        <form class="registration-form" method="POST" action="/betta/register">
+                            <?php if ($kids && $kidsData): ?>
+                                <div class="registration-form__group">
+                                    <label class="registration-form__group-label">Имя</label>
+                                    <input type="hidden" name="kid-first-name" value="<?= $_POST['kid-first-name'] ?>">
+                                    <span style="color: #e8471e"><?= $_POST['kid-first-name'] ?></span>
+                                </div>
+                                <div class="registration-form__group">
+                                    <label class="registration-form__group-label">Фамилия</label>
+                                    <input type="hidden" name="kid-last-name" value="<?= $_POST['kid-last-name'] ?>">
+                                    <span style="color: #e8471e"><?= $_POST['kid-last-name'] ?></span>
+                                </div>
+                                <div class="registration-form__group">
+                                    <label class="registration-form__group-label">Пол</label>
+                                    <input type="hidden" name="kid-sex" value="<?= $_POST['kid-sex'] ?>">
+                                    <span style="color: #e8471e"><?= $_POST['kid-sex'] === "male" ? 'муж' : 'жен' ?></span>
+                                </div>
+                                <div class="registration-form__group">
+                                    <label class="registration-form__group-label">Дата рождения</label>
+                                    <input type="hidden" name="kid-b-date" value="<?= $_POST['kid-b-date'] ?>">
+                                    <span style="color: #e8471e"><?= date('d.m.Y', strtotime($_POST['kid-b-date'])); ?></span>
+                                </div>
+                            <?php endif ?>
+                            <div class="registration-form__group registration-form__group_select">
+                                <label class="registration-form__group-label">Выбери гонку</label>
+                                <select class="registration-form__group-input registration-form__group-select"
+                                        name="events" id="events">
+                                    <option disabled selected>Выберите</option>
+                                </select>
+                            </div>
+                            <div class="registration-form__group registration-form__group_select"
+                                 id="event-category-container">
+                                <label class="registration-form__group-label">Формат участия</label>
+                                <select class="registration-form__group-input registration-form__group-select"
+                                        name="event-category" id="event-category">
+                                    <option disabled selected>Выберите</option>
+                                </select>
+                            </div>
+                            <div class="registration-form__group registration-form__group_select"
+                                 id="event-type-container">
+                                <label class="registration-form__group-label">Группа</label>
+                                <select class="registration-form__group-input registration-form__group-select"
+                                        name="event-type" id="event-type">
+                                    <option disabled selected>Выберите</option>
+                                </select>
+                            </div>
+                            <div class="registration-form__group" id="team-container">
+                                <label class="registration-form__group-label">Команда</label>
+                                <input class="registration-form__group-input" type="text"
+                                       name="team-name" id="team-name" placeholder="Название команды">
+                            </div>
+                            <div id="price-container" style="font-size:30px;color: #fff">Цена: <span
+                                        style="color: #e8471e;" class="price-placeholder"></span></div>
+                            <div class="registration-form__group registration-form__group_center">
+                                <button class="registration-form__group-submit" type="submit" disabled="disabled"
+                                        id="pay-offline" name="pay-offline">Оплатить
+                                    на месте
+                                </button>
+                                <button class="registration-form__group-submit" type="submit" name="pay-online"
+                                        id="pay-online" disabled="disabled">Оплатить
+                                    онлайн
+                                </button>
+                            </div>
+                        </form>
+
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php if (!$kids || ($kids && $kidsData && !$kidsErrors)): ?>
+    <script language="JavaScript">
+
+        let events = <?= json_encode($events, JSON_UNESCAPED_UNICODE) ?>;
+        let filteredCategories = <?= json_encode($filteredCategories, JSON_UNESCAPED_UNICODE) ?>;
+
+        let kidsForm = <?= $kids ? 'true' : 'false' ?>;
+
+        let selectEvent = jQuery('#events');
+
+        let categoryContainer = jQuery('#event-category-container');
+        let typeContainer = jQuery('#event-type-container');
+        let teamContainer = jQuery('#team-container');
+        let teamName = jQuery('#team-name');
+        let priceContainer = jQuery('#price-container');
+        let pricePlaceholder = jQuery('.price-placeholder');
+        let payOfflineButton = jQuery('#pay-offline');
+        let payOnlineButton = jQuery('#pay-online');
+
+
+        let selectCategory = jQuery('#event-category');
+        let selectType = jQuery('#event-type');
+
+        fillEvents(selectEvent, events);
+
+        function fillEvents(select, data) {
+            var options = select.prop('options');
+
+            jQuery('option:enabled', selectEvent).remove();
+
+            jQuery.each(data, function (key, event) {
+                options[options.length] = new Option(event.name, event.id);
+            });
+        }
+
+        function fillCategories(select, data) {
+            var options = select.prop('options');
+
+            jQuery('option:enabled', selectCategory).remove();
+            jQuery('option:disabled', selectCategory).attr('selected', 'selected');
+
+            jQuery.each(data, function (key, category) {
+                options[options.length] = new Option(category.name, category.id);
+            });
+            return true;
+        }
+
+        function fillTypes(select, data, selectedCategoryId) {
+            var options = select.prop('options');
+
+            jQuery('option:enabled', selectType).remove();
+            jQuery('option:disabled', selectType).attr('selected', 'selected');
+
+            jQuery.each(data, function (key, category) {
+                if (category.id === parseInt(selectedCategoryId)) {
+                    jQuery.each(category.types, function (key, type) {
+                        option = new Option(type.name, type.id);
+                        jQuery(option).attr('data-price', type.price);
+                        jQuery(option).attr('data-team', type.team);
+                        options[options.length] = option;
+
+                    });
+                }
+            });
+        }
+
+        selectEvent.on('change', onEventSelect);
+        selectCategory.on('change', onCategorySelect);
+        selectType.on('change', onTypeSelect);
+        teamName.on('input', onTeamChange);
+
+        function onEventSelect() {
+            payOfflineButton.attr('disabled', 'disabled');
+            payOnlineButton.attr('disabled', 'disabled');
+            jQuery('option:enabled', selectType).remove();
+            typeContainer.hide();
+            categoryContainer.hide()
+            pricePlaceholder.text('');
+            priceContainer.hide();
+            teamContainer.hide();
+
+            fillCategories(selectCategory, filteredCategories[selectEvent.val()]);
+            categoryContainer.show()
+        }
+
+        function onCategorySelect() {
+            payOfflineButton.attr('disabled', 'disabled');
+            payOnlineButton.attr('disabled', 'disabled');
+            jQuery('option:enabled', selectType).remove();
+            typeContainer.hide();
+            pricePlaceholder.text('');
+            priceContainer.hide();
+            teamContainer.hide();
+
+            fillTypes(selectType, filteredCategories[selectEvent.val()], selectCategory.val());
+            typeContainer.show()
+        }
+
+        function onTypeSelect() {
+            pricePlaceholder.text(jQuery("option:selected", selectType).data('price'));
+            priceContainer.show();
+
+            if (jQuery("option:selected", selectType).data('team') !== true) {
+                payOfflineButton.removeAttr('disabled');
+                payOnlineButton.removeAttr('disabled');
+                teamContainer.hide();
+            } else {
+                teamContainer.show();
+            }
+        }
+
+        function onTeamChange() {
+            pricePlaceholder.text(jQuery("option:selected", selectType).data('price'));
+            priceContainer.show();
+
+            if (teamName.val().trim() !== '') {
+                payOfflineButton.removeAttr('disabled');
+                payOnlineButton.removeAttr('disabled');
+            } else {
+                payOfflineButton.attr('disabled', 'disabled');
+                payOnlineButton.attr('disabled', 'disabled');
+                teamName.val('');
+            }
+        }
+
+        jQuery(function () {
+            categoryContainer.hide();
+            typeContainer.hide();
+            teamContainer.hide();
+            priceContainer.hide();
+        });
+
+    </script>
+<?php endif; ?>
+<?php endif; ?>

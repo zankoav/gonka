@@ -47,14 +47,15 @@
 
 
 	function my_custom_endpoints() {
-		add_rewrite_endpoint( 'my-commands', EP_ROOT | EP_PAGES );
+		add_rewrite_endpoint( 'my-teams', EP_ROOT | EP_PAGES );
+		add_rewrite_endpoint( 'my-applies', EP_ROOT | EP_PAGES );
 //		add_rewrite_endpoint( 'profile', EP_ROOT | EP_PAGES );
 	}
 
 	add_action( 'init', 'my_custom_endpoints' );
 
 	function my_custom_query_vars( $vars ) {
-		$vars[] = 'my-commands';
+		$vars[] = 'betta-profile';
 //		$vars[] = 'profile';
 
 		return $vars;
@@ -74,7 +75,8 @@
 			//'edit-address'    => __( 'Addresses', 'woocommerce' ),
 			//'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
 			'edit-account'    => __( 'Изменить профиль', 'woocommerce' ),
-			'my-commands'    => 'Мои команды',
+			'my-teams'    => 'Мои команды',
+			'my-applies'    => 'Мои регистрации',
 			'customer-logout' => __( 'Выйти', 'woocommerce' ),
 		);
 
@@ -83,11 +85,17 @@
 
 	add_filter( 'woocommerce_account_menu_items', 'my_custom_my_account_menu_items' );
 
-	function my_custom_endpoint_content() {
-		include 'woocommerce/myaccount/my-commands.php';
+	function my_custom_endpoint_applies()
+    {
+        include 'woocommerce/myaccount/my-applies.php';
+    }
+
+	function my_custom_endpoint_teams() {
+        include 'woocommerce/myaccount/my-teams.php';
 	}
 
-	add_action( 'woocommerce_account_my-commands_endpoint', 'my_custom_endpoint_content' );
+	add_action( 'woocommerce_account_my-teams_endpoint', 'my_custom_endpoint_teams' );
+	add_action( 'woocommerce_account_my-applies_endpoint', 'my_custom_endpoint_applies' );
 
 //	function profile_endpoint_content() {
 //		include 'woocommerce/myaccount/profile.php';
@@ -106,13 +114,13 @@
 			'posts_per_page' => 1,
 			'post_type'=>'gonka',
 			'meta_query' => array(
-				'gonka_date' => array(
+				array(
 					'key'     => 'gonka_start',
-					'value'   => date('Y.m.d'),
+					'value'   => time('now'),
 					'compare' => '>',
 				),
 			),
-			'orderby' => 'gonka_date',
+			'orderby' => 'gonka_start',
 			'order'   => 'ASC',
 		);
 
@@ -122,7 +130,7 @@
 		$time = get_post_meta($gonka->ID, 'gonka_start', 1);
 
 		if(!empty($time)){
-            return $time;
+            return $time * 1000;
         }
 
 
