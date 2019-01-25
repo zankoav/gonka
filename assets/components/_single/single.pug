@@ -1,6 +1,7 @@
 mixin _single(title, image)
     li.single
-        .single__content(style=`background-image:url(${image})`)
+        .single__content
+            .single__image-bg(style=`background-image:url(${image})`)
             .single__from
                 .single__date 09.02.2018
                 .single__by by
