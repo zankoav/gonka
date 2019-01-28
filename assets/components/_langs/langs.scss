@@ -45,7 +45,7 @@
         a{
             color: $WHITE;
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 500;
             font-size: 16px;
             @media (min-width: map_get($MEDIA, SM)) {
                 font-size: 14px;
@@ -56,7 +56,7 @@
     &__current{
         color: $WHITE;
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 16px;
         transition: all .4s;
 

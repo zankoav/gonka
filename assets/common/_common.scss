@@ -6,7 +6,7 @@
  */
 
 //@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700,900|Montserrat:400,500,600,700,800,900&subset=cyrillic,cyrillic-ext');
-@import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,900&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600,700,900&subset=cyrillic');
 
 @import './../../node_modules/swiper/dist/css/swiper.min.css';
 @import '~@fortawesome/fontawesome-free/css/all';
@@ -15,6 +15,7 @@
 
 body {
     font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
     background-color: $DARK;
 }
 
@@ -109,7 +110,7 @@ a {
             margin-right: 1rem;
             text-transform: uppercase;
             color: $GRAY_100;
-            font-weight: bold;
+            font-weight: 500;
             flex: 0 0 auto;
         }
 
@@ -221,7 +222,7 @@ a {
             }
 
             a {
-                font-weight: bold;
+                font-weight: 500;
                 color: $RED;
             }
         }

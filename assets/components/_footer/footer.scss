@@ -27,7 +27,7 @@
         a{
             color: $WHITE;
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 500;
             font-size: 16px;
             transition: .4s;
         }
@@ -107,7 +107,7 @@
     &__title{
         font-family: 'Exo 2', sans-serif;
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 22px;
         margin-bottom: 2rem;
 
