@@ -141,8 +141,9 @@
         if ($validCoupon) {
 
             foreach ($categoriesForEvent as &$category) {
-                foreach($category['types'] as &$type)
-                    $type['price'] = ($type['price'] / 100) * (100-$validCoupon['discount']);
+                foreach($category['types'] as &$type) {
+                    $type['price'] = round(($type['price'] / 100) * (100 - $validCoupon['discount']), 2, PHP_ROUND_HALF_DOWN);
+                }
             }
         }
 
@@ -164,7 +165,10 @@
                                 <label class="registration-form__group-label">Использовать купон</label>
                                 <input style="width:59%" class="registration-form__group-input" type="text" name="coupon"
                                        placeholder="Купон" value="<?=isset($_GET['coupon']) ? $_GET['coupon'] : ''?>">
-                                <button style="width:40%"class="registration-form__group-submit" type="submit">Применить
+                                <?php if (isset($_GET['kids'])) : ?>
+                                <input type="hidden" name="kids" value="<?=$_GET['kids']?>">
+                                <?php endif; ?>
+                                <button style="width:40%; padding: 0.62rem 2rem;" class="registration-form__group-submit" type="submit">Применить
                                 </button>
                                 <?php if ($couponErrors['invalid']): ?>
                                 <div>
@@ -176,13 +180,17 @@
                     <?php endif ?>
                     <div class="registration-form__group_is-group"><a
                                 class="registration-form__group-submit registration-form__group-submit_tab<?php if (!isset($_GET['kids']) || $_GET['kids'] === "no"): ?> registration-form__group-submit_active<?php endif; ?>"
-                                href="?kids=no">Взрослый</a><a
+                                href="?kids=no<?=$validCoupon ? '&coupon=' . $validCoupon['code']:''?>">Взрослый</a><a
                                 class="registration-form__group-submit registration-form__group-submit_tab<?php if (isset($_GET['kids']) && $_GET['kids'] === "yes"): ?> registration-form__group-submit_active<?php endif; ?>"
-                                href="?kids=yes">Ребёнок</a>
+                                href="?kids=yes<?=$validCoupon ? '&coupon=' . $validCoupon['code']:''?>">Ребёнок</a>
                     </div>
                     <?php if ($kids && (!$kidsData || $kidsErrors)): ?>
                         <form class="registration-form" method="POST"
-                              action="<?= strtok($_SERVER["REQUEST_URI"], '?') ?>?kids=yes">
+                              action="<?= strtok($_SERVER["REQUEST_URI"], '?') ?>?kids=yes<?=$validCoupon ? '&coupon=' . $validCoupon['code']:''?>">
+                            <?php if ($validCoupon):?>
+                                <input type="hidden" name="coupon" value="<?=$validCoupon['code']?>">
+                                <div style="padding: 10px;margin: 10px 0 20px 0 ;border:1px dashed;font-size:16px;color: #aaa">Использован купон <?=$validCoupon['code'] ?> со скидкой <?=$validCoupon['discount'] ?>%</div>
+                            <?php endif; ?>
                             <div class="registration-form__group">
                                 <label class="registration-form__group-label">Имя</label>
                                 <input class="registration-form__group-input" type="text" name="kid-first-name"
@@ -231,8 +239,9 @@
                         <form class="registration-form" method="POST" action="/betta/register">
                             <?php if ($validCoupon):?>
                                 <input type="hidden" name="coupon" value="<?=$validCoupon['code']?>">
-                                <div style="font-size:16px;color: #e8471e">Купон использован <?=$validCoupon['code'] ?> со скидкой <?=$validCoupon['discount'] ?>%</div>
+                                <div style="padding: 10px;margin: 10px 0 20px 0 ;border:1px dashed;font-size:16px;color: #aaa">Использован купон <?=$validCoupon['code'] ?> со скидкой <?=$validCoupon['discount'] ?>%</div>
                             <?php endif; ?>
+                            <a style="font-size: 20px;" target="_blank" href="<?=get_permalink(get_page_by_path('faq'))?>">Как правильно выбрать формат?</a>
                             <?php if ($kids && $kidsData): ?>
                                 <div class="registration-form__group">
                                     <label class="registration-form__group-label">Имя</label>
@@ -282,6 +291,9 @@
                                 <label class="registration-form__group-label">Команда</label>
                                 <input class="registration-form__group-input" type="text"
                                        name="team-name" id="team-name" placeholder="Название команды">
+                            </div>
+                            <div class="registration-form__group">
+                                <input style="margin: 0 10px 0 0;" type="checkbox" name="transfer" id="transfer-field"><label style="display: inline; cursor: pointer;font-size:14px;" class="registration-form__group-label" for="transfer-field">Нужен трансфер</label>
                             </div>
                             <div id="price-container" style="font-size:30px;color: #fff">Цена: <span
                                         style="color: #e8471e;" class="price-placeholder"></span></div>
