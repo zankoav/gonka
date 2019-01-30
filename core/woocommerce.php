@@ -51,7 +51,7 @@
 			$userdata = new WP_Error(
 				'betta_confirmation_error',
 				Lang::get( "Attention: Your account is inactive." ) .
-				'<a href="/my-account/?u=' . $userdata->ID . '">' . Lang::get( 'Send_again' ) . $userdata->user_email . '</a>'
+				' <a href="/my-account/?u=' . $userdata->ID . '">' . Lang::get( 'Send_again' ) . $userdata->user_email . '</a>'
 			);
 		}
 

@@ -23,6 +23,21 @@
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
+<style>
+    .woocommerce-error {
+        padding: 1em 2em 1em 3.5em !important;
+    }
+
+    .woocommerce-notices-wrapper {
+        margin: 0 0 30px;
+    }
+
+    .woocommerce {
+        flex-direction: column !important;
+    }
+
+</style>
+
 <div class="u-columns col2-set" id="customer_login">
 
     <div class="u-column1 col-1">
@@ -31,7 +46,7 @@
 
         <h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
-        <form class="woocommerce-form woocommerce-form-login login" method="post">
+        <form class="woocommerce-form woocommerce-form-login login" method="post" action="/my-account">
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -113,7 +128,7 @@
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_user_date">Дата рождения&nbsp;<span class="required">*</span></label>
-                <input type="date" class="woocommerce-Input woocommerce-Input--date input-date" name="user-date"
+                <input type="text" class="datepicker woocommerce-Input woocommerce-Input--date input-date" name="user-date"
                        id="reg_user_date"
                        autocomplete="user-date"
                        value="<?php echo ( ! empty( $_POST['user-date'] ) ) ? esc_attr( wp_unslash( $_POST['user-date'] ) ) : ''; ?>"/>
@@ -126,19 +141,18 @@
                 <div class="radio-group-wrapp">
                     <div class="radio-group">
                         <label for="reg_user_sex_male">Мужчина</label>
-                        <input type="radio" class="woocommerce-Input woocommerce-Input--radio input-radio"
+                        <input type="radio" class="woocommerce-Input woocommerce-Input--radio input-radio" style="width:20px;"
                                name="user-sex"
                                id="reg_user_sex_male"
                                value="male"
-                               checked="checked"
                         />
                     </div>
                     <div class="radio-group">
                         <label for="reg_user_sex_fmale">Женщина</label>
-                        <input type="radio" class="woocommerce-Input woocommerce-Input--radio input-radio"
+                        <input type="radio" class="woocommerce-Input woocommerce-Input--radio input-radio"  style="width:20px;"
                                name="user-sex"
                                id="reg_user_sex_fmale"
-                               value="fmale"/>
+                               value="female"/>
                     </div>
                 </div>
                 <span class="contacts__form-group-message"></span>
@@ -178,9 +192,9 @@
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_phone">Телефон (Формат +375 XX XXX XX XX)&nbsp;<span
                             class="required">*</span></label>
-                <input type="tel" pattern="+375 [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}"
+                <input type="text"
                        class="woocommerce-Input woocommerce-Input--text input-text" name="phone"
-                       id="reg_phone" autocomplete="phone" required
+                       id="reg_phone" required
                        value="<?php echo ( ! empty( $_POST['phone'] ) ) ? esc_attr( wp_unslash( $_POST['phone'] ) ) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
                 <span class="contacts__form-group-message"></span>
             </p>
@@ -217,5 +231,11 @@
 
 </div>
 <?php endif; ?>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".datepicker").datepicker({ dateFormat: 'dd.mm.yy', changeMonth: true, changeYear: true, yearRange: "1930:2015" });
+    });
+</script>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>

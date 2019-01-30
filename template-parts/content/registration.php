@@ -1,3 +1,13 @@
+<?php if (! is_user_logged_in()) :?>
+    <div class="registration">
+        <div class="container">
+            <div class="registration__inner">
+                <h1 class="title">Для регистрации на гонку необходимо <a href="/my-account">зарегистрироваться и войти</a> на сайт</h1>
+            </div>
+        </div>
+    </div>
+<?php else: ?>
+
 <?php if (isset($_GET['step']) && $_GET['step'] == 'success') : ?>
     <div class="registration">
         <div class="container">
@@ -28,6 +38,7 @@
 <?php elseif (isset($_GET['step']) && $_GET['step'] == 'pay'): ?>
     <?php
     $competitor = betta_get_competitor($_GET['competitorId']);
+    $coupon = betta_get_coupon($competitor['coupon']);
     $type = betta_get_type_by_id($competitor['event_id'], $competitor['event_type_id']);
     ?>
     <div class="registration">
@@ -36,7 +47,7 @@
                 <h1 class="title">Оплата онлайн</h1>
                 <div class="registration__form">
                     <form class="registration-form" method="POST" action="<?= betta_get_webpay_url() ?>">
-                        <?= betta_generate_payment_fields($competitor['id']) ?>
+                        <?= count($coupon) ? betta_generate_payment_fields($competitor['id'], $coupon[0]) : betta_generate_payment_fields($competitor['id']) ?>
                         <div class="registration-form__group">
                             <label class="registration-form__group-label">Формат: <span
                                         style="color: #e8471e"><?= $type['name'] ?></span></label>
@@ -47,7 +58,7 @@
                         </div>
                         <div class="registration-form__group">
                             <label class="registration-form__group-label">Цена: <span
-                                        style="color: #e8471e"><?= $type['price'] ?></span></label>
+                                        style="color: #e8471e"><?= $competitor['totalPrice'] ?> руб.</span></label>
                         </div>
                         <div class="registration-form__group registration-form__group_center">
                             <button class="registration-form__group-submit" type="submit">Приступить к оплате
@@ -60,14 +71,34 @@
     </div>
 <?php else:
 
-    $user = wp_get_current_user();
+    $bettaUser = Betta\User::getCurrent();
 
     $events = get_betta_events();
+
+    $validCoupon = false;
+
+    if (isset($_GET['coupon'])) {
+        $coupon = betta_get_coupon($_GET['coupon'])[0];
+        if (!count($coupon)) {
+            $couponErrors['invalid'] = 'Неверный купон';
+        } else {
+            if ($coupon['used'] == "1") {
+                $couponErrors['invalid'] = 'Купон уже использован';
+            } else {
+                $validCoupon = $coupon;
+            }
+        }
+    }
 
     $events = array_filter($events, function ($event) {
         if (betta_get_event_status($event['id']) != BETTA_EVENT_STATUS_REGISTRATION_OPEN) {
             return false;
         }
+
+        if (!$event['categories']) {
+            return false;
+        }
+
         return true;
     });
 
@@ -92,7 +123,7 @@
         }
     }
 
-    $competitor = new \Betta\Competitor($user);
+    $competitor = new \Betta\Competitor($bettaUser);
     if (isset($_POST['kid-b-date']) && isset($_POST['kid-sex']) && !$kidsErrors) {
         $kidsFilter = [
             'sex' => $_POST['kid-sex'],
@@ -101,7 +132,20 @@
     }
 
     foreach ($events as $event) {
+
+        if (!$event['categories']) {
+            continue;
+        }
+
         $categoriesForEvent = $competitor->filterCategories($event['categories'], $event['id'], $kidsFilter);
+        if ($validCoupon) {
+
+            foreach ($categoriesForEvent as &$category) {
+                foreach($category['types'] as &$type)
+                    $type['price'] = ($type['price'] / 100) * (100-$validCoupon['discount']);
+            }
+        }
+
         if ($categoriesForEvent) {
             $filteredCategories[$event['id']] = $categoriesForEvent;
         }
@@ -109,17 +153,32 @@
 
     ?>
 
-
     <div class="registration">
         <div class="container">
             <div class="registration__inner">
                 <h1 class="title">Регистрация на гонку</h1>
                 <div class="registration__form">
+                    <?php if(!$validCoupon) : ?>
+                        <form clas="registration-form" method="get"?>
+                            <div class="registration-form__group">
+                                <label class="registration-form__group-label">Использовать купон</label>
+                                <input style="width:59%" class="registration-form__group-input" type="text" name="coupon"
+                                       placeholder="Купон" value="<?=isset($_GET['coupon']) ? $_GET['coupon'] : ''?>">
+                                <button style="width:40%"class="registration-form__group-submit" type="submit">Применить
+                                </button>
+                                <?php if ($couponErrors['invalid']): ?>
+                                <div>
+                                    <span style="color: #e8471e;font-size: 16px;display: block;margin-top:4px;"><?=$couponErrors['invalid']?></span>
+                                </div>
+                                <?php endif ?>
+                            </div>
+                        </form>
+                    <?php endif ?>
                     <div class="registration-form__group_is-group"><a
                                 class="registration-form__group-submit registration-form__group-submit_tab<?php if (!isset($_GET['kids']) || $_GET['kids'] === "no"): ?> registration-form__group-submit_active<?php endif; ?>"
                                 href="?kids=no">Взрослый</a><a
                                 class="registration-form__group-submit registration-form__group-submit_tab<?php if (isset($_GET['kids']) && $_GET['kids'] === "yes"): ?> registration-form__group-submit_active<?php endif; ?>"
-                                href="?kids=yes" command>Ребёнок</a>
+                                href="?kids=yes">Ребёнок</a>
                     </div>
                     <?php if ($kids && (!$kidsData || $kidsErrors)): ?>
                         <form class="registration-form" method="POST"
@@ -170,6 +229,10 @@
                         </form>
                     <?php else: ?>
                         <form class="registration-form" method="POST" action="/betta/register">
+                            <?php if ($validCoupon):?>
+                                <input type="hidden" name="coupon" value="<?=$validCoupon['code']?>">
+                                <div style="font-size:16px;color: #e8471e">Купон использован <?=$validCoupon['code'] ?> со скидкой <?=$validCoupon['discount'] ?>%</div>
+                            <?php endif; ?>
                             <?php if ($kids && $kidsData): ?>
                                 <div class="registration-form__group">
                                     <label class="registration-form__group-label">Имя</label>
@@ -223,10 +286,14 @@
                             <div id="price-container" style="font-size:30px;color: #fff">Цена: <span
                                         style="color: #e8471e;" class="price-placeholder"></span></div>
                             <div class="registration-form__group registration-form__group_center">
+                                <?php
+                                /**
                                 <button class="registration-form__group-submit" type="submit" disabled="disabled"
                                         id="pay-offline" name="pay-offline">Оплатить
                                     на месте
                                 </button>
+                                **/
+                                ?>
                                 <button class="registration-form__group-submit" type="submit" name="pay-online"
                                         id="pay-online" disabled="disabled">Оплатить
                                     онлайн
@@ -255,7 +322,7 @@
         let teamName = jQuery('#team-name');
         let priceContainer = jQuery('#price-container');
         let pricePlaceholder = jQuery('.price-placeholder');
-        let payOfflineButton = jQuery('#pay-offline');
+        <?php // let payOfflineButton = jQuery('#pay-offline'); ?>
         let payOnlineButton = jQuery('#pay-online');
 
 
@@ -311,7 +378,7 @@
         teamName.on('input', onTeamChange);
 
         function onEventSelect() {
-            payOfflineButton.attr('disabled', 'disabled');
+            <?php // payOfflineButton.attr('disabled', 'disabled'); ?>
             payOnlineButton.attr('disabled', 'disabled');
             jQuery('option:enabled', selectType).remove();
             typeContainer.hide();
@@ -325,7 +392,7 @@
         }
 
         function onCategorySelect() {
-            payOfflineButton.attr('disabled', 'disabled');
+            <?php // payOfflineButton.attr('disabled', 'disabled'); ?>
             payOnlineButton.attr('disabled', 'disabled');
             jQuery('option:enabled', selectType).remove();
             typeContainer.hide();
@@ -338,11 +405,11 @@
         }
 
         function onTypeSelect() {
-            pricePlaceholder.text(jQuery("option:selected", selectType).data('price'));
+            pricePlaceholder.text(jQuery("option:selected", selectType).data('price')+' руб.');
             priceContainer.show();
 
             if (jQuery("option:selected", selectType).data('team') !== true) {
-                payOfflineButton.removeAttr('disabled');
+                <?php //payOfflineButton.removeAttr('disabled'); ?>
                 payOnlineButton.removeAttr('disabled');
                 teamContainer.hide();
             } else {
@@ -351,14 +418,14 @@
         }
 
         function onTeamChange() {
-            pricePlaceholder.text(jQuery("option:selected", selectType).data('price'));
+            pricePlaceholder.text(jQuery("option:selected", selectType).data('price')+' руб.');
             priceContainer.show();
 
             if (teamName.val().trim() !== '') {
-                payOfflineButton.removeAttr('disabled');
+                <?php // payOfflineButton.removeAttr('disabled'); ?>
                 payOnlineButton.removeAttr('disabled');
             } else {
-                payOfflineButton.attr('disabled', 'disabled');
+                <?php // payOfflineButton.attr('disabled', 'disabled'); ?>
                 payOnlineButton.attr('disabled', 'disabled');
                 teamName.val('');
             }
@@ -372,5 +439,6 @@
         });
 
     </script>
+<?php endif; ?>
 <?php endif; ?>
 <?php endif; ?>

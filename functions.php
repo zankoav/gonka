@@ -35,7 +35,17 @@
 	require_once __DIR__ . '/core/cmb2/faq.php';
 
 
-	add_filter( 'the_title', function ( $title, $id ) {
+function betta_enqueue_datepicker() {
+    // Load the datepicker script (pre-registered in WordPress).
+    wp_enqueue_script( 'jquery-ui-datepicker' );
+
+    // You need styling for the datepicker. For simplicity I've linked to Google's hosted jQuery UI CSS.
+    wp_register_style( 'jquery-ui', '//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css' );
+    wp_enqueue_style( 'jquery-ui' );
+}
+add_action( 'wp_enqueue_scripts', 'betta_enqueue_datepicker' );
+
+add_filter( 'the_title', function ( $title, $id ) {
 		$titleLang = get_post_meta( $id, 'gonka_title_' . Lang::current(), 1 );
 		if ( isset( $titleLang ) and ! empty( $titleLang ) ) {
 			return $titleLang;
@@ -74,8 +84,8 @@
 			'dashboard'       => __( 'Профиль', 'woocommerce' ),
 			//'edit-address'    => __( 'Addresses', 'woocommerce' ),
 			//'payment-methods' => __( 'Payment Methods', 'woocommerce' ),
-			'edit-account'    => __( 'Изменить профиль', 'woocommerce' ),
-			'my-teams'    => 'Мои команды',
+			'edit-account'    => __( 'Изменить пароль', 'woocommerce' ),
+//			'my-teams'    => 'Мои команды',
 			'my-applies'    => 'Мои регистрации',
 			'customer-logout' => __( 'Выйти', 'woocommerce' ),
 		);
@@ -142,4 +152,13 @@
 	function add_custom_registrations_fields(){
 		get_template_part( 'template-parts/registration/registration' );
 	}
+
+add_filter('woocommerce_save_account_details_required_fields', 'wc_save_account_details_required_fields' );
+function wc_save_account_details_required_fields( $required_fields ){
+    unset( $required_fields['account_first_name'] );
+    unset( $required_fields['account_last_name'] );
+    unset( $required_fields['account_display_name'] );
+    unset( $required_fields['account_email'] );
+    return $required_fields;
+}
 ?>

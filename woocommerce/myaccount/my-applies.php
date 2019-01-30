@@ -80,7 +80,7 @@
         <div class="event-card-row"><label>Команда: </label><?= $competition['team_name'] ?></div>
         <?php endif; ?>
 
-        <div class="event-card-row"><label>Возраст в году проеведения: </label> <?= (int)date('Y', strtotime($competition['eventDate'])) - date('Y', strtotime($competition['bDate'])) ?>
+        <div class="event-card-row"><label>Возраст в году проведения: </label> <?= (int)date('Y', strtotime($competition['eventDate'])) - date('Y', strtotime($competition['bDate'])) ?>
         </div>
         <div class="event-card-row"><label>Дата участия: </label> <?= date('d.m.Y', strtotime($competition['eventDate'])) ?></div>
         <div class="event-card-row"><label>Дата регистрации: </label> <?= date('d.m.Y', strtotime($competition['registeredAt'])) ?></div>
@@ -94,7 +94,10 @@
             </div>
             <div class="event-card-row payment-code"><label>Код платежа: </label> <?= $competition['order_id'] ?></div>
         <?php endif; ?>
-        <div class="event-card-row"><label>Стоимость: </label> <?= $competition['price'] . ' руб.' ?></div>
+        <?php if ($competition['discount']): ?>
+        <div class="event-card-row"><label>Скидка: </label> <?= $competition['discount'] ?>%</div>
+        <?php endif; ?>
+        <div class="event-card-row"><label>Стоимость: </label> <?= $competition['totalPrice'] . ' руб.' ?></div>
     </div>
     <?php endforeach; ?>
 </div>
