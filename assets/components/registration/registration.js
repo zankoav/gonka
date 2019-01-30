@@ -1,5 +1,7 @@
 import './registration.scss';
 import $ from 'jquery';
+import Inputmask from "inputmask";
+
 
 $('.registration-form__group-submit-js-1').on('click', function (event) {
     event.preventDefault();
@@ -20,3 +22,6 @@ $('.registration-form__group-submit-js-2').on('click', function (event) {
         $('.registration-form__command-select').toggleClass('registration-form__command-select_active');
     }
 });
+
+let reg_phone = document.getElementById('reg_phone');
+Inputmask({ regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);

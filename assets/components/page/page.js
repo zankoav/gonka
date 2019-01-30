@@ -1,6 +1,7 @@
 import './page.scss';
 import $ from 'jquery';
 import {Validator} from "../../utils/_validateor";
+import Inputmask from 'inputmask';
 
 $('[name="user-sex"]').on('change', buttonPressed);
 
@@ -54,7 +55,7 @@ function sendData(data) {
             if(response.status == 2){
                 alert('Пользователь с таким email уже существует. Авторизируйтесь.');
             }else if(response.status == 1){
-                alert('Поздравляем с регистрацией! Для подтверждения аккаунта перейдите по ссылке отправленной вам в писме на почту');
+                alert('Поздравляем с регистрацией! Для подтверждения аккаунта перейдите по ссылке отправленной вам в письме на почту');
             }else{
                 alert('Ошибка соединения, попробуйте позже');
             }
@@ -218,9 +219,8 @@ function isFormValid() {
         user_password_confirm: user_password_confirm
     };
 
-    console.log(data);
-    
-
-
     return data;
 }
+
+let reg_phone = document.getElementById('reg_phone');
+Inputmask({ regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
