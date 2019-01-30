@@ -24,7 +24,7 @@
     padding: 2rem 4rem;
     background: $DARK_2;
 
-    button{
+    button {
         margin-top: 2rem;
     }
 
@@ -51,20 +51,7 @@
         }
 
         &_select {
-            &:after {
-                content: '\27A4';
-                width: 36px;
-                height: 36px;
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: rotate(90deg);
-                color: $GRAY_DARK;
-                z-index: 1;
-            }
+
         }
     }
 
@@ -103,6 +90,26 @@
         -webkit-appearance: none;
         border-radius: 0;
         padding: .5rem 2rem .5rem .5rem;
+        background: transparent;
+    }
+
+    &__select {
+        position: relative;
+        background-color: $WHITE;
+
+        &:before {
+            content: '\27A4';
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(90deg);
+            color: $GRAY_DARK;
+        }
     }
 
     &__group-submit {

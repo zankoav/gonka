@@ -24,12 +24,13 @@ mixin registration()
                                     input.registration-form__group-input(id="user-female", type='radio', name='user-sex', value='female')
                         .registration-form__group.registration-form__group_select
                             label.registration-form__group-label Группа
-                            select.registration-form__group-input.registration-form__group-select(name="user-group-type")
-                                option(disabled, selected) Группа
-                                option( value="Ниньзя") Ниньзя
-                                option( value="М + Ж") М + Ж
-                                option( value="M") M
-                                option( value="Ж") Ж
+                            .registration-form__select
+                                select.registration-form__group-input.registration-form__group-select(name="user-group-type")
+                                    option(disabled, selected) Группа
+                                    option( value="Ниньзя") Ниньзя
+                                    option( value="М + Ж") М + Ж
+                                    option( value="M") M
+                                    option( value="Ж") Ж
                         .registration-form__group
                             .registration-form__group_is-group
                                 a.registration-form__group-submit.registration-form__group-submit-js-1.registration-form__group-submit_tab.registration-form__group-submit_active(href="#") Один
