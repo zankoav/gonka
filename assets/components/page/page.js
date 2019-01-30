@@ -74,7 +74,7 @@ function isFormValid() {
     let $surname = $('.register [name="user-last_name"]');
     let $country = $('.register [name="user_country"]');
     let $user_date = $('.register [name="user-date"]');
-    let $user_sex = $('.register [name="user-sex"]');
+    let $user_sex = $('.register [name="user-sex"]:checked');
     let $user_size = $('.register [name="user_size"]');
     let $user_email = $('.register [name="email"]');
     let $user_email_confirm = $('.register [name="email_confirm"]');
@@ -95,6 +95,7 @@ function isFormValid() {
     let user_password = $user_password.val();
     let user_password_confirm = $user_password_confirm.val();
 
+    
 
     if (name.length === 0) {
         let $parent = $name.parent();
@@ -216,6 +217,9 @@ function isFormValid() {
         user_password: user_password,
         user_password_confirm: user_password_confirm
     };
+
+    console.log(data);
+    
 
 
     return data;
