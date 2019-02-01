@@ -9,7 +9,6 @@
             $videos = get_post_meta(get_the_ID(),'video_group',1);
         ?>
 
-            <div class="gonka">
                 <div class="container">
                     <div class="gonka__inner">
                         <h1 class="title"><?= get_the_title();?></h1>
@@ -76,162 +75,13 @@
                                     <p class="map-zoom__title"><?=Lang::get('click')?></p>
                                 </div>
                             </div>
-                            <div class="accordion-mixed__tab" data-mixed-tab="6"><?=Lang::get('results')?></div>
-                            <div class="accordion-mixed__content" data-mixed-conent="6">
-                                <div class="accordion-mixed__content-inner">
-                                    <div class="table table_full-width">
-                                        <table>
-                                            <thead>
-                                            <tr>
-                                                <th>Место</th>
-                                                <th>Рейтинг</th>
-                                                <th>Имя</th>
-                                                <th>Лучшее время</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">1</td>
-                                                <td data-label="Рейтинг">1590</td>
-                                                <td data-label="Имя">Smash</td>
-                                                <td data-label="Лучшее время">03:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Место">2</td>
-                                                <td data-label="Рейтинг">1400</td>
-                                                <td data-label="Имя">Misha_1990</td>
-                                                <td data-label="Лучшее время">03:50</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <footer class="house-booking"><a class="house-booking__button" href="#" targe="_blank"><?=Lang::get('registration')?></a></footer>
+                            <?php if (get_post_meta(get_the_ID(),'results_link',1)) : ?>
+                            <a class="accordion-mixed__tab" href="<?=get_post_meta(get_the_ID(),'results_link',1)?>"><?=Lang::get('results')?></a>
+                            <?php endif; ?>
+                            <footer class="house-booking"><a class="house-booking__button" href="<?=get_permalink(get_page_by_path('apply'))?>"><?=Lang::get('registration')?></a></footer>
                         </div>
                     </div>
                 </div>
-            </div>
 
         <?php endwhile;
     } ?>

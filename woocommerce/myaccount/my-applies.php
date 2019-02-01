@@ -88,16 +88,18 @@
         <?php if ($competition['payment_type'] == 'online'): ?>
             <div class="event-card-row payment-type-<?=$competition['status']?>"><label>Статус оплаты: </label> <?= betta_get_user_payment_status_name($competition['status']) ?>
 
-                <?php if ($competition['status'] == BETTA_ORDER_STATUS_FAILED): ?>
-                    <a href="<?= add_query_arg('competitorId', $competition['id'], add_query_arg('step', 'pay', betta_get_registration_url())) ?>">Оплатить</a>
+                <?php if ($competition['status'] != BETTA_ORDER_STATUS_SUCCESS): ?>
+                    (<a href="<?= add_query_arg('competitorId', $competition['competitor_id'], add_query_arg('step', 'pay', betta_get_registration_url())) ?>">оплатить</a>)
                 <?php endif; ?>
             </div>
             <div class="event-card-row payment-code"><label>Код платежа: </label> <?= $competition['order_id'] ?></div>
         <?php endif; ?>
         <?php if ($competition['discount']): ?>
+        <div class="event-card-row"><label>Купон: </label> <?= $competition['coupon'] ?></div>
         <div class="event-card-row"><label>Скидка: </label> <?= $competition['discount'] ?>%</div>
         <?php endif; ?>
         <div class="event-card-row"><label>Стоимость: </label> <?= $competition['totalPrice'] . ' руб.' ?></div>
+        <div class="event-card-row"><label>Нужен трансфер: </label> <?= $competitor['transfer'] == 1 ? 'да' : 'нет' ?></div>
     </div>
     <?php endforeach; ?>
 </div>

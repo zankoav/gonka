@@ -1,12 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="gonki">
         <div class="container">
-            <div class="breadcrumbs">
-                <h2 class="breadcrumbs__title">Календарь</h2>
-                <div class="breadcrumbs__nav"><a class="breadcrumbs__item breadcrumbs__link" href="#">Home</a><span
-                            class="breadcrumbs__item">Календарь</span></div>
-            </div>
             <div class="gonki__inner">
                 <h1 class="title">Календарь</h1>
                 <div class="gonki__tabs"><a class="gonki__tabs-item gonki__tabs-item_early gonki__tabs-item_active"
@@ -19,14 +13,14 @@
 		                'posts_per_page' => -1,
                         'post_type'=>'gonka',
                         'meta_query' => array(
-				                'gonka_date' => array(
-					                'key'     => 'gonka_start',
-					                'value'   => date('Y.m.d'),
-					                'compare' => '>=',
-				                ),
+				                [
+                                    'key'     => 'gonka_start',
+                                    'value'   => time(),
+                                    'compare' => '>=',
+				                ],
 			                ),
-			                'orderby' => 'gonka_date',
-			                'order'   => 'DESC',
+			                'orderby' => 'gonka_start',
+			                'order'   => 'ASC',
 	                );
 
 	                $query = new WP_Query( $args );
@@ -58,13 +52,13 @@
 			                'posts_per_page' => -1,
 			                'post_type'=>'gonka',
 			                'meta_query' => array(
-				                'gonka_date' => array(
+				                array(
 					                'key'     => 'gonka_start',
-					                'value'   => date('Y.m.d'),
+					                'value'   => time(),
 					                'compare' => '<',
 				                ),
 			                ),
-			                'orderby' => 'gonka_date',
+			                'orderby' => 'gonka_start',
 			                'order'   => 'DESC',
 		                );
 
@@ -92,6 +86,5 @@
                 </ul>
             </div>
         </div>
-    </div>
 
 <?php get_footer(); ?>

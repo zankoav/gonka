@@ -6,6 +6,8 @@ $blog         = Lang::get( 'blog' );
 
 	<div class="category">
 		<div class="container">
+            <?php
+          /**
 			<div class="breadcrumbs">
 				<h2 class="breadcrumbs__title"><?= $blog; ?></h2>
 				<div class="breadcrumbs__nav">
@@ -13,6 +15,8 @@ $blog         = Lang::get( 'blog' );
 					<span class="breadcrumbs__item"><?= $blog; ?></span>
 				</div>
 			</div>
+           **/
+			?>
 			<div class="category__row" id="blog-content">
 				<div class="category__col" id="blog-news">
 					<ul class="single-big-list">

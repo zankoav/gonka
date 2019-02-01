@@ -95,10 +95,14 @@
         <span class="my-profile__title">Пол:</span>
         <span class="my-profile__value"><?= $bettaUser->getGender() === 'female' ? 'жен' : 'муж' ?></span>
     </div>
+        <?php
+        /**
     <div class="my-profile__group">
         <span class="my-profile__title">О себе:</span>
         <p class="my-profile__value my-profile__value_full-width"><textarea class="registration-form__textarea" cols="30" rows="5" name="user_about"><?= $bettaUser->getAbout() ?></textarea></p>
     </div>
         <input type="submit" class="registration-form__group-submit" value="Сохранить">
+         **/
+        ?>
     </form>
 </div>

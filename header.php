@@ -36,6 +36,8 @@
 <body class="<?= $classWoocommerce; ?>">
 
 <header class="header">
+    <?php
+    /**
     <header class="header-top">
         <div class="container">
             <div class="header-top__inner">
@@ -72,6 +74,7 @@
                         </div>
                     </a>
                 </div>
+                /**
                 <div class="header-top__search">
                     <a class="header-top__search-button"><i class="fas fa-search"></i></a>
                     <div class="header-top__search_mobile_fixed">
@@ -83,6 +86,8 @@
             </div>
         </div>
     </header>
+    **/
+    ?>
     <header class="header-bottom">
         <div class="container">
             <div class="header-bottom__inner">

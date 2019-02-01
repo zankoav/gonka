@@ -53,11 +53,13 @@
             'name' => 'Дата начала гонки',
             'id'   => 'gonka_start',
             'type' => 'text_date_timestamp',
-            'date_format' => 'd-m-Y',
+            'date_format' => 'd.m.Y',
             'time_format' => 'H:i',
             'attributes'  => array(
                 'required'    => 'required',
+                'autocomplete' => 'off',
             ),
+
         ) );
 
         $cmb->add_field( [
@@ -65,10 +67,11 @@
             'id'   => 'gonka_end',
             'type' => 'text_date_timestamp',
             // 'timezone_meta_key' => 'wiki_test_timezone',
-            'date_format' => 'd-m-Y',
+            'date_format' => 'd.m.Y',
             'time_format' => 'H:i',
             'attributes'  => array(
                 'required'    => 'required',
+                'autocomplete' => 'off',
             ),
 
         ] );
@@ -78,6 +81,12 @@
 			'id'   => 'small_description',
 			'type' => 'textarea_small',
 		) );
+
+        $cmb->add_field( array(
+            'name'    => 'Ссылка на результаты',
+            'id'      => 'results_link',
+            'type'    => 'text',
+        ) );
 
         $cmb->add_field( [
             'name' => 'Форматы',
