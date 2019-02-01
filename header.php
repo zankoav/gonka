@@ -132,8 +132,7 @@
                 <div class="container">
                     <div class="main-slider__title" data-swiper-parallax="-300"><?= $bannerTitle; ?></div>
                     <div class="main-slider__subtitle" data-swiper-parallax="-200"><?= $bannerDescription; ?></div>
-                    <a class="button button_gonka" href="<?= $bannerUrl; ?>"
-                       target="_blank"><?= Lang::get( 'read more' ); ?></a>
+                    <a class="button button_gonka" href="<?= $bannerUrl; ?>"><?= Lang::get( 'read more' ); ?></a>
                 </div>
             </div>
         </div>
