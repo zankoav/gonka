@@ -8,10 +8,10 @@ mixin _header-bottom(isMain)
                     .header-bottom__registration
                         a.header-bottom__registration-link(href="#")
                             img.header-bottom__registration-image(src=require('./../images/registration.svg'))
-                            span.header-bottom__registration-title Регистрация
+                            span.header-bottom__registration-title.header-bottom__registration-title_no-mb Регистрация
                         .header-bottom__time(href="#")
                             img.header-bottom__registration-image(src=require('./../images/time.svg'))
-                            span.header-bottom__registration-title.header-bottom__registration-time(data-time="2019-01-25") Осталось...
+                            span.header-bottom__registration-title.header-bottom__registration-time.header-bottom__registration-title_no-mb(data-time="2019-01-25") Осталось...
                     +categories()
         marquee(class='header-bottom__line' , scrollamount="15") Бегущая строка cлева направо
 

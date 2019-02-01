@@ -91,7 +91,7 @@
         font-size: 12px;
         font-weight: 500;
 
-        @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait){
+        @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait) {
             margin-bottom: 1rem;
         }
 
@@ -102,9 +102,13 @@
         &_mr_4px {
             margin-right: 8px;
 
-            @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait){
+            @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait) {
                 margin-right: 0;
             }
+        }
+
+        &_no-mb {
+            margin-bottom: 0;
         }
     }
 
