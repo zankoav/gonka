@@ -48,6 +48,7 @@
         flex: 1 0 100%;
         max-width: 100%;
         display: flex;
+        flex-wrap: wrap;
         padding-bottom: 2rem;
         justify-content: center;
 
@@ -76,10 +77,9 @@
         }
     }
 
-    &__time{
+    &__time {
         text-align: center;
     }
-
 
     &__registration-image {
         width: 20px;
@@ -91,18 +91,31 @@
         font-size: 12px;
         font-weight: 500;
 
+        @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait){
+            margin-bottom: 1rem;
+        }
+
         @media (min-width: map_get($MEDIA, MD)) {
             font-size: 16px;
         }
 
-        &_mr_4px{
+        &_mr_4px {
             margin-right: 8px;
+
+            @media (max-width: map_get($MEDIA, SM) - 1px) and (orientation: portrait){
+                margin-right: 0;
+            }
         }
     }
 
-     &__registration-time{
-         min-width: 200px;
-     }
+    &__registration-time {
+        min-width: 150px;
+
+        @include lg {
+            min-width: 200px;
+        }
+
+    }
 
     &__menu {
         flex: 1 0 100%;

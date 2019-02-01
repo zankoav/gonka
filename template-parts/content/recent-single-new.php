@@ -8,7 +8,7 @@
         </div>
         <h3 class="single__title"><?= get_post_meta( get_the_ID(), 'gonka_title_' . Lang::current(), 1 ); ?></h3>
         <div class="single__button">
-            <a class="button button_gonka" href="<?= get_the_permalink(); ?>" target="_blank">
+            <a class="button button_gonka" href="<?= get_the_permalink(); ?>">
                 <?= Lang::get( 'read more' ); ?></a>
         </div>
     </div>

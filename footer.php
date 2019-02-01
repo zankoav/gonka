@@ -51,8 +51,7 @@
     <div class="container">
         <div class="footer__bottom-inner">
             <div class="footer__pay-systems">
-                <img src="/wp-content/themes/gonka/src/icons/master-card.5d5a59.png">
-                <img src="/wp-content/themes/gonka/src/icons/visa.49832b.png">
+                <img src="/wp-content/themes/gonka/src/icons/logo-payment-system.d23a68.png" alt="pay systems">
             </div>
             <div class="footer__copy-right">&copy; <?= date( 'Y' ); ?> <?= Lang::get( 'All rights reserved.' ); ?></div>
         </div>

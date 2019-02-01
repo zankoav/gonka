@@ -64,9 +64,9 @@ $tags         = Lang::get( 'tags' );
 			<h3 class="widjet__title"><?= Lang::get('Socials');?></h3>
 			<div class="socials socials_widjet">
 
-				<a class="socials__link" href="<?= $vk_link; ?>" target="_blank"><i class="fab fa-vk"></i></a>
-				<a class="socials__link" href="<?= $fb_link; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-				<a class="socials__link" href="<?= $linkedin_link; ?>" target="_blank"><i
+				<a class="socials__link" href="<?= $vk_link; ?>"><i class="fab fa-vk"></i></a>
+				<a class="socials__link" href="<?= $fb_link; ?>"><i class="fab fa-facebook-f"></i></a>
+				<a class="socials__link" href="<?= $linkedin_link; ?>"><i
 						class="fab fa-linkedin-in"></i></a>
 
 			</div>

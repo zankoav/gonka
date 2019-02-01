@@ -38,7 +38,7 @@ $post_content = $meta_data["gonka_redactor_".$ln][0];
 								<?php foreach ( $tags as $tag ) :
 									$tag_link = get_term_link($tag->term_id);
 									$tag_name = $tag->name; ?>
-									<a class="button button_gonka button_gonka_tag" href="<?= $tag_link;?>" target="_blank"><?= $tag_name;?></a>
+									<a class="button button_gonka button_gonka_tag" href="<?= $tag_link;?>" ><?= $tag_name;?></a>
 								<?php endforeach;?>
 							</div>
 

@@ -46,7 +46,7 @@
                         </div>
                         <div class="widjet">
                             <h3 class="widjet__title">Socials</h3>
-                            <div class="socials socials_widjet"><a class="socials__link" href="#" target="_blank"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+                            <div class="socials socials_widjet"><a class="socials__link" href="#"><i class="fab fa-vk"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="socials__link" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
                         </div>
                     </div>
                 </div>
