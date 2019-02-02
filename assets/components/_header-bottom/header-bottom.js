@@ -2,7 +2,8 @@ import './header-bottom.scss';
 import $ from 'jquery';
 
 let $time = $('.header-bottom__registration-time');
-let endSeconds = new Date($time.data('time')).getTime() / 1000;
+
+let endSeconds = parseInt($time.data('time')) / 1000;
 
 const day = 86400,
     hour = 3600,

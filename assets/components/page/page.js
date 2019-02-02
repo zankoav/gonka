@@ -167,9 +167,9 @@ function isFormValid() {
         let $parent = $user_phone.parent();
         $parent.find('.contacts__form-group-message').html(Validator.ERROR_EMPTY_FIELD_RU);
         return;
-    }else if (!Validator.phone(user_phone)) {
+    }else if (!Validator.numbers(user_phone)) {
         let $parent = $user_phone.parent();
-        $parent.find('.contacts__form-group-message').html(Validator.ERROR_PHONE_FAILED_RU);
+        $parent.find('.contacts__form-group-message').html(Validator.ERROR_PHONE_ONLY_NUMBERS_FAILED_RU);
         return;
     } else {
         let $parent = $user_phone.parent();
@@ -223,4 +223,6 @@ function isFormValid() {
 }
 
 let reg_phone = document.getElementById('reg_phone');
-Inputmask({ regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
+if(reg_phone){
+    // Inputmask({ regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
+}

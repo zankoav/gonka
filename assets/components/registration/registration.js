@@ -24,4 +24,6 @@ $('.registration-form__group-submit-js-2').on('click', function (event) {
 });
 
 let reg_phone = document.getElementById('reg_phone');
-Inputmask({ regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
+if (reg_phone) {
+    // Inputmask({regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
+}

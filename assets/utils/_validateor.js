@@ -8,6 +8,7 @@ export const Validator = {
     ERROR_EMAIL_CONFIRM_FAILED_RU: 'Ошибка: email не совпадают',
     ERROR_PASSWORD_CONFIRM_FAILED_RU: 'Ошибка: пароли не совпадают не совпадают',
     ERROR_PHONE_FAILED_RU: 'Ошибка: не верный формат телефона',
+    ERROR_PHONE_ONLY_NUMBERS_FAILED_RU: 'Ошибка: не верный формат телефона(только числа)',
     email: function (email) {
         let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
@@ -15,5 +16,12 @@ export const Validator = {
     phone: function (phone) {
         let re = /^\+375 (17|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$/;
         return re.test(phone);
+    },
+    numbers: function (phone) {
+        let re = /^\d+$/;
+        return re.test(phone);
     }
 };
+
+//import Inputmask from "inputmask";
+// Inputmask({regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
