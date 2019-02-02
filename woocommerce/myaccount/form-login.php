@@ -190,7 +190,7 @@
             </p>
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label for="reg_phone">Телефон (Формат +375 XX XXX XX XX)&nbsp;<span
+                <label for="reg_phone">Телефон (только цифры)&nbsp;<span
                             class="required">*</span></label>
                 <input type="text"
                        class="woocommerce-Input woocommerce-Input--text input-text" name="phone"
