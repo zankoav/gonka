@@ -128,7 +128,7 @@
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_user_date">Дата рождения&nbsp;<span class="required">*</span></label>
-                <input type="text" class="datepicker woocommerce-Input woocommerce-Input--date input-date" name="user-date"
+                <input type="date" class="datepicker woocommerce-Input woocommerce-Input--date input-date" name="user-date"
                        id="reg_user_date"
                        autocomplete="user-date"
                        value="<?php echo ( ! empty( $_POST['user-date'] ) ) ? esc_attr( wp_unslash( $_POST['user-date'] ) ) : ''; ?>"/>
@@ -231,11 +231,5 @@
 
 </div>
 <?php endif; ?>
-
-<script>
-    jQuery(document).ready(function($) {
-        $(".datepicker").datepicker({ dateFormat: 'dd.mm.yy', changeMonth: true, changeYear: true, yearRange: "1930:2015" });
-    });
-</script>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>
