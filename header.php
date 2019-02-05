@@ -20,8 +20,7 @@
 
 	$gonkaUrl = $options['gonka_url'];
 
-	$dateEarlyGonka = getEarlyGonka(); // 2019-01-16
-
+	$dateEarlyGonka = getEarlyGonka( true );
 	$classWoocommerce = is_account_page() ? 'account-content' : '';
 
 ?>
@@ -36,58 +35,58 @@
 <body class="<?= $classWoocommerce; ?>">
 
 <header class="header">
-    <?php
-    /**
-    <header class="header-top">
-        <div class="container">
-            <div class="header-top__inner">
-                <div class="header-top__menu">
-                    <a class="header-top__menu-button"><span></span><span></span><span></span></a>
-
-
-					<?php get_template_part( 'template-parts/menu/top-menu' ) ?>
-
-                </div>
-                <div class="header-top__langs">
-                    <div class="langs">
-                        <a class="langs__current" href="#"
-                           data-current-lang="<?= Lang::BASE_LANG === $ln ? 'ru' : 'en' ?>">
-							<?= Lang::BASE_LANG === $ln ? 'RU' : 'EN' ?>
-                            <i class="fas fa-angle-down"></i>
-                        </a>
-                        <ul class="langs__list">
-                            <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
-                            <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="header-top__cart">
-                    <!--+shopping-cart(false,'100.00')-->
-                </div>
-                <div class="header-bottom__profile">
-                    <a class="profile"
-                       href="<?= get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>">
-                        <img class="profile__icon" src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
-                             alt="profile">
-                        <div class="profile__default">
-                            <span class="profile__link profile__link_login"><?= $login; ?></span>
-                        </div>
-                    </a>
-                </div>
-                /**
-                <div class="header-top__search">
-                    <a class="header-top__search-button"><i class="fas fa-search"></i></a>
-                    <div class="header-top__search_mobile_fixed">
-
-						<?php get_search_form(); ?>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    **/
-    ?>
+	<?php
+		/**
+		 * <header class="header-top">
+		 * <div class="container">
+		 * <div class="header-top__inner">
+		 * <div class="header-top__menu">
+		 * <a class="header-top__menu-button"><span></span><span></span><span></span></a>
+		 *
+		 *
+		 * <?php get_template_part( 'template-parts/menu/top-menu' ) ?>
+		 *
+		 * </div>
+		 * <div class="header-top__langs">
+		 * <div class="langs">
+		 * <a class="langs__current" href="#"
+		 * data-current-lang="<?= Lang::BASE_LANG === $ln ? 'ru' : 'en' ?>">
+		 * <?= Lang::BASE_LANG === $ln ? 'RU' : 'EN' ?>
+		 * <i class="fas fa-angle-down"></i>
+		 * </a>
+		 * <ul class="langs__list">
+		 * <li class="langs__item"><a href="#" data-lang="ru">RU</a></li>
+		 * <li class="langs__item"><a href="#" data-lang="en">EN</a></li>
+		 * </ul>
+		 * </div>
+		 * </div>
+		 * <div class="header-top__cart">
+		 * <!--+shopping-cart(false,'100.00')-->
+		 * </div>
+		 * <div class="header-bottom__profile">
+		 * <a class="profile"
+		 * href="<?= get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>">
+		 * <img class="profile__icon" src="/wp-content/themes/gonka/src/icons/profile.d7e3d5.svg"
+		 * alt="profile">
+		 * <div class="profile__default">
+		 * <span class="profile__link profile__link_login"><?= $login; ?></span>
+		 * </div>
+		 * </a>
+		 * </div>
+		 * /**
+		 * <div class="header-top__search">
+		 * <a class="header-top__search-button"><i class="fas fa-search"></i></a>
+		 * <div class="header-top__search_mobile_fixed">
+		 *
+		 * <?php get_search_form(); ?>
+		 *
+		 * </div>
+		 * </div>
+		 * </div>
+		 * </div>
+		 * </header>
+		 **/
+	?>
     <header class="header-bottom">
         <div class="container">
             <div class="header-bottom__inner">

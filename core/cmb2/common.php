@@ -176,20 +176,17 @@
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'VK', THEME_NAME ),
 			'id'      => 'vk_link',
-			'type'    => 'text_url',
-			'default' => 'https://vk.com/',
+			'type'    => 'text_url'
 		) );
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'Facebook', THEME_NAME ),
 			'id'      => 'fb_link',
-			'type'    => 'text_url',
-			'default' => 'https://facebook.com/',
+			'type'    => 'text_url'
 		) );
 		$cmb_options->add_field( array(
-			'name'    => esc_html__( 'LinkedIn', THEME_NAME ),
-			'id'      => 'linkedin_link',
-			'type'    => 'text_url',
-			'default' => 'https://linkedin.com/',
+			'name'    => esc_html__( 'Instagram', THEME_NAME ),
+			'id'      => 'instagram_link',
+			'type'    => 'text_url'
 		) );
 
 
@@ -249,6 +246,12 @@
 			'name' => esc_html__( 'УНП EN', THEME_NAME ),
 			'id'   => 'footer_paragraph_en',
 			'type' => 'textarea_small'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => esc_html__( 'Платежные системы', THEME_NAME ),
+			'id'   => 'footer_payment',
+			'type' => 'file'
 		) );
 
 
