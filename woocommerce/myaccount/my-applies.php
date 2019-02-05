@@ -69,7 +69,7 @@
     <?php $competitions = betta_get_user_competitions_with_orders(); ?>
     <?php foreach ($competitions as $competition): ?>
     <div class="event-card">
-        <img src="<?=betta_get_event_by_id($competition['event_id'])['image']?>">
+        <img style="max-width:300px;" src="<?=betta_get_event_by_id($competition['event_id'])['image']?>">
         <h4><?= betta_get_event_by_id($competition['event_id'])['name'] ?> (<span
                     class="type"><?= betta_get_type_by_id($competition['event_id'], $competition['event_type_id'])['name'] ?></span>)</h4>
         <h5><?=betta_get_event_status_name(betta_get_event_status($competition['event_id']))?></h5>
