@@ -34,10 +34,10 @@
                 <a class="footer__item footer__item_email" href="mailto:<?= $email; ?>"><?= $email; ?></a>
                 <a class="footer__item footer__item_phone" href="tel:<?= $phone; ?>"><?= $phone; ?></a>
                 <div class="socials undefined">
-                    <a class="socials__link" href="<?= $vk_link; ?>" target="_blank"><i class="fab fa-vk"></i></a>
-                    <a class="socials__link" href="<?= $fb_link; ?>" target="_blank"><i
+                    <a class="socials__link" href="<?= $vk_link; ?>"><i class="fab fa-vk"></i></a>
+                    <a class="socials__link" href="<?= $fb_link; ?>"><i
                                 class="fab fa-facebook-f"></i></a>
-                    <a class="socials__link" href="<?= $instagram_link; ?>" target="_blank">
+                    <a class="socials__link" href="<?= $instagram_link; ?>">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
