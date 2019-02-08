@@ -173,7 +173,7 @@
                 <h1 class="title">Регистрация на гонку</h1>
                 <div class="registration__form">
                     <?php if(!$validCoupon) : ?>
-                        <form clas="registration-form" method="get"?>
+                        <form class="registration-form" method="get"?>
                             <div class="registration-form__group">
                                 <label class="registration-form__group-label">Использовать купон</label>
                                 <input style="width:59%" class="registration-form__group-input" type="text" name="coupon"
@@ -306,7 +306,9 @@
                                        name="team-name" id="team-name" placeholder="Название команды">
                             </div>
                             <div class="registration-form__group">
-                                <input style="margin: 0 10px 0 0;" type="checkbox" name="transfer" id="transfer-field"><label style="display: inline; cursor: pointer;font-size:14px;" class="registration-form__group-label" for="transfer-field">Нужен трансфер</label>
+                                <label class="registration-form__group-label">Дополнительная информация</label>
+                                <textarea class="registration-form__group-input"
+                                          name="additional_info" id="team-name" placeholder="Нужен трансфер или что-то ещё"></textarea>
                             </div>
                             <div id="price-container" style="font-size:30px;color: #fff">Цена: <span
                                         style="color: #e8471e;" class="price-placeholder"></span></div>

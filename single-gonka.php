@@ -5,7 +5,9 @@
 
         $photos = get_post_meta(get_the_ID(), 'photo', 1);
         $map = get_post_meta(get_the_ID(), 'map', 1);
-        $shema = get_post_meta(get_the_ID(), 'shema', 1);
+        $map_text = get_post_meta(get_the_ID(), 'map_text', 1);
+        $schema = get_post_meta(get_the_ID(), 'schema', 1);
+        $schema_text = get_post_meta(get_the_ID(), 'schema_text', 1);
         $videos = get_post_meta(get_the_ID(), 'video_group', 1);
         ?>
 
@@ -56,6 +58,11 @@
                     </div>
                     <div class="accordion-mixed__tab" data-mixed-tab="3"><?= Lang::get('map') ?></div>
                     <div class="accordion-mixed__content" data-mixed-conent="3">
+                        <main class="content">
+                            <div class="content__inner">
+                                <?= wpautop($schema_text) ?>
+                            </div>
+                        </main>
                         <div class="map-zoom" id="map1">
                             <img class="map-zoom__image" src="<?= $map; ?>" alt="map" data-big="<?= $map; ?>">
                             <p class="map-zoom__title">Кликни</p>
@@ -75,10 +82,12 @@
                     </div>
                     <div class="accordion-mixed__tab" data-mixed-tab="5"><?= Lang::get('shema_delivery') ?></div>
                     <div class="accordion-mixed__content" data-mixed-conent="5">
-                        <div class="map-zoom" id="map2">
-                            <img class="map-zoom__image" src="<?= $shema ?>" alt="map" data-big="<?= $shema ?>">
-                            <p class="map-zoom__title"><?= Lang::get('click') ?></p>
-                        </div>
+                        <main class="content">
+                            <div class="content__inner">
+                                <?= wpautop($schema_text) ?>
+                            </div>
+                        </main>
+                        <?= $schema ?>
                     </div>
                     <?php
                     $competitors = betta_get_competitors_for_event_by_types(get_the_ID());

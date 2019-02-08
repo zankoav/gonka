@@ -108,25 +108,43 @@
 			'type' => 'file',
 		) );
 
+        $cmb->add_field( array(
+            'name' => 'Карта (текст)',
+            'id'   => 'map_text',
+            'type' => 'wysiwyg',
+        ) );
+
 		$cmb->add_field( array(
 			'name' => 'Схема проезда',
-			'id'   => 'shema',
-			'type' => 'file',
+			'id'   => 'schema',
+			'type' => 'textarea',
+            'sanitization_cb' => 'my_sanitization_func',
+            'description' => 'Создайте карту <a href="https://yandex.ru/map-constructor/" target="_blank">https://yandex.ru/map-constructor/</a> -> Получить код карты -> Код для сайта -> Вставьте код сюда'
 		) );
+// In another file somewhere
+        function my_sanitization_func( $original_value, $args, $cmb2_field ) {
+            return $original_value; // Unsanitized value.
+        }
+        $cmb->add_field( array(
+            'name' => 'Схема проезда (тескт)',
+            'id'   => 'schema_text',
+            'type' => 'wysiwyg',
+        ) );
 
-		$video_field_id = $cmb->add_field( array(
-			'id'          => 'video_group',
-			'type'        => 'group',
-			'description' => __( 'Вы можете добавить видео с YouTube', 'cmb2' ),
-			// 'repeatable'  => false, // use false if you want non-repeatable group
-			'options'     => array(
-				'group_title'   => __( 'Видео {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
-				'add_button'    => __( 'Добавит Видео', 'cmb2' ),
-				'remove_button' => __( 'Удалить Видео', 'cmb2' ),
-				'sortable'      => true, // beta
-				'closed'        => true, // true to have the groups closed by default
-			),
-		) );
+
+        $video_field_id = $cmb->add_field( array(
+            'id'          => 'video_group',
+            'type'        => 'group',
+            'description' => __( 'Вы можете добавить видео с YouTube', 'cmb2' ),
+            // 'repeatable'  => false, // use false if you want non-repeatable group
+            'options'     => array(
+                'group_title'   => __( 'Видео {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+                'add_button'    => __( 'Добавит Видео', 'cmb2' ),
+                'remove_button' => __( 'Удалить Видео', 'cmb2' ),
+                'sortable'      => true, // beta
+                'closed'        => true, // true to have the groups closed by default
+            ),
+        ) );
 
 		$cmb->add_group_field( $video_field_id, array(
 			'name' => 'oEmbed',

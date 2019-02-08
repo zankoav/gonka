@@ -99,7 +99,9 @@
         <div class="event-card-row"><label>Скидка: </label> <?= $competition['discount'] ?>%</div>
         <?php endif; ?>
         <div class="event-card-row"><label>Стоимость: </label> <?= $competition['totalPrice'] . ' руб.' ?></div>
-        <div class="event-card-row"><label>Нужен трансфер: </label> <?= $competitor['transfer'] == 1 ? 'да' : 'нет' ?></div>
+        <?php if($competition['additional_info']): ?>
+        <div class="event-card-row"><label>Дополнительная информация: </label> <br><?= nl2br($competition['additional_info']) ?></div>
+        <?php endif; ?>
     </div>
     <?php endforeach; ?>
 </div>
