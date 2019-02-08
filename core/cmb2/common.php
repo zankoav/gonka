@@ -189,6 +189,12 @@
 			'type'    => 'text_url'
 		) );
 
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'YuoTube', THEME_NAME ),
+			'id'      => 'youtube_link',
+			'type'    => 'text_url'
+		) );
+
 
 //Partners
 

@@ -7,6 +7,7 @@
 	$vk_link          = $options["vk_link"];
 	$fb_link          = $options["fb_link"];
 	$instagram_link   = $options["instagram_link"];
+	$youtube_link     = $options["youtube_link"];
 	$logo             = $options['logo_light'];
 	$footer_paragraph = $options[ 'footer_paragraph_' . $ln ];
 	$footer_unp_title = $options[ 'footer_unp_title_' . $ln ];
@@ -35,11 +36,9 @@
                 <a class="footer__item footer__item_phone" href="tel:<?= $phone; ?>"><?= $phone; ?></a>
                 <div class="socials undefined">
                     <a class="socials__link" href="<?= $vk_link; ?>"><i class="fab fa-vk"></i></a>
-                    <a class="socials__link" href="<?= $fb_link; ?>"><i
-                                class="fab fa-facebook-f"></i></a>
-                    <a class="socials__link" href="<?= $instagram_link; ?>">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a class="socials__link" href="<?= $fb_link; ?>"><i class="fab fa-facebook-f"></i></a>
+                    <a class="socials__link" href="<?= $instagram_link; ?>"><i class="fab fa-instagram"></i></a>
+                    <a class="socials__link" href="<?= $youtube_link; ?>"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer__col">

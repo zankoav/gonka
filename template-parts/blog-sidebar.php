@@ -3,6 +3,7 @@
 	$vk_link        = $options["vk_link"];
 	$fb_link        = $options["fb_link"];
 	$instagram_link = $options["instagram_link"];
+	$youtube_link = $options["youtube_link"];
 
 	$args = array(
 		'numberposts'      => 10,
@@ -66,8 +67,8 @@
 
                 <a class="socials__link" href="<?= $vk_link; ?>"><i class="fab fa-vk"></i></a>
                 <a class="socials__link" href="<?= $fb_link; ?>"><i class="fab fa-facebook-f"></i></a>
-                <a class="socials__link" href="<?= $instagram_link; ?>"><i
-                            class="fab fa-instagram"></i></a>
+                <a class="socials__link" href="<?= $instagram_link; ?>"><i class="fab fa-instagram"></i></a>
+                <a class="socials__link" href="<?= $youtube_link; ?>"><i class="fab fa-youtube"></i></a>
 
             </div>
         </div>
