@@ -13,10 +13,7 @@ $(document).ready(function () {
 
 
 if ($(window).width() < 768) {
-
     let slider = new Swiper('.media-library__container', {
-        slidesPerView: 'auto',
-        centeredSlides: true,
         spaceBetween: 10,
         navigation: {
             nextEl: '.media-library__button-next',

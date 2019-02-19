@@ -4,7 +4,6 @@ import $ from "jquery";
 
 let menuProjects = null;
 let activeMenu = $('[data-active-menu]').data('active-menu');
-console.log(activeMenu);
 
 if (screen.width < 768) {
     menuProjects = new Swiper('.categories-container', {
