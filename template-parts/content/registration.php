@@ -322,8 +322,7 @@
                                 **/
                                 ?>
                                 <button class="registration-form__group-submit" type="submit" name="pay-online"
-                                        id="pay-online" disabled="disabled">Оплатить
-                                    онлайн
+                                        id="pay-online" disabled="disabled">Подать заявку
                                 </button>
                             </div>
                         </form>
