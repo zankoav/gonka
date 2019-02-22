@@ -27,6 +27,9 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+    <meta property="og:image" content="/wp-content/themes/gonka/assets/images/favicon.png" />
+    <meta property="og:image" content="/wp-content/themes/gonka/assets/images/favicon.png" />
+    <meta property="og:image" content="/wp-content/themes/gonka/assets/images/favicon.png" />
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
