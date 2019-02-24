@@ -40,7 +40,7 @@
                     <a class="socials__link" href="<?= $fb_link; ?>"><i class="fab fa-facebook-f"></i></a>
                     <a class="socials__link" href="<?= $instagram_link; ?>"><i class="fab fa-instagram"></i></a>
                     <a class="socials__link" href="<?= $youtube_link; ?>"><i class="fab fa-youtube"></i></a>
-                    <a class="socials__link" href="telegram.me/<?= $telegramm_group; ?>"><i class="fab fa-telegram-plane"></i></a>
+                    <a title="Telegram" class="socials__link" href="tg://resolve?domain=<?= $telegramm_group; ?>"><i class="fab fa-telegram-plane"></i></a>
                 </div>
             </div>
             <div class="footer__col">

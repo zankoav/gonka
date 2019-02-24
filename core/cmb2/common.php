@@ -197,7 +197,7 @@
 
 		$cmb_options->add_field( array(
 			'name'    => esc_html__( 'Telegram', THEME_NAME ),
-			'description'=> '@groupname',
+			'description'=> 'nikname',
 			'id'      => 'telegramm',
 			'type'    => 'text'
 		) );
