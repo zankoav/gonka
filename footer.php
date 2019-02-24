@@ -6,6 +6,7 @@
 	$phone            = $options["phone"];
 	$vk_link          = $options["vk_link"];
 	$fb_link          = $options["fb_link"];
+	$telegramm_group  = $options["telegramm"];
 	$instagram_link   = $options["instagram_link"];
 	$youtube_link     = $options["youtube_link"];
 	$logo             = $options['logo_light'];
@@ -39,6 +40,7 @@
                     <a class="socials__link" href="<?= $fb_link; ?>"><i class="fab fa-facebook-f"></i></a>
                     <a class="socials__link" href="<?= $instagram_link; ?>"><i class="fab fa-instagram"></i></a>
                     <a class="socials__link" href="<?= $youtube_link; ?>"><i class="fab fa-youtube"></i></a>
+                    <a class="socials__link" href="telegram.me/<?= $telegramm_group; ?>"><i class="fab fa-telegram-plane"></i></a>
                 </div>
             </div>
             <div class="footer__col">

@@ -195,6 +195,12 @@
 			'type'    => 'text_url'
 		) );
 
+		$cmb_options->add_field( array(
+			'name'    => esc_html__( 'Telegram', THEME_NAME ),
+			'id'      => 'telegramm',
+			'type'    => 'text'
+		) );
+
 
 //Partners
 
