@@ -118,7 +118,7 @@
                                                     $bettaUser = Betta\User::findById($competitor['user_id']);
                                                     ?>
                                                     <li>
-                                                        <?= $competitor['firstName'] . ' ' . $competitor['lastName'] ?>
+                                                        <?= $competitor['lastName'] . ' ' . $competitor['firstName'] ?>
                                                         <?php if ($bettaUser):?>(<?= $bettaUser->getCountry() ?>)<?php endif;?>
                                                     </li>
                                                 <?php endforeach; ?>
