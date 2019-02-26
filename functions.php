@@ -8,7 +8,7 @@
 
 	define( 'THEME_NAME', get_template() );
 	define( 'BASE_URL', '/wp-content/themes/' . THEME_NAME );
-	date_default_timezone_set("Europe/Minsk");
+	date_default_timezone_set( "Europe/Minsk" );
 
 	require_once __DIR__ . '/utils/Lang.php';
 	require_once __DIR__ . '/utils/Assets.php';
@@ -141,7 +141,7 @@
 		$time = get_post_meta( $gonka->ID, 'gonka_start', 1 );
 
 		if ( $isDiffTime and ! empty( $time ) ) {
-			return $time - $timeNow - (3 * 60 * 60);
+			return $time - $timeNow - ( 3 * 60 * 60 );
 		}
 
 		if ( ! empty( $time ) ) {
@@ -168,4 +168,65 @@
 		return $required_fields;
 	}
 
-?>
+
+	add_action( 'manage_users_columns', 'account_verification_status_column' );
+	function account_verification_status_column( $column_headers ) {
+		unset( $column_headers['posts'] );
+		unset( $column_headers['name'] );
+
+		$res = array_slice( $column_headers, 0, 2, true ) +
+		       array( "lastname" => "Фамилия" ) +
+		       array( "firstname" => "Имя" ) +
+		       array_slice( $column_headers, 1, count( $column_headers ) - 1, true );
+
+		return $res;
+	}
+
+	add_filter( 'manage_users_sortable_columns', 'make_verification_status_column_sortable' );
+	function make_verification_status_column_sortable( $vars ) {
+		$columns['firstname'] = 'Имя';
+		$columns['lastname']  = 'Фамилия';
+
+		return $columns;
+	}
+
+	add_filter( 'manage_users_custom_column', 'add_user_column_value', 10, 3 );
+	function add_user_column_value( $value, $column_name, $user_id ) {
+		if ( 'firstname' == $column_name ) {
+			$name  = get_user_meta( $user_id, 'user_name', true );
+			$value = $name;
+
+		} else if ( 'lastname' == $column_name ) {
+			$lastname = get_user_meta( $user_id, 'user_surname', true );
+			$value    = $lastname;
+		}
+
+		return $value;
+	}
+
+	add_action( 'pre_user_query', 'yoursite_pre_user_search' );
+	function yoursite_pre_user_search( $user_search ) {
+		global $wpdb;
+		if ( ! isset( $_GET['s'] ) ) {
+			return;
+		}
+
+		//Enter Your Meta Fields To Query
+		$search_array = array(
+			"user_email",
+			"user_name",
+			"user_surname"
+		);
+
+		$user_search->query_from .= " INNER JOIN {$wpdb->usermeta} ON {$wpdb->users}.ID={$wpdb->usermeta}.user_id AND (";
+		for ( $i = 0; $i < count( $search_array ); $i ++ ) {
+			if ( $i > 0 ) {
+				$user_search->query_from .= " OR ";
+			}
+			$user_search->query_from .= "{$wpdb->usermeta}.meta_key='" . $search_array[ $i ] . "'";
+		}
+		$user_search->query_from  .= ")";
+		$custom_where             = $wpdb->prepare( "{$wpdb->usermeta}.meta_value LIKE '%s'", "%" . $_GET['s'] . "%" );
+		$user_search->query_where = str_replace( 'WHERE 1=1 AND (', "WHERE 1=1 AND ({$custom_where} OR ", $user_search->query_where );
+
+	}
