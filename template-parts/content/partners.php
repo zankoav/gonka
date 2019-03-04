@@ -9,7 +9,9 @@
 	<?php if ( ! empty( $partners ) ):
 		foreach ( $partners as $partner ):?>
             <div class="partners__item">
-                <img class="partners__item-image" src="<?= $partner['partner']; ?>">
+                <a href="<?= $partner['partner_link']; ?>">
+                    <img class="partners__item-image" src="<?= $partner['partner']; ?>">
+                </a>
             </div>
 		<?php endforeach;
 	endif;

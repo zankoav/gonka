@@ -224,9 +224,16 @@
 		) );
 		$cmb_options->add_group_field( $partners, array(
 			'id'   => 'partner',
-			'description' => 'Реккомендуемый размер 250x220',
+            'name' => esc_html__( 'Логотип', THEME_NAME ),
+            'description' => 'Реккомендуемый размер 250x220',
 			'type' => 'file'
 		) );
+
+        $cmb_options->add_group_field( $partners, array(
+            'name' => esc_html__( 'URL', THEME_NAME ),
+            'id'   => 'partner_link',
+            'type' => 'text_url'
+        ) );
 
 //footer paragraph
 
