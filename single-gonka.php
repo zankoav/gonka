@@ -107,25 +107,40 @@
 
                                     $event = betta_get_event_by_id(get_the_ID());
 
+
+
+                                    $ouputTypes = [];
                                     foreach ($event['categories'] as $category) :
                                         foreach ($category['types'] as $type) :
                                             if (!isset($competitors[$type['id']])) continue;
-                                            ?>
-                                            <h3 class="type-header"><?= $type['name'] ?></h3>
-                                            <ol>
-                                                <?php foreach ($competitors[$type['id']] as $competitor) : ?>
-                                                    <?php
-                                                    $bettaUser = Betta\User::findById($competitor['user_id']);
-                                                    ?>
-                                                    <li>
-                                                        <?= $competitor['lastName'] . ' ' . $competitor['firstName'] ?>
-                                                        <?php if ($bettaUser):?>(<?= $bettaUser->getCountry() ?>)<?php endif;?>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ol>
-                                        <?php
+
+                                            $ouputTypes[$type['id']] = $type;
+
                                         endforeach;
                                     endforeach;
+
+                                    uasort($ouputTypes, function($el1, $el2){
+                                        $date1 = new \DateTime($el1['date']);
+                                        $date2 = new \DateTime($el2['date']);
+                                       return $date1 > $date2;
+                                    });
+
+                                        foreach ($ouputTypes as $type):
+                                        ?>
+                                        <h3 class="type-header"><?= $type['name'] ?></h3>
+                                        <ol>
+                                            <?php foreach ($competitors[$type['id']] as $competitor) : ?>
+                                                <?php
+                                                $bettaUser = Betta\User::findById($competitor['user_id']);
+                                                ?>
+                                                <li>
+                                                    <?= $competitor['lastName'] . ' ' . $competitor['firstName'] ?>
+                                                    <?php if ($bettaUser):?>(<?= $bettaUser->getCountry() ?>)<?php endif;?>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ol>
+                                    <?php
+                                        endforeach;
                                     ?>
                                 </div>
                             </main>
