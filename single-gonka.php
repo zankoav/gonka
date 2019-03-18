@@ -150,25 +150,11 @@
 
                         <div class="accordion-mixed__tab" data-mixed-tab="7"><?= Lang::get('results'); ?></div>
                         <div class="accordion-mixed__content" data-mixed-conent="7">
-                            <div class="swiper-container accordion-mixed__content-inner house-media-library__container">
-                                <div class="swiper-wrapper house-media-library">
-
-                                    <?php foreach ((array)$results_images as $attachment_id => $attachment_url) : ?>
-                                        <div class="swiper-slide house-media-library__item">
-                                            <a class="house-media-library__media-wrapper" rel="group"
-                                               href="<?= $attachment_url; ?>">
-                                                <img class="house-media-library__media" src="<?= $attachment_url; ?>"
-                                                     alt="picture">
-                                            </a>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                                <div class="house-media-library__container">
-                                    <div class="b-container house-media-library__container-wrapper">
-                                        <div class="swiper-button-next house-media-library__button-next"></div>
-                                        <div class="swiper-button-prev house-media-library__button-prev"></div>
-                                    </div>
-                                </div>
+                            <div class="results">
+                                <?php foreach ((array)$results_images as $attachment_id => $attachment_url) : ?>
+                                    <img class="results__item" src="<?= $attachment_url; ?>"
+                                         alt="results">
+                                <?php endforeach; ?>
                             </div>
                         </div>
 
