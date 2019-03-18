@@ -83,9 +83,33 @@
 		) );
 
         $cmb->add_field( array(
+            'name'    => 'Результаты',
+            'id'      => 'results_title',
+            'type'    => 'title',
+        ) );
+
+        $cmb->add_field( array(
+            'name'    => 'Включить резуьтаты',
+            'id'      => 'results_enable',
+            'type'    => 'checkbox',
+        ) );
+
+        $cmb->add_field( array(
             'name'    => 'Ссылка на результаты',
             'id'      => 'results_link',
             'type'    => 'text',
+        ) );
+
+        $cmb->add_field( array(
+            'name'    => 'Результаты',
+            'id'      => 'results_images',
+            'type'    => 'file_list',
+        ) );
+
+        $cmb->add_field( array(
+            'name'    => 'Форматы',
+            'id'      => 'event_schema_title',
+            'type'    => 'title',
         ) );
 
         $cmb->add_field( [
