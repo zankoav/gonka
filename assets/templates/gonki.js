@@ -22,8 +22,6 @@ import './../components/header/header';
 import './../components/profile/profile';
 import './../components/categories/categories';
 import './../components/shopping-cart/shopping-cart';
-import './../components/results/results';
-
 
 
 

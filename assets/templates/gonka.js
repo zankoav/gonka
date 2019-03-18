@@ -32,8 +32,7 @@ import './../components/categories/categories';
 import './../components/shopping-cart/shopping-cart';
 import './../components/main-slider/main-slider';
 import './../components/_video/video';
-
-
+import './../components/results/results';
 
 
 
