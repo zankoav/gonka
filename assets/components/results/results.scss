@@ -1,14 +1,17 @@
 @import "./../../common/constants";
 
 .results {
-    overflow : auto;
+
+    &__item-wrapper {
+        overflow      : auto;
+        margin-bottom : 2rem;
+    }
 
     &__item {
-        max-width     : initial;
-        height        : 400px;
-        width         : auto;
-        display       : block;
-        margin-bottom : 2rem;
+        max-width : initial;
+        height    : 400px;
+        width     : auto;
+        display   : block;
 
         @include sm {
             max-width : 100%;

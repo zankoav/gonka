@@ -151,9 +151,12 @@
                         <div class="accordion-mixed__tab" data-mixed-tab="7"><?= Lang::get('results'); ?></div>
                         <div class="accordion-mixed__content" data-mixed-conent="7">
                             <div class="results">
+
                                 <?php foreach ((array)$results_images as $attachment_id => $attachment_url) : ?>
-                                    <img class="results__item" src="<?= $attachment_url; ?>"
-                                         alt="results">
+                                    <div class="results__item-wrapper">
+                                        <img class="results__item" src="<?= $attachment_url; ?>"
+                                             alt="results">
+                                    </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
